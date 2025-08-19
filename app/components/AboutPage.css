@@ -1,0 +1,597 @@
+/* About Page Styles - Modern Redesign */
+.about-page {
+  padding-top: 90px; /* 70px navbar + 20px spacing */
+  min-height: 100vh;
+  background: var(--bg-primary);
+  overflow-x: hidden;
+}
+
+/* Main Content Container */
+.about-content {
+  padding: 60px 0;
+  background: var(--bg-primary);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Content Section - Single Column Layout */
+.about-section {
+  display: block;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+}
+
+/* Text Content */
+.about-text {
+  padding: 1rem 0;
+}
+
+.about-text h1 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.about-text > p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  max-width: 100%;
+}
+
+.about-text h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 2.5rem 0 1rem 0;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.about-text h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  border-radius: 2px;
+}
+
+/* Blue Divider */
+.blue-divider {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  margin: 2rem 0;
+  border-radius: 1px;
+  opacity: 0.6;
+}
+
+/* Impact and Values Container */
+.impact-values-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin: 3rem 0;
+}
+
+/* Stats Section */
+.stats-section {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(0, 191, 255, 0.05) 100%);
+  border-radius: 24px;
+  padding: 2.5rem;
+  border: 1px solid rgba(0, 191, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  border-radius: 24px 24px 0 0;
+}
+
+.stats-section h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+/* Stats Grid */
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.stat {
+  background: var(--bg-primary);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.stat:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 
+    0 15px 30px rgba(0, 191, 255, 0.15),
+    0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat:hover::before {
+  transform: scaleX(1);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  display: block;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Values Section */
+.values-section {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(0, 191, 255, 0.05) 100%);
+  border-radius: 24px;
+  padding: 2.5rem;
+  border: 1px solid rgba(0, 191, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.values-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  border-radius: 24px 24px 0 0;
+}
+
+.values-section h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Values Grid */
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.value-item {
+  background: var(--bg-primary);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.value-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.value-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 
+    0 15px 30px rgba(0, 191, 255, 0.15),
+    0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.value-item:hover::before {
+  transform: scaleX(1);
+}
+
+.value-item h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.value-item p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+
+/* Large Desktop */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1600px;
+  }
+  
+  .about-section {
+    gap: 5rem;
+  }
+  
+  .impact-values-container {
+    gap: 4rem;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .impact-values-container {
+    gap: 2.5rem;
+  }
+  
+  .stats-section,
+  .values-section {
+    padding: 2rem;
+  }
+}
+
+/* Mobile Large */
+@media (max-width: 768px) {
+  .about-page {
+    padding-top: 80px; /* Adjusted for mobile navbar */
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .about-content {
+    padding: 40px 0;
+  }
+  
+  .about-section {
+    margin-bottom: 2rem;
+  }
+  
+  .about-text h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .about-text > p {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-text h3 {
+    text-align: center;
+    margin: 2rem 0 1rem 0;
+  }
+  
+  .about-text h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .impact-values-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .about-stats,
+  .values-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .stat,
+  .value-item {
+    padding: 1.5rem 1rem;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .stat-label {
+    font-size: 0.8rem;
+  }
+  
+  .value-item h4 {
+    font-size: 1.1rem;
+  }
+  
+  .value-item p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile Small */
+@media (max-width: 480px) {
+  .about-page {
+    padding-top: 75px;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .about-content {
+    padding: 30px 0;
+  }
+  
+  .about-text h1 {
+    font-size: 1.8rem;
+  }
+  
+  .about-text > p {
+    font-size: 1rem;
+  }
+  
+  .stats-section,
+  .values-section {
+    padding: 1.5rem;
+  }
+  
+  .stats-section h3,
+  .values-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-stats,
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .stat,
+  .value-item {
+    padding: 1.5rem;
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+  }
+  
+  .value-item h4 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Landscape Mobile Optimization */
+@media (max-width: 844px) and (orientation: landscape) {
+  .about-page {
+    padding-top: 70px;
+  }
+  
+  .about-content {
+    padding: 20px 0;
+  }
+  
+  .about-section {
+    margin-bottom: 2rem;
+  }
+  
+  .about-text h1 {
+    font-size: 1.8rem;
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+  
+  .about-text > p {
+    font-size: 0.95rem;
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+  
+  .about-text h3 {
+    font-size: 1.4rem;
+    text-align: left;
+    margin: 1.5rem 0 1rem 0;
+  }
+  
+  .about-text h3::after {
+    left: 0;
+    transform: none;
+  }
+  
+  .impact-values-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  .stats-section,
+  .values-section {
+    padding: 1.5rem;
+  }
+  
+  .stats-section h3,
+  .values-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-stats,
+  .values-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+  }
+  
+  .stat,
+  .value-item {
+    padding: 1rem 0.8rem;
+  }
+  
+  .stat-number {
+    font-size: 1.8rem;
+  }
+  
+  .stat-label {
+    font-size: 0.7rem;
+  }
+  
+  .value-item h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .value-item p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+}
+
+/* iPhone landscape specific fix */
+@media (max-width: 832px) and (max-height: 400px) and (orientation: landscape) {
+  .about-page {
+    padding-top: 15px;
+  }
+  
+  .about-content {
+    padding: 15px 0;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+  
+  .about-section {
+    margin-bottom: 15px;
+  }
+  
+  .about-text h1 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+  
+  .about-text > p {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  
+  .about-text h3 {
+    font-size: 1.2rem;
+    margin: 12px 0 8px 0;
+  }
+  
+  .impact-values-container {
+    margin: 15px 0;
+    gap: 1rem;
+  }
+  
+  .stats-section,
+  .values-section {
+    padding: 1rem;
+  }
+  
+  .stats-section h3,
+  .values-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about-stats,
+  .values-grid {
+    gap: 0.5rem;
+  }
+  
+  .stat,
+  .value-item {
+    padding: 0.8rem 0.5rem;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+  }
+  
+  .stat-label {
+    font-size: 0.65rem;
+  }
+  
+  .value-item h4 {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .value-item p {
+    font-size: 0.7rem;
+    line-height: 1.3;
+  }
+}
+
+/* Dark mode specific adjustments */
+@media (prefers-color-scheme: dark) {
+  .stats-section,
+  .values-section {
+    border-color: rgba(0, 191, 255, 0.2);
+  }
+  
+  .stat,
+  .value-item {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .stat:hover,
+  .value-item:hover {
+    box-shadow: 
+      0 15px 30px rgba(0, 191, 255, 0.2),
+      0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+}

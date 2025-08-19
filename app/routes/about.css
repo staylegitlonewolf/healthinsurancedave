@@ -1,0 +1,29 @@
+/* Styles scoped to the About route */
+.route-about {}
+
+/* Layout */
+.container-root { @apply container mx-auto px-4 py-8; }
+.inner-narrow { @apply max-w-4xl mx-auto; }
+
+/* Typography */
+.page-title { @apply text-4xl font-bold mb-8; }
+
+/* Gradient heading to match brand */
+.page-title {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.prose-text { @apply text-lg leading-relaxed text-gray-700 dark:text-gray-300 space-y-4; }
+
+/* Grid */
+.two-col-grid { @apply grid md:grid-cols-2 gap-8 mt-12; }
+
+/* Cards */
+.info-card { @apply bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md; }
+.card-title { @apply text-xl font-semibold text-gray-900 dark:text-white mb-4; }
+.card-text { @apply text-gray-700 dark:text-gray-300; }
+
+

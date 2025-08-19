@@ -1,0 +1,47 @@
+/* Styles scoped to the Discover route */
+.route-discover {}
+
+/* Layout */
+.container-root { @apply container mx-auto px-4 py-8; }
+.inner-wide { @apply max-w-6xl mx-auto; }
+
+/* Headings */
+.page-title { @apply text-4xl font-bold mb-8; }
+.page-title {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.intro { @apply text-lg text-gray-700 dark:text-gray-300 mb-12 max-w-3xl; }
+
+/* Cards grid */
+.card-grid { @apply grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12; }
+.card { @apply bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300; }
+.card-media { @apply h-48 flex items-center justify-center; }
+.media-blue { @apply bg-gradient-to-br from-blue-500 to-purple-600; }
+.media-green { @apply bg-gradient-to-br from-green-500 to-teal-600; }
+.media-orange { @apply bg-gradient-to-br from-orange-500 to-red-600; }
+.card-body { @apply p-6; }
+.card-title { @apply text-xl font-semibold text-gray-900 dark:text-white mb-2; }
+.card-text { @apply text-gray-700 dark:text-gray-300; }
+
+/* Search */
+.search { @apply bg-white dark:bg-gray-800 rounded-lg shadow-md p-8; }
+.search-title { @apply text-2xl font-bold mb-6; }
+.search-title {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.search-row { @apply flex flex-col sm:flex-row gap-4; }
+.search-input { @apply flex-1 px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white; }
+.search-button { @apply px-6 py-3 rounded-lg transition-all duration-200; }
+
+/* Themed button (light/dark) */
+.search-button { composes: btn-outline-accent; }
+
+
