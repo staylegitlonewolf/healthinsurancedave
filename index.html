@@ -1,98 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Health Insurance Dave - Professional Health Insurance Solutions</title>
-    <meta name="description" content="Professional health insurance solutions for individuals, families, and businesses. Expert coverage with licensed specialists.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta name="description" content="Professional health insurance solutions for individuals, families, and businesses. Expert coverage with licensed specialists." />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/assets/root-CJi0kAvj.css" as="style" />
+    <link rel="preload" href="/assets/entry.client-jiSVXCYh.js" as="script" />
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/root-CJi0kAvj.css" />
+    <link rel="stylesheet" href="/assets/home-Cxqf87wt.css" />
+    
+    <!-- Meta tags for SEO and social sharing -->
+    <meta property="og:title" content="Health Insurance Dave - Professional Health Insurance Solutions" />
+    <meta property="og:description" content="Professional health insurance solutions for individuals, families, and businesses." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://staylegitlonewolf.github.io/healthinsurancedave/" />
+    
     <style>
-        body {
-            margin: 0;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
-        .loading-container {
-            text-align: center;
-            max-width: 600px;
-            padding: 2rem;
-        }
-        .logo {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #00bfff;
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-        p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        .spinner {
-            width: 40px;
-            height: 40px;
-            border: 4px solid rgba(255,255,255,0.3);
-            border-top: 4px solid #00bfff;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 2rem auto;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .error-msg {
-            background: rgba(255,0,0,0.1);
-            border: 1px solid rgba(255,0,0,0.3);
-            border-radius: 8px;
-            padding: 1rem;
-            margin-top: 2rem;
-            display: none;
-        }
-        .manual-link {
-            color: #00bfff;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .manual-link:hover {
-            text-decoration: underline;
-        }
+      /* Loading styles */
+      #loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        color: white;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+      
+      .loading-content {
+        text-align: center;
+      }
+      
+      .loading-logo {
+        font-size: 3rem;
+        color: #00bfff;
+        margin-bottom: 1rem;
+      }
+      
+      .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid rgba(255,255,255,0.3);
+        border-top: 4px solid #00bfff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 2rem auto;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      /* Hide loading screen once React loads */
+      .loaded #loading-screen {
+        display: none;
+      }
     </style>
-</head>
-<body>
-    <div class="loading-container">
-        <div class="logo">
-            <i class="fas fa-shield-heart"></i>
+  </head>
+  <body>
+    <!-- Loading screen -->
+    <div id="loading-screen">
+      <div class="loading-content">
+        <div class="loading-logo">
+          <i class="fas fa-shield-heart"></i>
         </div>
         <h1>Health Insurance Dave</h1>
         <p>Loading your professional health insurance solutions...</p>
-        <div class="spinner"></div>
-        <div class="error-msg" id="errorMsg">
-            <p><strong>Having trouble loading?</strong></p>
-            <p>Visit our site directly: <a href="./app/routes/home.tsx" class="manual-link">Click here for Health Insurance Dave</a></p>
-        </div>
+        <div class="loading-spinner"></div>
+      </div>
     </div>
-
+    
+    <!-- React app root -->
+    <div id="root"></div>
+    
+    <!-- React Router scripts -->
+    <script type="module" src="/assets/entry.client-jiSVXCYh.js"></script>
+    
     <script>
-        // Redirect to the actual React app
-        setTimeout(() => {
-            // Try to redirect to the React app
-            window.location.href = './app/routes/home.tsx';
-        }, 2000);
-
-        // Show error message after 5 seconds if redirect doesn't work
-        setTimeout(() => {
-            document.getElementById('errorMsg').style.display = 'block';
-        }, 5000);
+      // Hide loading screen once React has loaded
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          document.body.classList.add('loaded');
+        }, 1000);
+      });
+      
+      // Fallback if React doesn't load
+      setTimeout(function() {
+        if (!document.body.classList.contains('loaded')) {
+          document.getElementById('loading-screen').innerHTML = `
+            <div class="loading-content">
+              <div class="loading-logo"><i class="fas fa-shield-heart"></i></div>
+              <h1>Health Insurance Dave</h1>
+              <p style="color: #ff6b6b;">Having trouble loading? Please refresh the page or contact us directly.</p>
+              <p><strong>Phone:</strong> <a href="tel:+1234567890" style="color: #00bfff;">Call Now</a></p>
+            </div>
+          `;
+        }
+      }, 10000);
     </script>
-</body>
+  </body>
 </html>
