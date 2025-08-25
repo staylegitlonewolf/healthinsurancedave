@@ -1,12 +1,17 @@
 {
-  "name": "sitelva",
+  "name": "health-insurance-dave",
   "private": true,
   "type": "module",
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
-    "typecheck": "react-router typegen && tsc"
+    "typecheck": "react-router typegen && tsc",
+    "analyze": "node scripts/analyze-bundle.js",
+    "build:analyze": "npm run build && npm run analyze",
+    "perf:monitor": "cross-env NODE_ENV=development npm run dev",
+    "perf:optimize": "node scripts/performance-optimizer.js",
+    "build:perf": "npm run build && npm run perf:optimize"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.0.0",

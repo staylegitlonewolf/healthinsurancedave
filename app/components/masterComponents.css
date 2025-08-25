@@ -1,0 +1,954 @@
+/* ===== UNIFIED MASTER COMPONENTS CSS ===== */
+/* Eliminates duplication across HealthMaster, NILMaster, and SolarMaster */
+
+/* ===== MOBILE-FIRST ZOOM PREVENTION & TOUCH OPTIMIZATION ===== */
+@media screen and (max-width: 768px) {
+  .master-container {
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  
+  .master-image-container {
+    touch-action: manipulation;
+    -webkit-user-drag: none;
+    user-select: none;
+  }
+  
+  .master-return-btn {
+    touch-action: manipulation;
+    font-size: 16px !important;
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .master-detail-card {
+    touch-action: manipulation;
+  }
+  
+  /* Prevent zoom on double-tap */
+  .master-image-container img {
+    touch-action: manipulation;
+    -webkit-user-drag: none;
+    user-select: none;
+  }
+}
+
+/* iPhone-specific optimizations */
+@media screen and (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .master-container {
+    padding: var(--space-sm);
+  }
+  
+  .master-return-btn {
+    font-size: 18px !important;
+    padding: var(--space-lg) var(--space-xl);
+    border-radius: var(--radius-2xl);
+  }
+}
+
+/* ===== MASTER COMPONENT THEME VARIABLES ===== */
+:root {
+  /* Health Master Theme */
+  --health-accent: #3b82f6;
+  --health-accent-hover: #2563eb;
+  --health-accent-light: #60a5fa;
+  
+  /* NIL Master Theme */
+  --nil-accent: #ffd700;
+  --nil-accent-hover: #ffb700;
+  --nil-accent-light: #ffed4e;
+  
+  /* Solar Master Theme */
+  --solar-accent: #f59e0b;
+  --solar-accent-hover: #d97706;
+  --solar-accent-light: #fbbf24;
+  
+  /* Cannabis Theme */
+  --cannabis-accent: #4CAF50;
+  --cannabis-accent-hover: #45a049;
+  --cannabis-accent-light: #66bb6a;
+  
+  /* Common Master Variables */
+  --master-bg-light: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+  --master-bg-dark: linear-gradient(135deg, #000000 0%, #111111 50%, #222222 100%);
+  --master-glass-light: rgba(255, 255, 255, 0.8);
+  --master-glass-dark: rgba(255, 255, 255, 0.08);
+  --master-border-light: rgba(0, 0, 0, 0.1);
+  --master-border-dark: rgba(255, 255, 255, 0.12);
+  --master-shadow-light: rgba(0, 0, 0, 0.1);
+  --master-shadow-dark: rgba(0, 0, 0, 0.3);
+  --master-text-primary-light: #1e293b;
+  --master-text-primary-dark: #f8fafc;
+  --master-text-secondary-light: #475569;
+  --master-text-secondary-dark: #cbd5e1;
+  
+  /* Default to light theme */
+  --master-bg: var(--master-bg-light);
+  --master-glass: var(--master-glass-light);
+  --master-border: var(--master-border-light);
+  --master-shadow: var(--master-shadow-light);
+  --master-text-primary: var(--master-text-primary-light);
+  --master-text-secondary: var(--master-text-secondary-light);
+}
+
+/* Dark theme overrides */
+[data-theme="dark"] {
+  --master-bg: var(--master-bg-dark);
+  --master-glass: var(--master-glass-dark);
+  --master-border: var(--master-border-dark);
+  --master-shadow: var(--master-shadow-dark);
+  --master-text-primary: var(--master-text-primary-dark);
+  --master-text-secondary: var(--master-text-secondary-dark);
+}
+
+/* ===== UNIFIED MASTER CONTAINER ===== */
+.master-container {
+  min-height: 100vh;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Header Spacing Section - Dedicated blank space under global header */
+.master-header-spacing {
+  height: calc(10vh + 40px); /* Global header height + extra spacing */
+  width: 100%;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+/* Optimized Background with CSS Variables */
+.master-container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+/* ===== UNIFIED MASTER HEADER ===== */
+.master-header {
+  position: sticky;
+  top: calc(10vh + 20px); /* Account for global header height */
+  z-index: 100;
+  background: var(--master-glass);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--master-border);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--master-shadow);
+}
+
+.master-header-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+/* Old header return button styles removed - now using fixed bottom return button */
+
+.master-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--master-text-primary);
+  margin: 0;
+}
+
+/* ===== UNIFIED MASTER CONTENT ===== */
+.master-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.master-content-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ===== UNIFIED MASTER IMAGE SECTION ===== */
+.master-image-section {
+  position: sticky;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.master-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  background: var(--master-glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--master-border);
+}
+
+.master-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.master-image-container:hover .master-image {
+  transform: scale(1.05);
+}
+
+.master-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.1) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* ===== UNIFIED MASTER DETAILS SECTION ===== */
+.master-details-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.master-detail-card {
+  background: var(--master-glass);
+  border: 1px solid var(--master-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+  transition: all var(--transition-normal);
+}
+
+.master-detail-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent);
+}
+
+.master-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.master-detail-icon {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  font-size: 1.5rem;
+  color: var(--text-inverse);
+}
+
+.master-detail-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--master-text-primary);
+  margin: 0;
+}
+
+.master-detail-content {
+  color: var(--master-text-secondary);
+  line-height: 1.7;
+}
+
+/* ===== THEME-SPECIFIC ACCENT COLORS ===== */
+.master-detail-icon.health {
+  background: var(--gradient-primary);
+}
+
+.master-detail-icon.nil {
+  background: var(--gradient-warning);
+}
+
+.master-detail-icon.solar {
+  background: var(--gradient-warning);
+}
+
+.master-detail-icon.cannabis {
+  background: var(--gradient-success);
+}
+
+/* ===== UNIFIED MASTER BUTTONS ===== */
+.master-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: var(--gradient-primary);
+  color: var(--text-inverse);
+  border: none;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-md);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.master-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  filter: brightness(1.1);
+}
+
+.master-btn.health {
+  background: var(--gradient-primary);
+}
+
+.master-btn.nil {
+  background: var(--gradient-warning);
+}
+
+.master-btn.solar {
+  background: var(--gradient-warning);
+}
+
+.master-btn.cannabis {
+  background: var(--gradient-success);
+}
+
+/* ===== CANNABIS SPECIALIZATION RIBBON ===== */
+.cannabis-specialization-ribbon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+  margin: 1rem 0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cannabis-specialization-ribbon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.cannabis-specialization-ribbon:hover::before {
+  left: 100%;
+}
+
+.cannabis-specialization-ribbon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(76, 175, 80, 0.4);
+}
+
+.cannabis-specialization-ribbon i {
+  font-size: 1rem;
+  animation: leaf-pulse 2s ease-in-out infinite;
+}
+
+@keyframes leaf-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* ===== CANNABIS SERVICE BADGE ===== */
+.master-service-item.cannabis-service {
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.1) 0%, rgba(69, 160, 73, 0.05) 100%);
+  border: 2px solid #4CAF50;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.master-service-item.cannabis-service::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #4CAF50, #45a049);
+  transition: transform 0.3s ease;
+}
+
+.master-service-item.cannabis-service:hover {
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.15) 0%, rgba(69, 160, 73, 0.1) 100%);
+  transform: translateX(4px);
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.2);
+}
+
+.master-service-item.cannabis-service i {
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+.master-service-item.cannabis-service span {
+  color: #4CAF50;
+  font-weight: 600;
+}
+
+/* ===== UNIFIED MASTER CONTACT INFO ===== */
+.master-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.master-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--master-glass);
+  border: 1px solid var(--master-border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-normal);
+}
+
+.master-contact-item:hover {
+  transform: translateX(4px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+}
+
+.master-contact-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-primary);
+  color: var(--text-inverse);
+  border-radius: var(--radius);
+  font-size: 1rem;
+}
+
+.master-contact-text {
+  flex: 1;
+  color: var(--master-text-primary);
+  font-weight: 500;
+}
+
+.master-contact-label {
+  font-size: 0.875rem;
+  color: var(--master-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.master-contact-link {
+  color: var(--master-text-primary);
+  text-decoration: none;
+  transition: color var(--transition-normal);
+  font-weight: 500;
+}
+
+.master-contact-link:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* ===== MASTER SERVICES LIST ===== */
+.master-services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.master-service-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: var(--master-glass);
+  border: 1px solid var(--master-border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-normal);
+}
+
+.master-service-item:hover {
+  transform: translateX(4px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.master-service-item i {
+  color: var(--success);
+  font-size: 1rem;
+  width: 1.5rem;
+  text-align: center;
+}
+
+.master-service-item span {
+  color: var(--master-text-primary);
+  font-weight: 500;
+}
+
+/* ===== MASTER ZOOM CONTROLS ===== */
+/* Hide zoom controls for all master components except certification */
+.master-zoom-controls {
+  display: none;
+}
+
+.master-zoom-indicator {
+  display: none;
+}
+
+.master-zoom-text {
+  display: none;
+}
+
+/* Show zoom controls only for certification master */
+.certification-master .master-zoom-controls,
+.certification-master .master-zoom-indicator,
+.certification-master .master-zoom-text {
+  display: flex;
+}
+
+.certification-master .master-zoom-indicator {
+  background: var(--master-glass);
+  border: 1px solid var(--master-border);
+  border-radius: var(--radius);
+  padding: 0.75rem 1.5rem;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-sm);
+}
+
+.certification-master .master-zoom-text {
+  color: var(--master-text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* ===== MASTER IMAGE ZOOM STATES ===== */
+.master-image-container.zoomed {
+  cursor: grab;
+}
+
+.master-image-container.zoomed:active {
+  cursor: grabbing;
+}
+
+/* ===== MASTER RETURN BUTTON ===== */
+.master-return-btn {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* Ensure it stays pinned to viewport */
+  position: fixed !important;
+  bottom: 30px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+.master-return-btn:hover {
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.master-return-btn:active {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Health-specific return button - matching solar master style */
+.master-return-btn.health {
+  background: linear-gradient(135deg, #00bfff 0%, #0099cc 100%);
+  box-shadow: 0 8px 20px rgba(0, 191, 255, 0.3);
+}
+
+.master-return-btn.health:hover {
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0, 191, 255, 0.4);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+  .master-content-columns {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .master-image-section {
+    position: relative;
+    top: 0;
+  }
+  
+  .master-image-container {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .master-header {
+    display: none; /* Hide header since we're using return button */
+  }
+  
+  .master-header-spacing {
+    height: calc(10vh + 20px); /* Reduced spacing for mobile */
+  }
+  
+  .master-content {
+    padding: var(--space-md);
+    padding-bottom: 5rem; /* Add bottom padding for return button */
+  }
+  
+  .master-content-columns {
+    padding: 0 var(--space-md);
+    gap: var(--space-lg);
+  }
+  
+  .master-image-container {
+    max-width: 300px;
+    border-radius: var(--radius-2xl);
+  }
+  
+  .master-detail-card {
+    padding: var(--space-lg);
+    border-radius: var(--radius-xl);
+    margin-bottom: var(--space-md);
+  }
+  
+  .master-btn {
+    padding: var(--space-lg) var(--space-xl);
+    font-size: var(--text-lg);
+    min-height: var(--touch-target-large);
+    border-radius: var(--radius-xl);
+  }
+  
+  .master-return-btn {
+    bottom: 20px !important;
+    padding: var(--space-md) var(--space-lg);
+    font-size: var(--text-lg);
+    border-radius: var(--radius-2xl);
+    min-height: var(--touch-target-large);
+    position: fixed !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  
+  .master-return-btn.health {
+    transform: translateX(-50%) !important;
+  }
+  
+  /* Enhanced mobile touch interactions */
+  .master-detail-card:active {
+    transform: scale(0.98);
+    transition: transform var(--transition-fast);
+  }
+  
+  .master-btn:active {
+    transform: scale(0.95);
+    transition: transform var(--transition-fast);
+  }
+}
+
+@media (max-width: 480px) {
+  .master-content-columns {
+    padding: 0 0.5rem;
+  }
+  
+  .master-image-container {
+    max-width: 250px;
+  }
+  
+  .master-detail-card {
+    padding: 1rem;
+  }
+  
+  .master-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .master-contact-item {
+    padding: 0.75rem;
+  }
+  
+  .master-contact-icon {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.875rem;
+  }
+  
+  .master-content {
+    padding-bottom: 4.5rem; /* Further reduced bottom padding for smaller screens */
+  }
+  
+  .master-return-btn {
+    bottom: 15px;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+  
+  .master-return-btn.health {
+    transform: translateX(-50%);
+  }
+}
+
+/* ===== MOBILE LANDSCAPE LAYOUT ===== */
+@media (orientation: landscape) and (max-height: 600px) {
+  .master-content-columns {
+    grid-template-columns: 1fr 1fr; /* Side by side layout */
+    gap: 1.5rem;
+  }
+  
+  .master-image-section {
+    order: 1;
+  }
+  
+  .master-details-section {
+    order: 2;
+  }
+  
+  .master-image-container {
+    max-width: 200px;
+    height: 40vh;
+  }
+  
+  .master-content {
+    padding: 1rem;
+    padding-bottom: 4rem;
+  }
+  
+  .master-detail-card {
+    padding: 1rem;
+  }
+  
+  .master-detail-title {
+    font-size: 1.1rem;
+  }
+  
+  .master-return-btn {
+    bottom: 10px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .master-return-btn.health {
+    transform: translateX(-50%);
+  }
+}
+
+/* ===== ANIMATION ENHANCEMENTS ===== */
+.master-container {
+  animation: fadeIn 0.6s var(--ease-smooth);
+}
+
+.master-detail-card {
+  animation: slideInUp 0.6s var(--ease-smooth);
+}
+
+.master-detail-card:nth-child(1) { animation-delay: 0.1s; }
+.master-detail-card:nth-child(2) { animation-delay: 0.2s; }
+.master-detail-card:nth-child(3) { animation-delay: 0.3s; }
+.master-detail-card:nth-child(4) { animation-delay: 0.4s; }
+
+.master-image-container {
+  animation: scaleIn 0.8s var(--ease-smooth);
+}
+
+.master-btn {
+  animation: bounceIn 0.8s var(--ease-bounce);
+}
+
+/* ===== ACCESSIBILITY ENHANCEMENTS ===== */
+.master-container:focus-within {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.master-btn:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.master-detail-card:focus-within {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+.master-container {
+  will-change: transform, opacity;
+}
+
+.master-image {
+  will-change: transform;
+}
+
+.master-detail-card {
+  will-change: transform, box-shadow;
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  .master-container {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .master-header,
+  .master-return-btn {
+    display: none !important;
+  }
+  
+  .master-content-columns {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 2rem !important;
+  }
+  
+  .master-image-container {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+  }
+}
+
+/* ===== MOBILE LANDSCAPE ENHANCEMENTS FOR HEALTH MASTER PHOTO ===== */
+@media (max-width: 926px) and (orientation: landscape) {
+  /* Make the photo bigger in landscape mode */
+  .master-image-container {
+    max-width: 600px !important;
+    aspect-ratio: 1 !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Ensure the photo takes up more space in the layout - give photo more space */
+  .master-content-columns {
+    grid-template-columns: 1.2fr 0.8fr !important;
+    gap: 1.5rem !important;
+    align-items: start !important;
+  }
+  
+  /* Make the photo section more prominent */
+  .master-image-section {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 60vh !important;
+    padding: 1rem !important;
+  }
+  
+  /* Enhance the photo with better styling in landscape */
+  .master-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: var(--radius-xl) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
+  }
+  
+  /* Adjust container spacing for better landscape layout */
+  .master-container {
+    padding: 1rem !important;
+    min-height: 100vh !important;
+  }
+  
+  /* Make details section more compact in landscape */
+  .master-details-section {
+    gap: 1rem !important;
+  }
+  
+  .master-detail-card {
+    padding: 1.5rem !important;
+  }
+  
+  /* Enhance photo container with better styling */
+  .master-image-container {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2) !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  }
+}
+
+/* iPhone-specific landscape enhancements for health master */
+@media screen and (max-width: 926px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .master-image-container {
+    max-width: 500px !important;
+    aspect-ratio: 1 !important;
+  }
+  
+  .master-content-columns {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  .master-image-section {
+    min-height: 50vh !important;
+  }
+  
+  .master-detail-card {
+    padding: 1rem !important;
+  }
+  
+  .master-detail-title {
+    font-size: 1.1rem !important;
+  }
+}

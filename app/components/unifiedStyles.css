@@ -1,0 +1,251 @@
+/* ===== UNIFIED STYLES - REDUCING CSS DUPLICATION ===== */
+
+/* ===== UNIFIED BUTTON SYSTEM ===== */
+/* All button styles should inherit from app.css .btn base */
+
+/* ===== UNIFIED SERVICE BADGE SYSTEM ===== */
+/* Base service badge styles - used across discover and services */
+.service-badge-base {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(0, 191, 255, 0.3);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  transform: translateZ(0);
+}
+
+.service-badge-base:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 191, 255, 0.4);
+}
+
+/* ===== UNIFIED CONNECT BUTTON SYSTEM ===== */
+/* Base connect button styles - used across discover pages */
+.connect-btn-base {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  color: white;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(0, 191, 255, 0.3);
+  overflow-wrap: break-word;
+}
+
+.connect-btn-base:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 191, 255, 0.4);
+}
+
+.connect-btn-base:active {
+  transform: translateY(0);
+}
+
+/* ===== UNIFIED RETURN BUTTON SYSTEM ===== */
+/* Base return button styles - used across all master components */
+.return-btn-base {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  color: white;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.return-btn-base:hover {
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0, 191, 255, 0.4);
+}
+
+.return-btn-base:active {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ===== UNIFIED FILTER BUTTON SYSTEM ===== */
+/* Base filter button styles - used in discover page */
+.filter-btn-base {
+  width: 100%;
+  max-width: 100%;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  text-align: left;
+}
+
+.filter-btn-base:hover {
+  background: var(--bg-primary);
+  border-color: var(--accent);
+  transform: translateX(4px);
+}
+
+.filter-btn-base.active {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  border-color: var(--accent);
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 191, 255, 0.4);
+}
+
+.filter-btn-base i {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.filter-btn-base.active i {
+  color: white;
+}
+
+/* ===== UNIFIED CARD SYSTEM ===== */
+/* Base card styles - used across all components */
+.card-base {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.card-base:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 191, 255, 0.1);
+  border-color: var(--accent);
+}
+
+/* ===== UNIFIED MOBILE OPTIMIZATIONS ===== */
+/* Common mobile touch optimizations */
+.mobile-touch-optimized {
+  touch-action: manipulation;
+  -webkit-user-drag: none;
+  user-select: none;
+  min-height: var(--touch-target);
+  min-width: var(--touch-target);
+}
+
+.mobile-touch-optimized:active {
+  transform: scale(0.98);
+  transition: transform var(--transition-fast);
+}
+
+/* ===== UNIFIED THEME VARIABLES ===== */
+/* Common theme variables used across components */
+:root {
+  /* Unified accent colors */
+  --unified-accent: #00bfff;
+  --unified-accent-dark: #0066cc;
+  --unified-accent-hover: #0099e6;
+  
+  /* Unified gradients */
+  --unified-gradient-primary: linear-gradient(135deg, var(--unified-accent) 0%, var(--unified-accent-dark) 100%);
+  --unified-gradient-hover: linear-gradient(135deg, var(--unified-accent-dark) 0%, #0077aa 100%);
+  
+  /* Unified shadows */
+  --unified-shadow-sm: 0 2px 8px rgba(0, 191, 255, 0.3);
+  --unified-shadow-md: 0 4px 15px rgba(0, 191, 255, 0.3);
+  --unified-shadow-lg: 0 8px 25px rgba(0, 191, 255, 0.4);
+  --unified-shadow-xl: 0 12px 35px rgba(0, 191, 255, 0.4);
+  
+  /* Unified transitions */
+  --unified-transition: all 0.3s ease;
+  --unified-transition-fast: all 0.2s ease;
+  --unified-transition-slow: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* ===== UNIFIED RESPONSIVE BREAKPOINTS ===== */
+/* Common responsive breakpoints used across components */
+@media (max-width: 1200px) {
+  .unified-responsive {
+    /* Large screen adjustments */
+  }
+}
+
+@media (max-width: 768px) {
+  .unified-responsive {
+    /* Tablet and mobile adjustments */
+  }
+}
+
+@media (max-width: 480px) {
+  .unified-responsive {
+    /* Small mobile adjustments */
+  }
+}
+
+@media (max-width: 360px) {
+  .unified-responsive {
+    /* Ultra small mobile adjustments */
+  }
+}
+
+/* ===== UNIFIED ACCESSIBILITY ===== */
+/* Common accessibility styles */
+.unified-focus:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.unified-focus-within:focus-within {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 24px;
+}
+
+/* ===== UNIFIED ANIMATIONS ===== */
+/* Common animations used across components */
+@keyframes unified-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.unified-fade-in-up {
+  animation: unified-fadeInUp 0.6s ease-out;
+}
+
+/* ===== UNIFIED PERFORMANCE OPTIMIZATIONS ===== */
+/* Common performance optimizations */
+.unified-performance {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* ===== UNIFIED PRINT STYLES ===== */
+@media print {
+  .unified-print {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+  }
+}

@@ -1,0 +1,86 @@
+/* Optimized Image Component Styles */
+.optimized-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.optimized-image.loading {
+  opacity: 0.6;
+  filter: blur(1px);
+}
+
+.optimized-image.error {
+  opacity: 0.8;
+  filter: grayscale(1);
+}
+
+.optimized-image:not(.loading):not(.error) {
+  opacity: 1;
+  filter: none;
+}
+
+/* Loading animation */
+.optimized-image.loading::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error state styling */
+.optimized-image.error::after {
+  content: '⚠️';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  opacity: 0.7;
+}
+
+/* Hover effects */
+.optimized-image:hover:not(.loading):not(.error) {
+  transform: scale(1.02);
+}
+
+/* Responsive optimizations */
+@media (max-width: 768px) {
+  .optimized-image {
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .optimized-image:hover:not(.loading):not(.error) {
+    transform: none; /* Disable hover effects on mobile */
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .optimized-image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Print styles */
+@media print {
+  .optimized-image {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+  }
+}

@@ -1,47 +1,1894 @@
-/* Styles scoped to the Discover route */
-.route-discover {}
+/* BULLETPROOF DISCOVER PAGE CSS - NO HORIZONTAL OVERFLOW */
 
-/* Layout */
-.container-root { @apply container mx-auto px-4 py-8; }
-.inner-wide { @apply max-w-6xl mx-auto; }
-
-/* Headings */
-.page-title { @apply text-4xl font-bold mb-8; }
-.page-title {
-  background: linear-gradient(135deg, var(--accent), var(--accent-light));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
+/* ===== MOBILE-FIRST ZOOM PREVENTION & TOUCH OPTIMIZATION ===== */
+@media screen and (max-width: 768px) {
+  .discover-layout {
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  
+  .discover-member {
+    touch-action: manipulation;
+    -webkit-user-drag: none;
+    user-select: none;
+  }
+  
+  .discover-nav-button {
+    touch-action: manipulation;
+    font-size: 16px !important;
+    min-height: var(--touch-target);
+    min-width: var(--touch-target);
+  }
+  
+  .connect-btn {
+    touch-action: manipulation;
+    font-size: 16px !important;
+    min-height: var(--touch-target);
+    min-width: var(--touch-target);
+  }
+  
+  .contact-item a {
+    touch-action: manipulation;
+    font-size: 16px !important;
+    min-height: var(--touch-target);
+    min-width: var(--touch-target);
+  }
+  
+  /* Enhanced mobile touch interactions */
+  .discover-member:active {
+    transform: scale(0.98);
+    transition: transform var(--transition-fast);
+  }
+  
+  .discover-nav-button:active,
+  .connect-btn:active {
+    transform: scale(0.95);
+    transition: transform var(--transition-fast);
+  }
 }
-.intro { @apply text-lg text-gray-700 dark:text-gray-300 mb-12 max-w-3xl; }
 
-/* Cards grid */
-.card-grid { @apply grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12; }
-.card { @apply bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300; }
-.card-media { @apply h-48 flex items-center justify-center; }
-.media-blue { @apply bg-gradient-to-br from-blue-500 to-purple-600; }
-.media-green { @apply bg-gradient-to-br from-green-500 to-teal-600; }
-.media-orange { @apply bg-gradient-to-br from-orange-500 to-red-600; }
-.card-body { @apply p-6; }
-.card-title { @apply text-xl font-semibold text-gray-900 dark:text-white mb-2; }
-.card-text { @apply text-gray-700 dark:text-gray-300; }
-
-/* Search */
-.search { @apply bg-white dark:bg-gray-800 rounded-lg shadow-md p-8; }
-.search-title { @apply text-2xl font-bold mb-6; }
-.search-title {
-  background: linear-gradient(135deg, var(--accent), var(--accent-light));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
+/* iPhone-specific optimizations */
+@media screen and (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .discover-layout {
+    padding: var(--space-sm);
+  }
+  
+  .discover-nav-button,
+  .connect-btn {
+    font-size: 18px !important;
+    padding: var(--space-lg) var(--space-xl);
+    border-radius: var(--radius-2xl);
+  }
 }
-.search-row { @apply flex flex-col sm:flex-row gap-4; }
-.search-input { @apply flex-1 px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white; }
-.search-button { @apply px-6 py-3 rounded-lg transition-all duration-200; }
 
-/* Themed button (light/dark) */
-.search-button { composes: btn-outline-accent; }
+/* CSS Reset for Discover Page to prevent overlapping issues */
+.discover-layout {
+  position: relative;
+  z-index: 1;
+}
 
+.discover-layout * {
+  box-sizing: border-box;
+}
 
+/* Loading Spinner for Lazy Images */
+.image-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+}
+
+.loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Discover Page Layout using unified system */
+.discover-page {
+  background: transparent;
+}
+
+/* Sidebar Styling */
+.discover-sidebar {
+  background: transparent;
+  border-right: 1px solid var(--border);
+  box-shadow: none;
+}
+
+.sidebar-header {
+  padding: 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: transparent;
+  z-index: 20;
+  backdrop-filter: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 120px;
+  height: auto;
+}
+
+.sidebar-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.sidebar-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.department-filters {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.filter-button {
+  flex: 1;
+  padding: 0.4rem 0.6rem;
+  margin-bottom: 0.1rem;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  text-align: center;
+  min-height: 32px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.filter-button:hover {
+  background: var(--bg-primary);
+  border-color: var(--accent);
+  transform: translateX(4px);
+}
+
+.filter-button.active {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  border-color: var(--accent);
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 191, 255, 0.4);
+}
+
+.filter-button i {
+  font-size: 0.75rem;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.filter-button.active i {
+  color: white;
+}
+
+/* Discover Content Area */
+.discover-content {
+  padding: calc(var(--header-height) + 1rem) 2rem 2rem 2rem; /* Dynamic padding based on header height */
+  /* Width is controlled by app.css layout */
+}
+
+/* Discover Members Grid */
+.discover-members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1rem;
+  margin-top: 0.5rem; /* Reduced gap */
+  padding: 0 0.5rem;
+}
+
+/* Health Layout - Side by side layout for health members */
+.health-layout-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 0.5rem;
+  max-width: 95vw;
+  margin: 0 auto;
+}
+
+.health-member-card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  margin-top: 0.5rem;
+  z-index: 1;
+  min-height: 300px;
+}
+
+.dark .health-member-card {
+  background: rgba(0, 0, 0, 0.95);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.health-member-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-color: var(--accent);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.health-member-image {
+  position: relative;
+  height: 100%;
+  min-height: 300px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark .health-member-image {
+  background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+}
+
+.health-member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.health-member-card:hover .health-member-image img {
+  transform: scale(1.05);
+}
+
+.health-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.health-member-card:hover .health-image-overlay {
+  opacity: 1;
+}
+
+.health-image-overlay i {
+  color: white;
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 1rem;
+  border-radius: 50%;
+}
+
+.health-member-details {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.health-member-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.health-member-title {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+}
+
+.health-access-options {
+  margin: 1rem 0;
+}
+
+.health-access-options h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0 0 0.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.health-coverage-states p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.health-member-contact {
+  margin: 1rem 0;
+}
+
+.health-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.health-contact-item i {
+  color: var(--accent);
+  width: 16px;
+}
+
+.health-contact-item a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.health-contact-item a:hover {
+  color: var(--accent);
+}
+
+/* School Information for NIL specialists in Health Layout */
+.health-contact-item.school-item {
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 8px;
+  padding: 0.75rem;
+  transition: all 0.3s ease;
+  margin-bottom: 0.75rem;
+}
+
+.dark .health-contact-item.school-item {
+  background: rgba(255, 215, 0, 0.15);
+  border-color: rgba(255, 215, 0, 0.4);
+}
+
+.health-contact-item.school-item:hover {
+  background: rgba(255, 215, 0, 0.2);
+  border-color: rgba(255, 215, 0, 0.5);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
+}
+
+.dark .health-contact-item.school-item:hover {
+  background: rgba(255, 215, 0, 0.25);
+  border-color: rgba(255, 215, 0, 0.6);
+}
+
+.health-contact-item.school-item span {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.dark .health-contact-item.school-item span {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.health-member-services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.health-service-badge {
+  background: var(--accent);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.health-connect-btn {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: auto;
+  box-shadow: 0 4px 15px rgba(0, 191, 255, 0.3);
+}
+
+.health-connect-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 191, 255, 0.4);
+}
+
+/* Use unified connect button styles */
+.health-connect-btn {
+  composes: connect-btn;
+}
+
+.discover-member {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 3px solid rgba(0, 191, 255, 0.2);
+  position: relative;
+  margin-top: 0.5rem;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: auto;
+}
+
+.dark .discover-member {
+  background: rgba(0, 0, 0, 0.95);
+  border-color: rgba(0, 191, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* NIL discover member cards - vertical layout (photo on top, details below) */
+.discover-member[data-category="nil"] {
+  grid-column: span 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 400px;
+  max-height: none;
+  padding: 0 !important;
+}
+
+/* Mobile portrait: NIL cards stack vertically on small screens */
+@media (max-width: 768px) and (orientation: portrait) {
+  .discover-member[data-category="nil"] {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 1fr !important;
+  }
+  
+  .discover-member[data-category="nil"] .member-image {
+    border-radius: 0 !important;
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    height: 250px !important;
+    min-height: 250px !important;
+  }
+  
+  .discover-member[data-category="nil"] .member-info {
+    border-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-left-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+  }
+}
+
+.dark .discover-member {
+  background: rgba(0, 0, 0, 0.95);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.discover-member:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-color: var(--accent);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.member-image {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  border-bottom-left-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Conditional horizontal layout for single search result */
+.discover-members-grid:has(.discover-member:only-child) .discover-member {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  min-height: 400px;
+}
+
+.discover-members-grid:has(.discover-member:only-child) .member-image {
+  height: 100%;
+  min-height: 400px;
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
+  border-top-right-radius: 0;
+}
+
+.discover-members-grid:has(.discover-member:only-child) .member-info {
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+  border-top-left-radius: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Conditional horizontal layout for single NIL search result */
+.discover-members-grid:has(.discover-member:only-child) .discover-member[data-category="nil"] {
+  display: grid !important;
+  grid-template-columns: 1fr 2fr !important;
+  min-height: 400px;
+}
+
+.discover-members-grid:has(.discover-member:only-child) .discover-member[data-category="nil"] .member-image {
+  height: 100% !important;
+  min-height: 400px !important;
+  border-top-left-radius: 20px !important;
+  border-bottom-left-radius: 20px !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.discover-members-grid:has(.discover-member:only-child) .discover-member[data-category="nil"] .member-info {
+  border-top-right-radius: 20px !important;
+  border-bottom-right-radius: 20px !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.discover-members-grid:has(.discover-member:only-child) .discover-member[data-category="nil"] .connect-btn {
+  margin-top: auto !important;
+}
+
+/* Increase card height when fewer cards are displayed (for vertical layout) */
+.discover-members-grid:has(.discover-member:nth-child(2):last-child) .discover-member {
+  min-height: 350px;
+}
+
+.discover-members-grid:has(.discover-member:nth-child(3):last-child) .discover-member {
+  min-height: 320px;
+}
+
+.dark .member-image {
+  background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+}
+
+/* NIL discover member images - vertical layout (photo on top) */
+.discover-member[data-category="nil"] .member-image {
+  width: 100% !important;
+  height: 50vh !important;
+  min-height: auto !important;
+  border-radius: 0 !important;
+  border-top-left-radius: 20px !important;
+  border-top-right-radius: 20px !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+}
+
+.member-image:hover img {
+  transform: scale(1.15);
+  filter: brightness(1.1) contrast(1.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.member-image:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 191, 255, 0.3) 0%, rgba(0, 102, 204, 0.3) 100%);
+  opacity: 1;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 1;
+  pointer-events: none;
+  backdrop-filter: blur(2px);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.member-image:hover .image-overlay {
+  opacity: 1;
+}
+
+.image-overlay i {
+  color: white;
+  font-size: 2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.image-error {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 0.9rem;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.image-error i {
+  font-size: 2rem;
+  opacity: 0.7;
+}
+
+.member-info {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 2;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  border-top-right-radius: 0;
+  display: block;
+}
+
+/* NIL discover member info - vertical layout (details below) */
+.discover-member[data-category="nil"] .member-info {
+  width: 100% !important;
+  border-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-left-radius: 20px !important;
+  border-bottom-right-radius: 20px !important;
+  display: block;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.dark .member-info {
+  background: rgba(0, 0, 0, 0.95);
+}
+
+.member-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+  position: relative;
+  z-index: 3;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  display: inline-block;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dark .member-name {
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.95);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* NIL discover member names - vertical layout */
+.discover-member[data-category="nil"] .member-name {
+  font-size: 1.4rem;
+}
+
+.member-title {
+  font-size: 1rem;
+  color: var(--accent-dark);
+  font-weight: 600;
+  margin: 0 0 2.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  display: inline-block;
+  backdrop-filter: blur(10px);
+  white-space: normal;
+  overflow: visible;
+  word-wrap: break-word;
+  max-width: 100%;
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(0, 102, 204, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dark .member-title {
+  background: rgba(0, 0, 0, 0.95);
+  color: var(--accent);
+  border: 1px solid rgba(0, 191, 255, 0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* NIL discover member titles - horizontal layout */
+.discover-member[data-category="nil"] .member-title {
+  font-size: 1rem;
+}
+
+.member-contact {
+  margin: 1rem 0;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.dark .contact-item {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-item i {
+  color: var(--accent);
+  width: 16px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.contact-item a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.dark .contact-item a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-item a:hover {
+  color: var(--accent);
+}
+
+/* Website link styling for solar partners */
+.contact-item.website-item {
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(0, 191, 255, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 191, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.dark .contact-item.website-item {
+  background: rgba(0, 191, 255, 0.15);
+  border-color: rgba(0, 191, 255, 0.3);
+}
+
+.contact-item.website-item:hover {
+  background: rgba(0, 191, 255, 0.2);
+  border-color: rgba(0, 191, 255, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 191, 255, 0.2);
+}
+
+.dark .contact-item.website-item:hover {
+  background: rgba(0, 191, 255, 0.25);
+  border-color: rgba(0, 191, 255, 0.5);
+}
+
+.contact-item.website-item i {
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+.contact-item.website-item a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.dark .contact-item.website-item a {
+  color: var(--accent);
+}
+
+.contact-item.website-item a:hover {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
+
+.dark .contact-item.website-item a:hover {
+  color: var(--accent-light);
+}
+
+/* School Information for NIL Specialists */
+.contact-item.school-item {
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 8px;
+  padding: 0.75rem;
+  transition: all 0.3s ease;
+  margin-bottom: 0.75rem;
+}
+
+.dark .contact-item.school-item {
+  background: rgba(255, 215, 0, 0.15);
+  border-color: rgba(255, 215, 0, 0.4);
+}
+
+.contact-item.school-item:hover {
+  background: rgba(255, 215, 0, 0.2);
+  border-color: rgba(255, 215, 0, 0.5);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
+}
+
+.dark .contact-item.school-item:hover {
+  background: rgba(255, 215, 0, 0.25);
+  border-color: rgba(255, 215, 0, 0.6);
+}
+
+.school-logo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  border-radius: 4px;
+  background: var(--bg-primary);
+  padding: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.contact-item.school-item span {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.dark .contact-item.school-item span {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.member-services {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin: 1rem 0;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+.discover-member .service-badge {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  box-shadow: 0 2px 8px rgba(0, 191, 255, 0.3);
+  transition: all 0.3s ease;
+  white-space: normal;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: static !important;
+  z-index: 2;
+  /* Override any conflicting styles from other components */
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+  min-height: 36px;
+  width: 100% !important;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  line-height: 1.2;
+}
+
+/* Remove the arrow from MainServices.css that's being applied to discover badges */
+.discover-member .service-badge::before {
+  display: none !important;
+}
+
+/* NIL discover member service badges - vertical layout */
+.discover-member[data-category="nil"] .service-badge {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.8rem;
+}
+
+/* NIL discover member connect button - vertical layout */
+.discover-member[data-category="nil"] .connect-btn {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0.75rem 1.5rem !important;
+  font-size: 0.9rem !important;
+  margin-top: 1rem !important;
+  display: flex !important;
+}
+
+.discover-member .service-badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 191, 255, 0.4);
+}
+
+/* Cannabis Service Badge Styling */
+.cannabis-service-badge {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%) !important;
+  color: white !important;
+  border: 2px solid #4CAF50 !important;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  transition: all 0.3s ease !important;
+}
+
+.cannabis-service-badge:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4) !important;
+  background: linear-gradient(135deg, #45a049 0%, #388e3c 100%) !important;
+}
+
+.cannabis-service-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.connect-btn {
+  width: 100%;
+  max-width: 100%;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(0, 191, 255, 0.3);
+  margin-top: 1rem;
+  overflow-wrap: break-word;
+}
+
+.connect-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 191, 255, 0.4);
+}
+
+.connect-btn:active {
+  transform: translateY(0);
+}
+
+.connect-btn i {
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.connect-btn span {
+  font-weight: 600;
+}
+
+.no-members-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  border: 2px dashed rgba(0, 191, 255, 0.3);
+}
+
+.no-members-message h3 {
+  font-size: 1.5rem;
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+.dark .no-members-message h3 {
+  color: #ffffff;
+}
+
+.no-members-message p {
+  color: #666;
+  font-size: 1rem;
+}
+
+.dark .no-members-message p {
+  color: #b0b0b0;
+}
+
+/* ===== SKELETON LOADING STYLES ===== */
+.skeleton-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  margin-top: 0.5rem;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+.dark .skeleton-card {
+  background: rgba(0, 0, 0, 0.95);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.skeleton-image {
+  height: 250px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+.dark .skeleton-image {
+  background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+}
+
+.skeleton-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skeleton-title {
+  height: 1.5rem;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+  border-radius: 4px;
+  width: 70%;
+}
+
+.dark .skeleton-title {
+  background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+}
+
+.skeleton-text {
+  height: 1rem;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.skeleton-text.short {
+  width: 60%;
+}
+
+.dark .skeleton-text {
+  background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+}
+
+.skeleton-button {
+  height: 2.5rem;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+  border-radius: 12px;
+  width: 100%;
+  margin-top: auto;
+}
+
+.dark .skeleton-button {
+  background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes skeleton-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* ===== BULLETPROOF RESPONSIVE DESIGN ===== */
+/* Large screens */
+@media (max-width: 1200px) {
+  .discover-members-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1rem;
+    padding: 0 0.25rem;
+  }
+  
+  /* Health layout responsive */
+  .health-member-card {
+    grid-template-columns: 1fr 1.5fr;
+    gap: 1.5rem;
+  }
+}
+
+/* Tablet and mobile */
+@media (max-width: 768px) {
+  .discover-members-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+    padding: 0.25rem;
+    max-width: 95vw;
+    margin: 0 auto;
+  }
+  
+  /* Service badges - 2 columns on mobile */
+  .member-services {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem !important;
+  }
+  
+  .discover-member .service-badge {
+    font-size: 0.6rem !important;
+    padding: 0.3rem 0.6rem !important;
+    min-height: 32px !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+  
+  .discover-member {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: auto;
+  }
+  
+  /* Health layout mobile - stack vertically */
+  .health-member-card {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
+  
+  .health-member-image {
+    min-height: 250px;
+    height: 250px;
+  }
+  
+  .health-member-details {
+    padding: 1.5rem;
+  }
+  
+  .health-member-name {
+    font-size: 1.5rem;
+  }
+  
+  .health-member-title {
+    font-size: 1rem;
+  }
+  
+  .discover-member {
+    min-height: 400px;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* NIL discover members - already vertical layout */
+  .discover-member[data-category="nil"] .member-image {
+    height: 50vh !important;
+  }
+  
+  .member-image {
+    height: 200px;
+  }
+  
+  .member-info {
+    padding: 1.5rem;
+  }
+  
+  .member-name {
+    font-size: 1.4rem;
+  }
+  
+  .member-title {
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+    padding: 0.15rem 0.3rem;
+    white-space: normal;
+    overflow: visible;
+    word-wrap: break-word;
+  }
+  
+  .contact-item {
+    font-size: 1rem;
+  }
+  
+  .discover-member .service-badge {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+    /* Ensure no positioning conflicts */
+    top: auto !important;
+    left: auto !important;
+    transform: translateZ(0) !important;
+  }
+  
+  .connect-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+    /* Mobile sidebar adjustments */
+ .sidebar-header {
+   min-height: 50px;
+   padding: 0.5rem;
+ }
+
+ .sidebar-title {
+   font-size: 1.1rem;
+   margin-bottom: 0.2rem;
+ }
+
+ .sidebar-subtitle {
+   font-size: 0.7rem;
+ }
+
+ .department-filters {
+   padding: 0.3rem;
+   gap: 0.15rem;
+ }
+
+ .filter-button {
+   padding: 0.25rem 0.4rem;
+   font-size: 0.65rem;
+   min-height: 28px;
+   gap: 0.1rem;
+ }
+
+ .filter-button i {
+   font-size: 0.65rem;
+ }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .discover-member {
+    min-height: 350px;
+    padding: 1rem;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .member-image {
+    height: 180px;
+  }
+  
+  /* NIL discover member images - small mobile */
+  .discover-member[data-category="nil"] .member-image {
+    height: 45vh !important;
+  }
+  
+  .member-info {
+    padding: 1rem;
+  }
+  
+  .member-name {
+    font-size: 1.2rem;
+  }
+  
+  .member-title {
+    font-size: 0.85rem;
+    letter-spacing: 0.2px;
+    padding: 0.1rem 0.25rem;
+    white-space: normal;
+    overflow: visible;
+    word-wrap: break-word;
+  }
+  
+  .contact-item {
+    font-size: 0.9rem;
+  }
+  
+  .discover-member .service-badge {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.5rem;
+    margin: 0.1rem;
+    min-height: 30px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    /* Ensure no positioning conflicts */
+    top: auto !important;
+    left: auto !important;
+    transform: translateZ(0) !important;
+  }
+  
+  .connect-btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Ultra small screens */
+@media (max-width: 360px) {
+  .discover-member {
+    min-height: 300px;
+    padding: 0.75rem;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Service badges - single column on very small screens */
+  .member-services {
+    grid-template-columns: 1fr !important;
+    gap: 0.3rem !important;
+  }
+  
+  .discover-member .service-badge {
+    font-size: 0.55rem !important;
+    padding: 0.25rem 0.4rem !important;
+    min-height: 28px !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+  
+  .member-image {
+    height: 150px;
+  }
+  
+  /* NIL discover member images - ultra small mobile */
+  .discover-member[data-category="nil"] .member-image {
+    height: 40vh !important;
+  }
+  
+  .member-info {
+    padding: 0.75rem;
+  }
+  
+  .member-name {
+    font-size: 1.1rem;
+  }
+  
+  .member-title {
+    font-size: 0.8rem;
+    letter-spacing: 0.1px;
+    padding: 0.1rem 0.2rem;
+    white-space: normal;
+    overflow: visible;
+    word-wrap: break-word;
+  }
+  
+  .contact-item {
+    font-size: 0.8rem;
+  }
+  
+  .discover-member .service-badge {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.5rem;
+    margin: 0.1rem;
+    /* Ensure no positioning conflicts */
+    top: auto !important;
+    left: auto !important;
+    transform: translateZ(0) !important;
+  }
+  
+  .connect-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Mobile landscape orientation */
+@media (max-width: 900px) and (orientation: landscape) {
+  .discover-members-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  /* Service badges - 2 columns in landscape */
+  .member-services {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.3rem !important;
+  }
+  
+  .discover-member .service-badge {
+    font-size: 0.6rem !important;
+    padding: 0.25rem 0.4rem !important;
+    min-height: 24px !important;
+  }
+  
+  .discover-member {
+    min-height: 350px;
+    padding: 1.5rem;
+  }
+  
+  .member-image {
+    height: 200px;
+  }
+  
+  /* NIL discover member images - landscape mobile */
+  .discover-member[data-category="nil"] .member-image {
+    height: 55vh !important;
+  }
+  
+  .member-name {
+    font-size: 1.3rem;
+  }
+  
+  .member-title {
+    font-size: 1.1rem;
+  }
+  
+  .contact-item {
+    font-size: 1rem;
+  }
+  
+  .discover-member .service-badge {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.7rem;
+    /* Ensure no positioning conflicts */
+    top: auto !important;
+    left: auto !important;
+    transform: translateZ(0) !important;
+  }
+  
+  .connect-btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== ENHANCED SEARCH BAR STYLES ===== */
+.discover-search-container {
+  flex: 1;
+  max-width: 1000px; /* Increased from 800px for wider search bar */
+  min-width: 400px; /* Ensure minimum width */
+  margin: 0 auto;
+  position: relative;
+}
+
+.search-results-info {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.search-input-wrapper.focused {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.1);
+  background: var(--bg-primary);
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.search-input-wrapper:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.1);
+  background: var(--bg-primary);
+}
+
+.search-icon {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.discover-search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  min-width: 0;
+}
+
+.discover-search-input::placeholder {
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.search-clear-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  margin-left: 0.5rem;
+  flex-shrink: 0;
+}
+
+.search-clear-btn:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.search-clear-btn i {
+  font-size: 0.8rem;
+}
+
+/* Responsive search bar */
+@media (max-width: 768px) {
+  .discover-nav-container {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    height: auto;
+    min-height: 60px;
+  }
+  
+  .discover-search-container {
+    width: 100%;
+    max-width: none;
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .search-input-wrapper {
+    padding: 0.75rem 1rem;
+  }
+  
+  .discover-search-input {
+    font-size: 1rem;
+  }
+  
+  .discover-nav-filters {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .search-results-info {
+    position: static;
+    margin-top: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+}
+
+@media (max-width: 480px) {
+  .discover-nav-header {
+    height: auto;
+    min-height: 80px;
+  }
+  
+  .discover-nav-container {
+    padding: 0.5rem;
+  }
+  
+  .search-input-wrapper {
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .discover-search-input {
+    font-size: 0.9rem;
+  }
+  
+  .search-icon {
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+  }
+}
+
+/* ===== MOBILE LANDSCAPE FIXES FOR GLOBAL HEADER ===== */
+@media (max-width: 926px) and (orientation: landscape) {
+  /* Fix global header layout for iPhone landscape */
+  header[class*="fixed"] {
+    padding-left: env(safe-area-inset-left, 0px) !important;
+    padding-right: env(safe-area-inset-right, 0px) !important;
+  }
+  
+  /* Ensure header content doesn't overflow */
+  header[class*="fixed"] > div {
+    max-width: 100vw !important;
+    width: 100% !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    gap: 0.25rem !important;
+  }
+  
+  /* Reduce navigation text size in landscape */
+  header[class*="fixed"] nav {
+    gap: 0.25rem !important;
+  }
+  
+  header[class*="fixed"] nav a {
+    font-size: 0.75rem !important;
+    padding: 0.25rem 0.5rem !important;
+  }
+  
+  /* Ensure theme button stays in frame */
+  header[class*="fixed"] button[aria-label="Toggle theme"] {
+    padding: 0.5rem !important;
+    min-width: 2rem !important;
+    min-height: 2rem !important;
+  }
+  
+  header[class*="fixed"] button[aria-label="Toggle theme"] svg {
+    width: 1rem !important;
+    height: 1rem !important;
+  }
+  
+  /* Hide fullscreen button on iPhone landscape to save space */
+  header[class*="fixed"] button[aria-label="Toggle fullscreen"] {
+    display: none !important;
+  }
+  
+  /* Reduce logo size in landscape */
+  header[class*="fixed"] img[alt="Health Insurance Dave"] {
+    height: 2rem !important;
+    width: 2rem !important;
+  }
+}
+
+/* iPhone-specific landscape fixes */
+@media screen and (max-width: 926px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  header[class*="fixed"] > div {
+    padding-left: 0.25rem !important;
+    padding-right: 0.25rem !important;
+  }
+  
+  header[class*="fixed"] nav a {
+    font-size: 0.7rem !important;
+    padding: 0.2rem 0.4rem !important;
+  }
+  
+  /* Ensure discover page search bar doesn't overflow */
+  .discover-search-container {
+    max-width: 400px !important; /* Increased from 200px for better landscape visibility */
+    min-width: 300px !important; /* Ensure minimum size */
+  }
+  
+  .discover-search-input {
+    font-size: 0.8rem !important;
+  }
+  
+  .search-input-wrapper {
+    padding: 0.4rem 0.6rem !important;
+  }
+}
+
+/* ===== DISCOVER PAGE LANDSCAPE NAVIGATION FIXES ===== */
+@media (max-width: 926px) and (orientation: landscape) {
+  /* Fix discover navigation layout in landscape */
+  .discover-nav-container {
+    flex-direction: row !important;
+    gap: 0.75rem !important;
+    padding: 0.5rem !important;
+    padding-left: 2% !important; /* 2% margin from left edge */
+    align-items: center !important;
+    justify-content: flex-start !important;
+    height: auto !important;
+    min-height: auto !important;
+  }
+  
+  /* Make search container bigger with proper spacing */
+  .discover-search-container {
+    max-width: 500px !important; /* Increased from 450px for wider search */
+    min-width: 400px !important; /* Ensure minimum size */
+    margin-right: 1rem !important;
+    flex-shrink: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  
+  .discover-nav-filters {
+    flex: 1 !important;
+    justify-content: flex-start !important;
+    gap: 0.2rem !important; /* Reduced gap for smaller buttons */
+    margin-bottom: 0 !important;
+  }
+  
+  /* Make filter buttons smaller */
+  .filter-button {
+    padding: 0.25rem 0.4rem !important; /* Reduced padding */
+    font-size: 0.65rem !important; /* Smaller font */
+    min-height: 26px !important; /* Smaller height */
+    gap: 0.05rem !important; /* Minimal gap */
+    white-space: nowrap !important;
+    min-width: auto !important;
+  }
+  
+  .filter-button i {
+    font-size: 0.6rem !important; /* Smaller icons */
+  }
+  
+  /* Make search input bigger and more prominent */
+  .search-input-wrapper {
+    padding: 0.6rem 1rem !important; /* Increased padding */
+  }
+  
+  .discover-search-input {
+    font-size: 0.9rem !important; /* Larger font */
+  }
+  
+  .search-icon {
+    font-size: 0.85rem !important; /* Larger icon */
+    margin-right: 0.6rem !important;
+  }
+  
+  /* Ensure proper spacing for search results info */
+  .search-results-info {
+    position: static !important;
+    margin-top: 0.25rem !important;
+    border-radius: 6px !important;
+    font-size: 0.75rem !important;
+    padding: 0.25rem 0.5rem !important;
+  }
+}
+
+/* iPhone-specific discover landscape fixes */
+@media screen and (max-width: 926px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .discover-nav-container {
+    gap: 0.5rem !important;
+    padding: 0.4rem !important;
+    padding-left: 2% !important; /* Consistent 2% margin */
+  }
+  
+  .discover-search-container {
+    max-width: 450px !important; /* Even bigger on iPhone landscape */
+    min-width: 350px !important;
+    margin-right: 0.75rem !important;
+  }
+  
+  .discover-nav-filters {
+    gap: 0.15rem !important; /* Keep gap small for more buttons */
+  }
+  
+  .filter-button {
+    padding: 0.2rem 0.3rem !important; /* Keep buttons small */
+    font-size: 0.6rem !important;
+    min-height: 24px !important;
+  }
+  
+  .filter-button i {
+    font-size: 0.55rem !important;
+  }
+  
+  /* Make search input bigger on iPhone too */
+  .search-input-wrapper {
+    padding: 0.5rem 0.8rem !important; /* Increased padding */
+  }
+  
+  .discover-search-input {
+    font-size: 0.85rem !important; /* Larger font */
+  }
+  
+  .search-icon {
+    font-size: 0.8rem !important; /* Larger icon */
+    margin-right: 0.5rem !important;
+  }
+}

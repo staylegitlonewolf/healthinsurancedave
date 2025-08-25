@@ -1,0 +1,138 @@
+/* Custom animations for FloatingContactButton */
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.8), 0 0 40px rgba(59, 130, 246, 0.4);
+  }
+}
+
+/* Dark theme glow adjustments */
+.dark .floating-contact-btn {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.dark .floating-contact-btn:hover {
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.6), 0 0 40px rgba(59, 130, 246, 0.3);
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -8px, 0);
+  }
+  70% {
+    transform: translate3d(0, -4px, 0);
+  }
+  90% {
+    transform: translate3d(0, -2px, 0);
+  }
+}
+
+.floating-contact-btn {
+  animation: float 3s ease-in-out infinite;
+}
+
+.floating-contact-btn:hover {
+  animation: bounce 0.6s ease-in-out, glow 2s ease-in-out infinite;
+}
+
+/* Enhanced hover effects */
+.floating-contact-btn::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #3b82f6, #1d4ed8, #3b82f6);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.floating-contact-btn:hover::before {
+  opacity: 1;
+  animation: spin 2s linear infinite;
+}
+
+/* Dark theme border adjustments */
+.dark .floating-contact-btn::before {
+  background: linear-gradient(45deg, #60a5fa, #3b82f6, #60a5fa);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Ripple effect on click */
+.floating-contact-btn:active {
+  transform: scale(0.95);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .floating-contact-btn {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  
+  .floating-contact-btn i {
+    font-size: 1.25rem;
+  }
+}
+
+/* iPhone-Specific Floating Button Styles */
+.iphone-device .floating-contact-btn {
+  width: 3.25rem;
+  height: 3.25rem;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.iphone-device .floating-contact-btn i {
+  font-size: 1.1rem;
+}
+
+/* iPhone 428x926 Specific Styles */
+.iphone-428x926 .floating-contact-btn {
+  width: 3rem;
+  height: 3rem;
+  bottom: 0.75rem;
+  right: 0.75rem;
+}
+
+.iphone-428x926 .floating-contact-btn i {
+  font-size: 1rem;
+}
+
+/* iPhone Landscape 926x368 Specific Styles */
+.iphone-landscape-926x368 .floating-contact-btn {
+  width: 2.75rem;
+  height: 2.75rem;
+  bottom: 0.5rem;
+  right: 0.5rem;
+}
+
+.iphone-landscape-926x368 .floating-contact-btn i {
+  font-size: 0.9rem;
+}

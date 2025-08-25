@@ -1,58 +1,113 @@
-/* Services Section Styles */
+/* ===== MODERN SERVICES PAGE CSS - THEME AWARE ===== */
+
+/* Services Section Container */
 .services {
-  padding: 24px 20px;
-  background: transparent;
+  padding: 4rem 2rem;
+  background: var(--bg-primary);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
   width: 100%;
-  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  max-width: 100vw;
+  /* Force immediate layout */
+  position: relative;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  /* Account for fixed header only */
+  margin-top: calc(var(--header-height) + 20px) !important; /* Reduced space since no navigation bar */
+  padding-top: 1rem !important;
 }
 
+/* Container for proper centering */
+.services .container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Services Header */
+.services-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.services-header h2 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.services-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0 0 2rem 0;
+  font-weight: 400;
+}
+
+.blue-divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* Services Grid */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  width: 100%;
-  max-width: 1400px;
-  padding: 0;
-  margin: 0 auto 3rem;
-}
-
-/* Pricing Plans Container - Centered */
-.pricing-plans-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
   max-width: 1200px;
-  margin: 0 auto;
-}
-
-.pricing-card {
-  max-width: 600px;
   width: 100%;
-  margin: 0 auto;
+  margin: 0 auto 4rem;
+  justify-content: center;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
+/* Service Card - Enhanced Light Theme with Blue Accents */
 .service-card {
-  background: var(--bg-primary);
-  border-radius: 20px;
-  padding: 1.8rem;
-  border: 1px solid var(--border-light);
-  box-shadow: 0 10px 30px var(--shadow);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid rgba(0, 191, 255, 0.15);
+  border-radius: 24px;
+  padding: 2.5rem;
   position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
-  cursor: pointer;
-  width: 100%;
-  height: fit-content;
-  min-width: 0; /* Prevent overflow */
-  display: flex;
-  flex-direction: column;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  will-change: transform;
 }
 
+/* Dark theme service cards */
+@media (prefers-color-scheme: dark) {
+  .service-card {
+    background: var(--bg-secondary);
+    border-color: var(--border);
+    box-shadow: var(--shadow);
+  }
+}
+
+/* Top border accent on hover */
 .service-card::before {
   content: '';
   position: absolute;
@@ -60,1321 +115,2206 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
   transform: scaleX(0);
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
+  z-index: 2;
 }
 
-.service-card:hover::before {
-  transform: scaleX(1);
-}
-
-.service-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 25px 50px var(--shadow);
-  border-color: var(--accent);
-}
-
-/* Featured ribbon */
-.service-badge {
-  position: absolute;
-  top: 14px;
-  left: -14px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-light));
-  color: #fff;
-  padding: 8px 18px;
-  font-size: 0.85rem;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-  border-top-right-radius: 9999px;
-  border-bottom-right-radius: 9999px;
-  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.35);
-  text-transform: uppercase;
-}
-
-.service-badge::after {
-  content: '';
-  position: absolute;
-  right: -10px;
-  top: 0;
-  bottom: 0;
-  width: 10px;
-  background: linear-gradient(135deg, var(--accent-light), transparent);
-  filter: blur(6px);
-}
-
-.featured {
-  border: 2px solid var(--accent);
-  box-shadow: 0 25px 60px rgba(0, 123, 255, 0.25);
-}
-
-.service-icon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-light));
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  position: relative;
-  overflow: hidden;
-}
-
-.service-icon::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transform: translateX(-100%);
-  transition: transform 0.6s ease;
-}
-
-.service-card:hover .service-icon::before {
-  transform: translateX(100%);
-}
-
-.service-card:hover .service-icon {
-  transform: scale(1.15) rotate(10deg);
-  box-shadow: 0 10px 20px var(--shadow-dark);
-}
-
-.service-icon i {
-  font-size: 2rem;
-  color: white;
-}
-
-.service-card h3 {
-  text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: var(--text-primary);
-}
-
-.service-card p {
-  text-align: center;
-  color: var(--text-secondary);
-  margin-bottom: 2rem;
-  line-height: 1.6;
-}
-
-.service-features {
-  list-style: none;
-  margin-bottom: 2rem;
-}
-
-.service-features li {
-  padding: 0.5rem 0;
-  color: var(--text-secondary);
-  position: relative;
-  padding-left: 1.9rem; /* add more space between checkmark and text */
-  line-height: 1.5;
-}
-
-.service-features li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  top: 0.9rem; /* improved vertical centering for multi-line rows */
-  transform: translateY(-50%);
-  color: var(--accent);
-  font-weight: bold;
-  font-size: 1.05rem;
-}
-
-.services-health-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 4rem;
-  margin-top: 2rem;
-  width: 100%;
-  max-width: 100%;
-}
-
-.services-health-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  min-width: 0;
-  flex: 1;
-}
-
-.services-health-column {
-  margin-top: 1.5rem;
-  padding: 1.5rem;
-  background: var(--bg-secondary);
-  border-radius: 15px;
-  border: 1px solid var(--border-light);
-}
-
-.services-health-column h4 {
-  text-align: center;
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-/* 3-Column Benefits Grid */
-.services-health-benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-}
-
-.benefits-column {
-  display: flex;
-  flex-direction: column;
-}
-
-.services-health-features {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.services-health-features li {
-  padding: 0.5rem 0;
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  position: relative;
-  padding-left: 2rem; /* extra space from icon */
-  line-height: 1.5;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-.services-health-features li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  top: 1rem; /* center for two-line items */
-  transform: translateY(-50%);
-  color: var(--accent);
-  font-weight: bold;
-  font-size: 1.1rem;
-}
-
-.services-health-badges {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.services-health-badge {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  position: relative;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-light);
-}
-
-.services-health-badge:hover {
-  transform: translateY(-3px);
-  border-color: var(--accent);
-}
-
-.services-health-badge i {
-  font-size: 1.5rem;
-  color: var(--accent);
-  transition: all 0.3s ease;
-}
-
-.services-health-badge:hover i {
-  color: var(--accent-light);
-  transform: scale(1.2);
-}
-
-.services-health-badge span {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.services-health-pricing {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  width: 100%;
-  margin: 0 auto;
-  flex-wrap: wrap;
-}
-
-.services-health-tier {
-  text-align: center;
-  padding: 1rem;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  position: relative;
-  background: var(--bg-primary);
-  border: 1px solid var(--border-light);
-  box-shadow: 0 4px 12px var(--shadow-light);
-  flex: 1;
-  min-width: 120px;
-  max-width: 200px;
-}
-
-.services-health-tier:hover {
-  transform: translateY(-2px);
-}
-
-.services-tier-price {
-  display: block;
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--accent);
-}
-
-.services-tier-price span {
-  font-size: 1rem;
-  font-weight: normal;
-}
-
-.services-tier-name {
-  display: block;
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  margin-top: 0.5rem;
-}
-
-.services-health-cta {
-  margin-top: 1.5rem;
-}
-
-.services-health-cta .btn {
-  font-size: 1.1rem;
-  padding: 15px 30px;
-  min-width: 200px;
-}
-
-/* Pricing Logos */
-.pricing-logos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-}
-
-.logo-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  position: relative;
-}
-
-.logo-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, var(--accent), var(--accent-light));
-  border-radius: 10px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: -1;
-}
-
-.logo-item:hover::before {
-  opacity: 0.1;
-}
-
-.logo-item:hover {
-  transform: translateY(-3px);
-}
-
-.logo-item i {
-  font-size: 1.5rem;
-  color: var(--accent);
-  transition: all 0.3s ease;
-}
-
-.logo-item:hover i {
-  color: var(--accent-light);
-  transform: scale(1.2);
-}
-
-.logo-item span {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.pricing-tiers {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-  position: relative;
-}
-
-.pricing-tiers::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
-  transform: translateY(-50%);
-  z-index: 0;
-  opacity: 0.3;
-}
-
-.pricing-tier {
-  text-align: center;
-  padding: 1.5rem;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  position: relative;
-  z-index: 1;
-  background: var(--bg-primary);
-  border: 1px solid var(--border-light);
-  box-shadow: 0 4px 12px var(--shadow-light);
-}
-
-.pricing-tier:hover {
-  transform: translateY(-2px);
-}
-
-/* Dark theme styling for pricing tiers */
-[data-theme="dark"] .pricing-tier {
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.05);
-}
-
-[data-theme="dark"] .pricing-tier:hover {
-  transform: translateY(-2px);
-}
-
-/* Dark theme styling for logo items */
-[data-theme="dark"] .logo-item {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-[data-theme="dark"] .logo-item:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: var(--accent);
-}
-
-.tier-price {
-  display: block;
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--accent);
-}
-
-.tier-price span {
-  font-size: 1rem;
-  font-weight: normal;
-}
-
-.tier-name {
-  display: block;
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  margin-top: 0.5rem;
-}
-
-.service-cta {
-  margin-top: 1.5rem;
-}
-
-.service-cta .btn {
-  font-size: 1.1rem;
-  padding: 15px 30px;
-  min-width: 200px;
-}
-
-/* Large Desktop Styles */
-@media (min-width: 1400px) {
-  .services-grid {
-    max-width: 1600px;
-    gap: 2.5rem;
-  }
-
-  .service-card {
-    padding: 2rem;
-  }
-  
-  .service-card h3 {
-    font-size: 2rem;
-  }
-
-  .services-health-pricing {
-    gap: 1.5rem;
-  }
-
-  .services-health-tier {
-    min-width: 140px;
-    max-width: 220px;
-  }
-
-  .services-health-benefits-grid {
-    gap: 2rem;
-  }
-
-  .services-health-features li {
-    font-size: 0.95rem;
-  }
-}
-
-/* Landscape Mobile Optimization - Comprehensive Fix */
-@media (max-width: 844px) and (orientation: landscape) {
-  .services {
-    padding: 20px 15px;
-    min-height: auto;
-  }
-  
-  .container {
-    padding: 0 15px;
-    max-width: 100%;
-  }
-  
-  .services-hero {
-    padding: 20px 0;
-    margin-bottom: 20px;
-  }
-  
-  .services-hero h2 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-  color: var(--text-primary);
-  }
-  
-  .services-hero p {
-    font-size: 1rem;
-    line-height: 1.4;
-  color: var(--text-secondary);
-  }
-  
-  .services-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    max-width: 100%;
-    margin: 0 auto 20px;
-    height: auto;
-  }
-  
-  .service-card {
-    padding: 12px;
-    border-radius: 12px;
-    height: auto;
-    min-height: 160px;
-    max-height: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .service-icon {
-    width: 50px;
-    height: 50px;
-    margin: 0 auto 10px;
-  }
-  
-  .service-icon i {
-    font-size: 1.5rem;
-  }
-  
-  .service-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-    line-height: 1.2;
-  }
-  
-  .service-card p {
-    font-size: 0.85rem;
-    line-height: 1.3;
-    margin-bottom: 10px;
-  }
-  
-  .service-features {
-    margin-bottom: 10px;
-  }
-  
-  .service-features li {
-    padding: 3px 0;
-    font-size: 0.8rem;
-    padding-left: 2.2rem; /* extra spacing from checkmark in landscape */
-    line-height: 1.5;
-  }
-  .service-features li::before { top: 1rem; font-size: 1.1rem; }
-  
-  .services-health-layout {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 15px;
-    margin-top: 15px;
-  }
-  
-  .services-health-column {
-    padding: 10px;
-    margin-top: 0;
-  }
-  
-  .services-health-column h4 {
-    font-size: 1rem;
-    margin-bottom: 8px;
-  }
-  
-  .services-health-features li {
-    font-size: 0.75rem;
-    padding: 2px 0;
-    padding-left: 2.4rem; /* further spacing in landscape */
-    line-height: 1.5;
-  }
-  .services-health-features li::before { top: 1rem; font-size: 1.2rem; }
-  
-  .services-health-badges {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    margin: 10px auto;
-  }
-  
-  .services-health-badge {
-    padding: 8px;
-  }
-  
-  .services-health-badge i {
-    font-size: 1.2rem;
-  }
-  
-  .services-health-badge span {
-    font-size: 0.7rem;
-  }
-  
-  .services-health-pricing {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 8px;
-    margin: 10px 0;
-    flex-wrap: nowrap;
-  }
-  
-  .services-health-tier {
-    padding: 8px;
-    min-width: 80px;
-    max-width: 120px;
-    flex: 1;
-  }
-  
-  .services-tier-price {
-    font-size: 1.4rem;
-  }
-  
-  .services-tier-name {
-    font-size: 0.7rem;
-  }
-  
-  .pricing-logos {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
-    margin-bottom: 15px;
-  }
-  
-  .logo-item {
-    padding: 8px;
-  }
-  
-  .logo-item i {
-    font-size: 1.2rem;
-  }
-  
-  .logo-item span {
-    font-size: 0.65rem;
-  }
-  
-  .pricing-tiers {
-    gap: 10px;
-    margin-bottom: 15px;
-    flex-wrap: nowrap;
-  }
-  
-  .pricing-tier {
-    padding: 10px;
-    min-width: 100px;
-    flex: 1;
-  }
-  
-  .tier-price {
-    font-size: 1.4rem;
-  }
-  
-  .tier-name {
-    font-size: 0.75rem;
-  }
-  
-  .service-cta .btn,
-  .services-health-cta .btn {
-    padding: 8px 16px;
-    font-size: 0.9rem;
-    min-width: 140px;
-  }
-  
-  .cta-button {
-    padding: 8px 16px;
-    font-size: 0.9rem;
-    min-width: 120px;
-  }
-}
-
-/* Extra small landscape screens (iPhone SE, etc.) */
-@media (max-width: 700px) and (max-height: 400px) and (orientation: landscape) {
-  .services {
-    padding: 15px 10px;
-  }
-  
-  .services-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-  }
-  
-  .service-card {
-    padding: 10px;
-    min-height: 140px;
-  }
-  
-  .service-icon {
-    width: 40px;
-    height: 40px;
-    margin: 0 auto 8px;
-  }
-  
-  .service-icon i {
-    font-size: 1.2rem;
-  }
-  
-  .service-card h3 {
-    font-size: 1rem;
-    margin-bottom: 6px;
-  }
-  
-  .service-card p {
-    font-size: 0.8rem;
-    margin-bottom: 8px;
-  }
-  
-  .service-features li {
-    font-size: 0.75rem;
-    padding: 2px 0;
-    padding-left: 2.1rem; /* maintain spacing on extra small landscape */
-    line-height: 1.5;
-  }
-  .service-features li::before { top: 0.95rem; font-size: 1.05rem; }
-  
-  .services-health-layout {
-    gap: 10px;
-  }
-  
-  .services-health-column {
-    padding: 8px;
-  }
-  
-  .services-health-column h4 {
-    font-size: 0.9rem;
-    margin-bottom: 6px;
-  }
-  
-  .services-health-features li {
-    font-size: 0.7rem;
-    padding-left: 2.2rem;
-    line-height: 1.5;
-  }
-  .services-health-features li::before { top: 0.95rem; font-size: 1.1rem; }
-  
-  .services-health-pricing {
-    gap: 6px;
-  }
-  
-  .services-health-tier {
-    padding: 6px;
-    min-width: 70px;
-    max-width: 100px;
-  }
-  
-  .services-tier-price {
-    font-size: 1.2rem;
-  }
-  
-  .services-tier-name {
-    font-size: 0.65rem;
-  }
-  
-  .pricing-logos {
-    gap: 6px;
-  }
-  
-  .logo-item {
-    padding: 6px;
-  }
-  
-  .logo-item i {
-    font-size: 1rem;
-  }
-  
-  .logo-item span {
-    font-size: 0.6rem;
-  }
-}
-
-/* Responsive Design */
-@media (max-width: 1200px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.8rem;
-  }
-  
-  .service-card {
-    padding: 1.6rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .services {
-    padding: 24px 15px;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-  }
-
-  .service-card {
-    padding: 1.5rem;
-    margin: 0;
-  }
-
-  .service-card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-  }
-
-  .service-card p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-  }
-
-  .services-health-features {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-  }
-
-  .services-health-pricing {
-    flex-direction: column;
-    gap: 0.75rem;
-    margin: 1.5rem 0;
-  }
-
-  .services-health-tier {
-    padding: 1rem;
-    min-width: auto;
-    width: 100%;
-    text-align: center;
-  }
-
-  .services-tier-price {
-    font-size: 1.8rem;
-  }
-
-  .services-tier-name {
-    font-size: 0.9rem;
-  }
-
-  .pricing-logos {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .logo-item {
-    padding: 0.75rem;
-  }
-
-  .logo-item i {
-    font-size: 1.2rem;
-  }
-
-  .logo-item span {
-    font-size: 0.7rem;
-  }
-
-  .pricing-tiers {
-    gap: 1rem;
-  }
-
-  .pricing-tier {
-    padding: 1rem;
-    min-width: 120px;
-  }
-
-  .tier-price {
-    font-size: 1.5rem;
-  }
-
-  .tier-name {
-    font-size: 0.8rem;
-  }
-
-  .services-health-cta .btn {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .services {
-    padding: 16px 10px;
-  }
-
-  .services-grid {
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .service-card {
-    padding: 1.25rem;
-  }
-
-  .service-card h3 {
-    font-size: 1.6rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .service-card p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 1.25rem;
-  }
-
-  .service-icon {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 1rem;
-  }
-
-  .service-icon i {
-    font-size: 1.5rem;
-  }
-
-  .services-health-pricing {
-    gap: 0.5rem;
-    margin: 1.25rem 0;
-  }
-
-  .services-health-tier {
-    padding: 0.75rem;
-    min-width: auto;
-  }
-
-  .services-tier-price {
-    font-size: 1.6rem;
-  }
-
-  .services-tier-name {
-    font-size: 0.85rem;
-  }
-
-  .services-health-cta .btn {
-    padding: 0.875rem;
-    font-size: 1rem;
-  }
-
-  .pricing-logos {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-    max-width: 350px;
-  }
-
-  .pricing-tiers {
-    gap: 0.5rem;
-  }
-
-  .pricing-tier {
-    padding: 0.75rem;
-    min-width: 100px;
-  }
-
-  .tier-price {
-    font-size: 1.25rem;
-  }
-
-  .tier-name {
-    font-size: 0.7rem;
-  }
-
-  .service-cta .btn {
-    width: 100%;
-    min-width: auto;
-  }
-}
-
-/* Responsive Design for Benefits Grid */
-@media (max-width: 768px) {
-  .services-health-benefits-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
-  .benefits-column {
-    margin-bottom: 1rem;
-  }
-
-  .services-health-features li {
-    font-size: 0.95rem;
-    padding: 0.5rem 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .services-health-benefits-grid {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-  }
-  
-  .services-health-features li {
-    font-size: 0.9rem;
-    padding: 0.4rem 0;
-  }
-
-  .services-health-badges {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-  }
-
-  .services-health-badge {
-    padding: 0.75rem;
-  }
-
-  .services-health-badge i {
-    font-size: 1.2rem;
-  }
-
-  .services-health-badge span {
-    font-size: 0.8rem;
-  }
-}
-
-/* Services Benefits Section */
-.services-benefits {
-  margin-top: 3rem;
-  text-align: center;
-}
-
-.services-benefits h3 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: var(--text-primary);
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.benefit-item {
-  background: var(--bg-secondary);
-  padding: 1.5rem;
-  border-radius: 20px;
-  text-align: center;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  border: 1px solid var(--border-light);
-  box-shadow: 0 8px 25px var(--shadow-light);
-  position: relative;
-  overflow: hidden;
-  min-width: 0; /* Prevent overflow */
-}
-
-.benefit-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-light));
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-
-.benefit-item:hover::before {
-  transform: scaleX(1);
-}
-
-.benefit-item:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px var(--shadow);
-  border-color: var(--accent);
-}
-
-.benefit-item i {
-  font-size: 3rem;
-  color: var(--accent);
-  margin-bottom: 1rem;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  background: linear-gradient(135deg, var(--accent), var(--accent-light));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.benefit-item:hover i {
-  transform: scale(1.2) rotate(5deg);
-}
-
-.benefit-item h4 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 0.8rem;
-}
-
-.benefit-item p {
-  color: var(--text-secondary);
-  line-height: 1.5;
-  font-size: 0.95rem;
-}
-
-/* Dark theme adjustments for benefits */
-[data-theme="dark"] .benefit-item {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-[data-theme="dark"] .benefit-item:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: var(--accent);
-}
-
-/* Responsive benefits grid */
-@media (max-width: 1200px) {
-  .benefits-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-  
-  .benefit-item {
-    padding: 1.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .services-benefits {
-    margin-top: 2rem;
-  }
-  
-  .services-benefits h3 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .benefits-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .benefit-item {
-    padding: 1.5rem;
-  }
-  
-  .benefit-item i {
-    font-size: 2.5rem;
-  }
-  
-  .benefit-item h4 {
-    font-size: 1.2rem;
-  }
-  
-  .benefit-item p {
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .services-benefits h3 {
-    font-size: 1.8rem;
-  }
-  
-  .benefit-item {
-    padding: 1.25rem;
-  }
-  
-  .benefit-item i {
-    font-size: 2rem;
-  }
-  
-  .benefit-item h4 {
-    font-size: 1.1rem;
-  }
-  
-  .benefit-item p {
-    font-size: 0.9rem;
-  }
-}
-
-/* CTA Button Styles */
-.service-pricing {
-  text-align: center;
-  margin-top: auto;
-  padding-top: 1rem;
-}
-
-.service-price {
-  display: block;
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--accent);
-  margin-bottom: 1rem;
-}
-
-.cta-button {
-  background: linear-gradient(135deg, var(--accent), var(--accent-light));
-  color: white;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
-  position: relative;
-  overflow: hidden;
-  transform: perspective(1px) translateZ(0);
-  min-width: 160px;
-  border: 2px solid var(--accent);
-}
-
-.cta-button::before {
+/* Shimmer slide effect */
+.service-card::after {
   content: '';
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
   transition: left 0.6s ease;
+  z-index: 1;
 }
 
-.cta-button:hover::before {
+/* Dark theme shimmer variation */
+@media (prefers-color-scheme: dark) {
+  .service-card::after {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  }
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-card:hover::after {
   left: 100%;
 }
 
-.cta-button:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 15px 35px rgba(0, 123, 255, 0.6);
-  background: linear-gradient(135deg, var(--accent-light), var(--accent));
-  border-color: rgba(255, 255, 255, 0.3);
+.service-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  border-color: #00bfff;
+  box-shadow: 0 20px 60px rgba(0, 191, 255, 0.15);
 }
 
-.cta-button:active {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.4);
+/* Featured Card */
+.service-card.featured {
+  background: linear-gradient(135deg, rgba(0, 191, 255, 0.05) 0%, rgba(0, 153, 204, 0.02) 100%);
+  border: 2px solid #00bfff;
+  box-shadow: 0 12px 40px rgba(0, 191, 255, 0.1);
 }
 
-/* Pulse animation for extra attention */
-.cta-button::after {
-  content: '';
+.service-card.featured:hover {
+  border-color: #0099cc;
+  box-shadow: 0 25px 80px rgba(0, 191, 255, 0.15);
+}
+
+/* Most Popular Badge - Using unified service badge styles with Blue */
+.service-badge {
   position: absolute;
   top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #00bfff 0%, #0099cc 100%);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   border-radius: 50px;
-  z-index: -1;
-  opacity: 0;
-  animation: pulse 2s infinite;
+  box-shadow: 0 8px 25px rgba(0, 191, 255, 0.3);
+  z-index: 10;
 }
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.7;
+.service-badge::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 8px 0 8px;
+  border-color: #0099cc transparent transparent transparent;
+}
+
+/* Service Icon */
+.service-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #00bfff 0%, #0099cc 100%);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: white;
+  box-shadow: 0 12px 30px rgba(0, 191, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 16px 40px rgba(0, 191, 255, 0.3);
+}
+
+/* Service Title */
+.service-card h3 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 1rem 0;
+  line-height: 1.3;
+}
+
+/* Service Description */
+.service-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+/* Service Features List */
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.5rem 0;
+}
+
+.service-features li {
+  color: var(--text-secondary);
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 2rem;
+  font-size: 0.95rem;
+}
+
+.service-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Service Pricing */
+.service-pricing {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.service-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0;
+}
+
+/* Get Quote Button - Using unified button styles from app.css */
+.btn-accent {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  color: white;
+  border: 2px solid var(--accent);
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 25px rgba(0, 191, 255, 0.2);
+  width: 100%;
+}
+
+.btn-accent:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(0, 191, 255, 0.3);
+  background: linear-gradient(135deg, var(--accent-dark) 0%, #0077aa 100%);
+}
+
+.btn-accent:active {
+  transform: translateY(0);
+}
+
+/* Benefits Section */
+.services-benefits {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.services-benefits h3 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  text-align: center;
+  margin: 0 0 3rem 0;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.benefit-item {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+  background: var(--bg-primary);
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 191, 255, 0.1);
+}
+
+.benefit-item i {
+  font-size: 2.5rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.benefit-item h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 1rem 0;
+}
+
+.benefit-item p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .services {
+    padding: 3rem 1.5rem;
   }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.3;
+  
+  .services-header h2 {
+    font-size: 3rem;
   }
-  100% {
-    transform: scale(1);
-    opacity: 0;
+  
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .service-card {
+    padding: 2rem;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 }
 
-/* Dark theme button adjustments */
-[data-theme="dark"] .cta-button {
-  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
-}
-
-[data-theme="dark"] .cta-button:hover {
-  box-shadow: 0 15px 35px rgba(0, 123, 255, 0.7);
-}
-
-/* Mobile button adjustments */
 @media (max-width: 768px) {
-  .cta-button {
-    padding: 0.875rem 1.75rem;
-    font-size: 1rem;
-    min-width: 140px;
+  .services {
+    padding: 2rem 1rem;
+  }
+  
+  .services-header h2 {
+    font-size: 2.5rem;
+  }
+  
+  .services-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  
+  .service-card {
+    padding: 1.5rem;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .services-benefits h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .benefit-item {
+    padding: 1.5rem;
+  }
+  
+  .service-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+  
+  .service-card h3 {
+    font-size: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
-  .cta-button {
-    padding: 0.75rem 1.5rem;
-    font-size: 0.95rem;
-    min-width: 120px;
+  .services-header h2 {
+    font-size: 2rem;
+  }
+  
+  .services-subtitle {
+    font-size: 1rem;
+  }
+  
+  .service-card {
+    padding: 1.25rem;
+  }
+  
+  .service-badge {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+    /* Using unified service badge styles from discover.css */
+  }
+  
+  .btn-accent {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
   }
 }
 
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+.service-card:nth-child(3) { animation-delay: 0.3s; }
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus states for accessibility */
+.btn-accent:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.service-card:focus-within {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 24px;
+}
+
+/* ===== CANNABIS SECTION STYLES ===== */
+
+/* Cannabis Section Container - Premium Light Design */
+.cannabis-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 4rem auto 0;
+  padding: 4rem 3rem;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.95) 100%);
+  border-radius: 40px;
+  border: 3px solid rgba(76, 175, 80, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(76, 175, 80, 0.1);
+  position: relative;
+}
+
+/* Add subtle pattern overlay */
+.cannabis-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(76, 175, 80, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(76, 175, 80, 0.05) 0%, transparent 50%);
+  border-radius: 40px;
+  pointer-events: none;
+}
+
+/* Dark theme cannabis section */
+@media (prefers-color-scheme: dark) {
+  .cannabis-section {
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.95) 0%, rgba(30, 30, 30, 0.9) 100%);
+    border-color: rgba(76, 175, 80, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 8px 20px rgba(76, 175, 80, 0.2);
+  }
+}
+
+/* Cannabis Header */
+.cannabis-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Cannabis Logo Container */
+.cannabis-logo-container {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(76, 175, 80, 0.05);
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 2rem;
+  border: 3px solid rgba(76, 175, 80, 0.2);
+  transition: all 0.3s ease;
+}
+
+.cannabis-logo-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.2);
+  border-color: rgba(76, 175, 80, 0.3);
+}
+
+.cannabis-header-logo {
+  width: 80px;
+  height: auto;
+  filter: brightness(1.1) contrast(1.1);
+  transition: all 0.3s ease;
+}
+
+/* Dark theme logo container */
+@media (prefers-color-scheme: dark) {
+  .cannabis-logo-container {
+    background: rgba(76, 175, 80, 0.1);
+    border-color: rgba(76, 175, 80, 0.3);
+  }
+}
+
+.cannabis-header h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #2d3748;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: -0.02em;
+}
+
+.cannabis-header p {
+  font-size: 1.3rem;
+  color: #4a5568;
+  margin: 0;
+  line-height: 1.6;
+  font-weight: 500;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Dark theme cannabis header */
+@media (prefers-color-scheme: dark) {
+  .cannabis-header h2 {
+    color: #f7fafc;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .cannabis-header p {
+    color: #e2e8f0;
+  }
+}
+
+
+
+/* Cannabis Badge */
+.cannabis-badge {
+  position: absolute;
+  top: -2px;
+  right: 2rem;
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.cannabis-badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 35px rgba(76, 175, 80, 0.4);
+}
+
+/* Cannabis Content */
+.cannabis-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-top: 1rem;
+}
+
+/* Cannabis Icon Section */
+.cannabis-icon-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cannabis-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(76, 175, 80, 0.2);
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cannabis-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.cannabis-icon:hover::before {
+  left: 100%;
+}
+
+.cannabis-icon:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 16px 40px rgba(76, 175, 80, 0.3);
+}
+
+.cannabis-icon img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.cannabis-icon:hover img {
+  transform: scale(1.05);
+}
+
+.cannabis-icon-section h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.cannabis-description {
+  font-size: 1rem;
+  color: #4a5568;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 600px;
+}
+
+/* Dark theme text colors for cannabis section */
+@media (prefers-color-scheme: dark) {
+  .cannabis-icon-section h3 {
+    color: #f7fafc;
+  }
+  
+  .cannabis-description {
+    color: #e2e8f0;
+  }
+}
+
+/* Cannabis Features Section */
+.cannabis-features-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.cannabis-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.cannabis-feature {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+}
+
+/* Left border accent */
+.cannabis-feature::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #4CAF50, #45a049);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+/* Cannabis feature shimmer effect */
+.cannabis-feature::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(76, 175, 80, 0.08), transparent);
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+.cannabis-feature:hover::before {
+  transform: scaleY(1);
+}
+
+.cannabis-feature:hover::after {
+  left: 100%;
+}
+
+.cannabis-feature:hover {
+  border-color: #4CAF50;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.1);
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.02) 0%, rgba(69, 160, 73, 0.01) 100%);
+}
+
+.cannabis-feature h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.75rem 0;
+  transition: color 0.3s ease;
+}
+
+.cannabis-feature:hover h4 {
+  color: #4CAF50;
+}
+
+.cannabis-feature p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Cannabis Results */
+.cannabis-results {
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(69, 160, 73, 0.02) 100%);
+  border: 1px solid #4CAF50;
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.cannabis-results::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #4CAF50, #45a049);
+}
+
+.cannabis-results h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cannabis-results h4::before {
+  content: '🎯';
+  font-size: 1.25rem;
+}
+
+.cannabis-results ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cannabis-results li {
+  color: var(--text-secondary);
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 2rem;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.cannabis-results li:hover {
+  color: #4CAF50;
+}
+
+.cannabis-results li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  color: #4CAF50;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.cannabis-results li:hover::before {
+  transform: scale(1.2);
+}
+
+/* Cannabis CTA */
+.cannabis-cta {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(76, 175, 80, 0.1);
+  border-radius: 16px;
+  border: 1px solid rgba(76, 175, 80, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dark theme CTA background */
+@media (prefers-color-scheme: dark) {
+  .cannabis-cta {
+    background: rgba(76, 175, 80, 0.15);
+    border-color: rgba(76, 175, 80, 0.3);
+  }
+}
+
+.cannabis-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #4CAF50, #45a049);
+}
+
+.cannabis-cta p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+.cannabis-btn {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.2);
+  font-size: 1.1rem;
+  padding: 1.25rem 2rem;
+  min-width: 220px;
+  width: 220px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  justify-content: center;
+}
+
+.cannabis-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.cannabis-btn:hover::before {
+  left: 100%;
+}
+
+.cannabis-btn:hover {
+  background: linear-gradient(135deg, #45a049 0%, #3d8b40 100%);
+  box-shadow: 0 12px 35px rgba(76, 175, 80, 0.3);
+  transform: translateY(-2px);
+}
+
+.cannabis-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design for Cannabis Section */
+@media (max-width: 768px) {
+  .cannabis-section {
+    padding: 2rem 0;
+  }
+  
+  .cannabis-card {
+    padding: 1.5rem;
+    margin: 0 1rem;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+  
+  .cannabis-icon-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .cannabis-icon-section h3 {
+    font-size: 1.5rem;
+  }
+  
+  .cannabis-description {
+    font-size: 1rem;
+  }
+  
+  .cannabis-features-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .cannabis-feature {
+    padding: 1rem;
+  }
+  
+  .cannabis-badge {
+    right: 1rem;
+    font-size: 0.7rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .cannabis-content {
+    margin-top: 2rem;
+  }
+  
+  .cannabis-results {
+    padding: 1.5rem;
+  }
+  
+  .cannabis-cta {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cannabis-card {
+    padding: 1rem;
+    margin: 0 0.5rem;
+  }
+  
+  .cannabis-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .cannabis-icon img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .cannabis-icon-section {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .cannabis-icon-section h3 {
+    font-size: 1.25rem;
+  }
+  
+  .cannabis-description {
+    font-size: 0.9rem;
+  }
+  
+  .cannabis-header h2 {
+    font-size: 1.75rem;
+  }
+  
+  .cannabis-badge {
+    right: 0.5rem;
+    font-size: 0.65rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .cannabis-content {
+    margin-top: 2rem;
+  }
+  
+  .cannabis-feature {
+    padding: 0.75rem;
+  }
+  
+  .cannabis-feature h4 {
+    font-size: 1.1rem;
+  }
+  
+  .cannabis-feature p {
+    font-size: 0.85rem;
+  }
+  
+  .cannabis-results {
+    padding: 1rem;
+  }
+  
+  .cannabis-results h4 {
+    font-size: 1.25rem;
+  }
+  
+  .cannabis-results li {
+    font-size: 0.9rem;
+  }
+  
+  .cannabis-cta {
+    padding: 1rem;
+  }
+  
+  .cannabis-cta p {
+    font-size: 1rem;
+  }
+  
+  .cannabis-btn {
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    width: 100%;
+    max-width: 200px;
+    min-width: auto;
+  }
+}
+
+/* ===== CANNABIS BUSINESS INSURANCE SECTION STYLES ===== */
+
+/* Cannabis Insurance Section Container */
+.cannabis-insurance-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 4rem auto 0;
+  padding: 3rem 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Cannabis Insurance Header */
+.cannabis-insurance-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.cannabis-insurance-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 1rem 0;
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cannabis-insurance-header p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Cannabis Insurance Card */
+.cannabis-insurance-card {
+  background: var(--bg-secondary);
+  border: 2px solid #4CAF50;
+  border-radius: 24px;
+  padding: 3rem;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(76, 175, 80, 0.1);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cannabis-insurance-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 80px rgba(76, 175, 80, 0.2);
+  border-color: #45a049;
+}
+
+.cannabis-insurance-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #4CAF50, #45a049);
+  transition: height 0.3s ease;
+}
+
+.cannabis-insurance-card:hover::before {
+  height: 6px;
+}
+
+/* Cannabis Insurance Badge */
+.cannabis-insurance-badge {
+  position: absolute;
+  top: -2px;
+  right: 2rem;
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.cannabis-insurance-badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 35px rgba(76, 175, 80, 0.4);
+}
+
+/* Cannabis Insurance Content */
+.cannabis-insurance-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-top: 1rem;
+}
+
+/* Cannabis Insurance Icon Section */
+.cannabis-insurance-icon-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cannabis-insurance-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(76, 175, 80, 0.2);
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cannabis-insurance-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.cannabis-insurance-icon:hover::before {
+  left: 100%;
+}
+
+.cannabis-insurance-icon:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 16px 40px rgba(76, 175, 80, 0.3);
+}
+
+.cannabis-insurance-icon i {
+  font-size: 2.5rem;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.cannabis-insurance-icon:hover i {
+  transform: scale(1.05);
+}
+
+.cannabis-insurance-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.cannabis-insurance-icon:hover .cannabis-insurance-logo {
+  transform: scale(1.05);
+}
+
+.cannabis-insurance-icon-section h3 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cannabis-insurance-description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 600px;
+}
+
+/* Cannabis Insurance Features Section */
+.cannabis-insurance-features-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.cannabis-insurance-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.cannabis-insurance-feature {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cannabis-insurance-feature::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #4CAF50, #45a049);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.cannabis-insurance-feature:hover::before {
+  transform: scaleY(1);
+}
+
+.cannabis-insurance-feature:hover {
+  border-color: #4CAF50;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.1);
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.02) 0%, rgba(69, 160, 73, 0.01) 100%);
+}
+
+.cannabis-insurance-feature h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.75rem 0;
+  transition: color 0.3s ease;
+}
+
+.cannabis-insurance-feature:hover h4 {
+  color: #4CAF50;
+}
+
+.cannabis-insurance-feature p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Cannabis Insurance Results */
+.cannabis-insurance-results {
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(69, 160, 73, 0.02) 100%);
+  border: 1px solid #4CAF50;
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.cannabis-insurance-results::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #4CAF50, #45a049);
+}
+
+.cannabis-insurance-results h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cannabis-insurance-results h4::before {
+  content: '🎯';
+  font-size: 1.25rem;
+}
+
+.cannabis-insurance-results ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cannabis-insurance-results li {
+  color: var(--text-secondary);
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 2rem;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.cannabis-insurance-results li:hover {
+  color: #4CAF50;
+}
+
+.cannabis-insurance-results li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  color: #4CAF50;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.cannabis-insurance-results li:hover::before {
+  transform: scale(1.2);
+}
+
+/* Cannabis Insurance CTA */
+.cannabis-insurance-cta {
+  text-align: center;
+  padding: 2rem;
+  background: var(--bg-primary);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.cannabis-insurance-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #4CAF50, #45a049);
+}
+
+.cannabis-insurance-cta p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+.cannabis-insurance-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cannabis-insurance-btn {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.2);
+  font-size: 1.1rem;
+  padding: 1.25rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  min-width: 280px;
+  width: 280px;
+  justify-content: center;
+}
+
+.cannabis-insurance-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.cannabis-insurance-btn:hover::before {
+  left: 100%;
+}
+
+.cannabis-insurance-btn:hover {
+  background: linear-gradient(135deg, #45a049 0%, #3d8b40 100%);
+  box-shadow: 0 12px 35px rgba(76, 175, 80, 0.3);
+  transform: translateY(-2px);
+}
+
+.cannabis-insurance-btn:active {
+  transform: translateY(0);
+}
+
+.cannabis-learn-more-btn {
+  background: transparent;
+  color: #4CAF50;
+  border: 2px solid #4CAF50;
+  font-size: 1.1rem;
+  padding: 1.25rem 2.5rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  font-weight: 600;
+  min-width: 280px;
+  width: 280px;
+  justify-content: center;
+}
+
+.cannabis-learn-more-btn:hover {
+  background: #4CAF50;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+  text-decoration: none;
+}
+
+.cannabis-learn-more-btn i {
+  font-size: 0.9rem;
+}
+
+/* Responsive Design for Cannabis Insurance Section */
+@media (max-width: 768px) {
+  .cannabis-insurance-section {
+    padding: 2rem 0;
+  }
+  
+  .cannabis-insurance-card {
+    padding: 1.5rem;
+    margin: 0 1rem;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+  
+  .cannabis-insurance-icon-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .cannabis-insurance-icon-section h3 {
+    font-size: 1.5rem;
+  }
+  
+  .cannabis-insurance-description {
+    font-size: 1rem;
+  }
+  
+  .cannabis-insurance-features-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .cannabis-insurance-feature {
+    padding: 1rem;
+  }
+  
+  .cannabis-insurance-badge {
+    right: 1rem;
+    font-size: 0.7rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .cannabis-insurance-content {
+    margin-top: 2rem;
+  }
+  
+  .cannabis-insurance-results {
+    padding: 1.5rem;
+  }
+  
+  .cannabis-insurance-cta {
+    padding: 1.5rem;
+  }
+  
+  .cannabis-insurance-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cannabis-insurance-btn,
+  .cannabis-learn-more-btn {
+    width: 100%;
+    max-width: 280px;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .cannabis-insurance-card {
+    padding: 1rem;
+    margin: 0 0.5rem;
+  }
+  
+  .cannabis-insurance-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .cannabis-insurance-icon i {
+    font-size: 1.5rem;
+  }
+  
+  .cannabis-insurance-icon-section {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .cannabis-insurance-icon-section h3 {
+    font-size: 1.25rem;
+  }
+  
+  .cannabis-insurance-description {
+    font-size: 0.9rem;
+  }
+  
+  .cannabis-insurance-header h2 {
+    font-size: 1.75rem;
+  }
+  
+  .cannabis-insurance-badge {
+    right: 0.5rem;
+    font-size: 0.65rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .cannabis-insurance-content {
+    margin-top: 2rem;
+  }
+  
+  .cannabis-insurance-feature {
+    padding: 0.75rem;
+  }
+  
+  .cannabis-insurance-feature h4 {
+    font-size: 1.1rem;
+  }
+  
+  .cannabis-insurance-feature p {
+    font-size: 0.85rem;
+  }
+  
+  .cannabis-insurance-results {
+    padding: 1rem;
+  }
+  
+  .cannabis-insurance-results h4 {
+    font-size: 1.25rem;
+  }
+  
+  .cannabis-insurance-results li {
+    font-size: 0.9rem;
+  }
+  
+  .cannabis-insurance-cta {
+    padding: 1rem;
+  }
+  
+  .cannabis-insurance-cta p {
+    font-size: 1rem;
+  }
+  
+  .cannabis-insurance-btn,
+  .cannabis-learn-more-btn {
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    width: 100%;
+    max-width: 260px;
+    min-width: auto;
+  }
+}
+
+/* ===== NEW CANNABIS SECTION STYLES - COMBINED LAYOUT ===== */
+
+/* Cannabis Grid Layout */
+.cannabis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Premium Cannabis Cards Design */
+.cannabis-card.health-benefits,
+.cannabis-card.business-insurance {
+  background: transparent;
+  border-radius: 32px;
+  padding: 3rem 2.5rem;
+  margin-top: 20px;
+  border: none;
+  box-shadow: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: visible;
+  will-change: transform;
+}
+
+
+
+
+
+
+
+/* Cannabis Card Badges - Enhanced Premium Style */
+.cannabis-badge.health {
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 6px 20px rgba(233, 30, 99, 0.4);
+  z-index: 10;
+  transform: rotate(-2deg);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.cannabis-badge.insurance {
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
+  z-index: 10;
+  transform: rotate(-2deg);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.cannabis-badge.health:hover,
+.cannabis-badge.insurance:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
+/* Cannabis Features Compact */
+.cannabis-features-compact {
+  margin: 2rem 0;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.feature-item i {
+  color: #4CAF50;
+  margin-right: 0.75rem;
+  margin-top: 0.2rem;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.cannabis-card.health-benefits .feature-item i {
+  color: #e91e63;
+}
+
+.cannabis-card.business-insurance .feature-item i {
+  color: #ff9800;
+}
+
+.feature-item span {
+  color: #2d3748;
+  font-weight: 500;
+  flex: 1;
+}
+
+/* Dark theme feature text */
+@media (prefers-color-scheme: dark) {
+  .feature-item span {
+    color: #e2e8f0;
+  }
+}
+
+/* Results Section */
+.cannabis-results-section {
+  background: rgba(76, 175, 80, 0.05);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid rgba(76, 175, 80, 0.1);
+}
+
+/* Dark theme results section */
+@media (prefers-color-scheme: dark) {
+  .cannabis-results-section {
+    background: rgba(76, 175, 80, 0.08);
+    border-color: rgba(76, 175, 80, 0.2);
+  }
+}
+
+.cannabis-results-section h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0 0 2rem 0;
+}
+
+/* Dark theme results title */
+@media (prefers-color-scheme: dark) {
+  .cannabis-results-section h3 {
+    color: #f7fafc;
+  }
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.result-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.result-item i {
+  font-size: 2rem;
+  color: #4CAF50;
+  margin-bottom: 0.75rem;
+}
+
+.result-item span {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+/* Dark theme result item text */
+@media (prefers-color-scheme: dark) {
+  .result-item span {
+    color: #e2e8f0;
+  }
+}
+
+/* Mobile Responsive for New Cannabis Layout */
+@media (max-width: 768px) {
+  .cannabis-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .cannabis-card.health-benefits,
+  .cannabis-card.business-insurance {
+    padding: 1.5rem;
+    margin: 0 1rem;
+  }
+  
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .result-item {
+    font-size: 0.85rem;
+  }
+  
+  .result-item i {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cannabis-section {
+    padding: 2rem 1rem;
+    margin: 2rem 1rem;
+  }
+  
+  .results-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* ===== CANNABIS COMPARISON SECTION ===== */
+
+/* Comparison Section Container */
+.cannabis-comparison-section {
+  margin-top: 4rem;
+  padding: 4rem 3rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.95) 100%);
+  border-radius: 32px;
+  border: 2px solid rgba(76, 175, 80, 0.15);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dark theme comparison section */
+@media (prefers-color-scheme: dark) {
+  .cannabis-comparison-section {
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.95) 0%, rgba(30, 30, 30, 0.9) 100%);
+    border-color: rgba(76, 175, 80, 0.25);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Comparison Title */
+.cannabis-comparison-section h3 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comparison-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #4a5568;
+  margin-bottom: 3rem;
+  font-weight: 500;
+}
+
+/* Dark theme comparison subtitle */
+@media (prefers-color-scheme: dark) {
+  .comparison-subtitle {
+    color: #e2e8f0;
+  }
+}
+
+/* Comparison Container */
+.comparison-container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 3rem;
+}
+
+/* Comparison Columns */
+.comparison-column {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dark theme comparison columns */
+@media (prefers-color-scheme: dark) {
+  .comparison-column {
+    background: rgba(25, 25, 25, 0.95);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Us Column - Winner Styling */
+.us-column {
+  border: 3px solid #4CAF50;
+  box-shadow: 0 16px 40px rgba(76, 175, 80, 0.15);
+  transform: scale(1.05);
+}
+
+.us-column:hover {
+  transform: scale(1.08) translateY(-8px);
+  box-shadow: 0 24px 60px rgba(76, 175, 80, 0.25);
+}
+
+/* Them Column - Outdated Styling */
+.them-column {
+  border: 3px solid #ff6b6b;
+  box-shadow: 0 16px 40px rgba(255, 107, 107, 0.15);
+  opacity: 0.9;
+}
+
+.them-column:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(255, 107, 107, 0.2);
+}
+
+/* Comparison Headers */
+.comparison-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.comparison-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+
+.us-header .comparison-logo {
+  background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+  color: white;
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+}
+
+.them-header .comparison-logo {
+  background: linear-gradient(135deg, #757575 0%, #424242 100%);
+  color: white;
+  box-shadow: 0 8px 25px rgba(117, 117, 117, 0.3);
+}
+
+.comparison-logo:hover {
+  transform: scale(1.1) rotate(10deg);
+}
+
+.comparison-header h4 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #2d3748;
+}
+
+/* Dark theme comparison header */
+@media (prefers-color-scheme: dark) {
+  .comparison-header h4 {
+    color: #f7fafc;
+  }
+}
+
+/* Comparison Badges */
+.comparison-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 0.5rem;
+}
+
+.winner-badge {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA000 100%);
+  color: #1a1a2e;
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+  animation: pulse-winner 2s ease-in-out infinite;
+}
+
+.outdated-badge {
+  background: linear-gradient(135deg, #ff6b6b 0%, #d32f2f 100%);
+  color: white;
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+@keyframes pulse-winner {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* VS Divider */
+.vs-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 400px;
+}
+
+.vs-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: white;
+  box-shadow: 0 12px 30px rgba(76, 175, 80, 0.3);
+  animation: spin-vs 4s linear infinite;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+}
+
+@keyframes spin-vs {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Feature Rows */
+.comparison-features {
+  margin-bottom: 2rem;
+}
+
+.feature-row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.feature-row:hover {
+  transform: translateX(8px);
+}
+
+/* Winner Features */
+.feature-row:not(.them-feature) {
+  background: rgba(76, 175, 80, 0.05);
+  border-left: 4px solid #4CAF50;
+}
+
+.feature-row:not(.them-feature):hover {
+  background: rgba(76, 175, 80, 0.1);
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.1);
+}
+
+.winner-icon {
+  color: #4CAF50;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+}
+
+/* Them Features */
+.them-feature {
+  background: rgba(255, 107, 107, 0.05);
+  border-left: 4px solid #ff6b6b;
+}
+
+.them-feature:hover {
+  background: rgba(255, 107, 107, 0.1);
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.1);
+  transform: translateX(-8px);
+}
+
+.them-icon {
+  color: #ff6b6b;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+}
+
+.feature-row span {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+/* Dark theme feature text */
+@media (prefers-color-scheme: dark) {
+  .feature-row span {
+    color: #e2e8f0;
+  }
+}
+
+/* Comparison CTAs */
+.comparison-cta {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.winner-btn {
+  background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+  animation: glow-winner 2s ease-in-out infinite alternate;
+}
+
+.winner-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 16px 40px rgba(76, 175, 80, 0.4);
+}
+
+@keyframes glow-winner {
+  0% { box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3); }
+  100% { box-shadow: 0 8px 25px rgba(76, 175, 80, 0.6), 0 0 30px rgba(76, 175, 80, 0.3); }
+}
+
+.them-result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: rgba(255, 107, 107, 0.1);
+  border: 2px solid #ff6b6b;
+  border-radius: 30px;
+  color: #d32f2f;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.them-result i {
+  font-size: 1.3rem;
+  animation: shake-warning 1s ease-in-out infinite;
+}
+
+@keyframes shake-warning {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  75% { transform: translateX(2px); }
+}
+
+/* Comparison Stats */
+.comparison-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 2px solid rgba(76, 175, 80, 0.2);
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(76, 175, 80, 0.05);
+  border-radius: 20px;
+  border: 2px solid rgba(76, 175, 80, 0.1);
+  transition: all 0.3s ease;
+}
+
+
+
+
+
+/* Mobile Responsive */
+@media (max-width: 968px) {
+  .comparison-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .vs-divider {
+    min-height: auto;
+    height: 60px;
+  }
+  
+  .vs-circle {
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
+  }
+  
+  .us-column {
+    transform: none;
+    order: 1;
+  }
+  
+  .vs-divider {
+    order: 2;
+  }
+  
+  .them-column {
+    order: 3;
+  }
+  
+  .comparison-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .cannabis-comparison-section {
+    padding: 2rem 1.5rem;
+  }
+  
+  .comparison-column {
+    padding: 2rem 1.5rem;
+  }
+  
+  .comparison-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
  

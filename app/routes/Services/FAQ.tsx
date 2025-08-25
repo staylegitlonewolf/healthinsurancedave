@@ -47,7 +47,7 @@ const FAQ: React.FC = () => {
     <section id="faq" className="faq">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title text-3xl font-bold">Frequently Asked Questions</h2>
+          <h2 className="section-title">Frequently Asked Questions</h2>
           <p className="section-subtitle">Get answers to common questions about our services</p>
                {/* Blue Divider */}
                <div className="blue-divider"></div> 

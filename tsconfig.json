@@ -1,6 +1,7 @@
 {
   "include": [
-    "**/*",
+    "**/*.ts",
+    "**/*.tsx",
     "**/.server/**/*",
     "**/.client/**/*",
     ".react-router/types/**/*"
@@ -22,6 +23,8 @@
     "noEmit": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "strict": true
+    "strict": true,
+    "allowJs": true,
+    "checkJs": false
   }
 }

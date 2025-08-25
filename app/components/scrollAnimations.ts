@@ -150,14 +150,14 @@ export const initAllAnimations = (): void => {
   initParallax();
   initRippleEffect();
   
-  // Add stagger animation to team grid
-  addStaggerAnimation('.team-grid');
+  // Add stagger animation to discover grid
+  addStaggerAnimation('.discover-members-grid');
   
   // Add floating animation to service cards
   addFloatingAnimation('.service-card');
   
   // Add hover effects
-  document.querySelectorAll('.team-member').forEach(member => {
+  document.querySelectorAll('.discover-member').forEach(member => {
     member.classList.add('hover-bounce');
   });
   
