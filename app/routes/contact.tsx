@@ -191,7 +191,7 @@ export default function Contact() {
             </div>
 
             <div className="form-group">
-              <label htmlFor="referral">How did you hear about us?</label>
+              <label htmlFor="referral">How did you hear about us?(Optional)</label>
               <select
                 id="referral"
                 name="referral"
