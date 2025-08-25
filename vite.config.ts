@@ -7,4 +7,10 @@ export default defineConfig({
   server: {
     host: true,
   },
+  base: "/healthinsurancedave/", // GitHub Pages repository name
+  build: {
+    outDir: "dist",
+    emptyOutDir: true,
+    assetsDir: "assets",
+  },
 });
