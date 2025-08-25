@@ -1,118 +1,112 @@
-# SiteLVA
+# Health Insurance Dave
 
-A modern React application built with Vite, React Router, and Tailwind CSS for discovering amazing places and connecting with partners.
+**Professional Health Insurance Solutions & Services**
 
-## Features
+A modern, responsive React website built for Health Insurance Dave, featuring comprehensive health insurance services, cannabis business insurance, solar solutions, and professional certifications.
 
-- 🎨 **Modern UI/UX** - Beautiful, responsive design with dark/light theme support
-- 🌙 **Theme Toggle** - Switch between dark and light themes
-- 📱 **Mobile Responsive** - Optimized for all device sizes
-- 🔍 **Fullscreen Support** - Fullscreen button (hidden on iPhone for compatibility)
-- 🚀 **Fast Performance** - Built with Vite for lightning-fast development
-- 🛣️ **React Router** - Client-side routing with React Router v7
-- 🎨 **Tailwind CSS** - Utility-first CSS framework for rapid UI development
+## 🚀 Live Site
 
-## Pages
+Visit the live website: [https://staylegitlonewolf.github.io/healthinsurancedave/](https://staylegitlonewolf.github.io/healthinsurancedave/)
 
-- **Home** (`/`) - Landing page with hero section and features
-- **About** (`/about`) - Information about SiteLVA
-- **Discover** (`/discover`) - Explore places and opportunities
-- **Partners** (`/partners`) - Partnership information and contact form
+## ✨ Features
 
-## Getting Started
+### 🏥 **Health Insurance Services**
+- Individual & Family Plans
+- Group Insurance Solutions
+- Cannabis Business Insurance
+- Comprehensive Coverage Options
 
-### Prerequisites
+### 👥 **Professional Team**
+- Licensed Health Insurance Experts
+- David Brown - Licensed Health Coverage Expert
+- Matthias Wendler - Licensed Health Coverage Expert
+- Victoria Whitfield - NIL Specialist
 
-- Node.js (version 16 or higher)
-- npm or yarn
+### 📱 **Modern Web Experience**
+- **Responsive Design** - Optimized for desktop, tablet, and mobile
+- **Dark/Light Theme** - Toggle between themes
+- **Mobile-First** - Perfect iPhone and Android experience
+- **Fast Performance** - Built with Vite for lightning-fast loading
+- **Interactive Components** - Floating particles, smooth animations
 
-### Installation
+### 🔍 **Advanced Features**
+- **Dynamic Navigation** - Context-aware menu system
+- **Master Pages** - Detailed specialist profiles
+- **Certification Gallery** - State licensing displays
+- **Contact Forms** - Professional inquiry system
+- **Promo System** - Event and announcement lightbox
 
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd sitelva
-```
+## 📄 Pages
 
-2. Install dependencies:
-```bash
-npm install
-```
+- **🏠 Home** (`/`) - Hero section with services overview
+- **💼 Services** (`/services`) - Insurance plans and pricing
+- **ℹ️ About** (`/about`) - Company information and mission
+- **🏆 Certifications** (`/certifications`) - Professional licenses by state
+- **🔍 Discover** (`/discover`) - Team member directory
+- **📞 Contact** (`/contact`) - Get in touch form
 
-3. Start the development server:
-```bash
-npm run dev
-```
+### 👨‍⚕️ Specialist Pages
+- **Health Master** (`/health_master`) - Health insurance specialists
+- **NIL Master** (`/nil_master`) - Name, Image, Likeness specialists
+- **Solar Master** (`/solar_master`) - Solar solution providers
+- **Certification Master** (`/certification_master`) - License details
 
-4. Open your browser and navigate to `http://localhost:5173`
+## 🛠️ Built With
 
-### Available Scripts
+- **React 19** - Modern React with latest features
+- **React Router v7** - Client-side routing
+- **TypeScript** - Type-safe development
+- **Vite** - Fast build tool and dev server
+- **CSS3** - Custom responsive styling
+- **Font Awesome** - Professional icons
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run typecheck` - Run TypeScript type checking
+## 🏗️ Technical Highlights
 
-## Project Structure
+- **Mobile Responsive** - Works perfectly on iPhone, Android, tablets
+- **Performance Optimized** - Fast loading with optimized assets
+- **SEO Friendly** - Proper meta tags and semantic HTML
+- **Accessibility** - WCAG compliant design
+- **Cross-Browser** - Works on all modern browsers
 
-```
-sitelva/
-├── app/
-│   ├── components/
-│   │   └── GlobalHeader.tsx    # Global header component
-│   ├── routes/
-│   │   ├── home.tsx           # Home page
-│   │   ├── about.tsx          # About page
-│   │   ├── discover.tsx       # Discover page
-│   │   └── partners.tsx       # Partners page
-│   ├── app.css               # Global styles with Tailwind
-│   └── root.tsx              # Root layout component
-├── public/                   # Static assets
-├── tailwind.config.js        # Tailwind CSS configuration
-├── postcss.config.js         # PostCSS configuration
-├── vite.config.ts           # Vite configuration
-└── package.json             # Project dependencies
-```
+## 🌟 Specialized Features
 
-## Global Header Features
+### Cannabis Insurance
+- Tailored coverage for cannabis businesses
+- Florida MMTC compliance
+- Budtender and cultivator health plans
+- Risk management solutions
 
-The global header includes:
+### Solar Solutions
+- Partnership with trusted solar providers
+- Energy cost reduction services
+- Sustainable business solutions
 
-- **Logo** - SiteLVA branding with link to home
-- **Navigation** - Links to About, Discover, and Partners pages
-- **Theme Toggle** - Switch between dark and light themes
-- **Fullscreen Button** - Toggle fullscreen mode (hidden on iPhone)
+### NIL Services
+- Name, Image, Likeness consultation
+- Student-athlete support
+- Sports partnership management
 
-## Styling
+## 📱 Mobile Experience
 
-This project uses Tailwind CSS for styling with:
+Optimized for all mobile devices with:
+- Touch-friendly navigation
+- Responsive layouts
+- Fast loading on mobile networks
+- iPhone-specific optimizations
+- Landscape mode support
 
-- **Dark Mode Support** - Automatic dark/light theme switching
-- **Responsive Design** - Mobile-first approach
-- **Custom Components** - Reusable UI components
-- **Smooth Transitions** - Hover effects and animations
+## 🎨 Design System
 
-## Browser Support
+- **Primary Color**: Blue (#00bfff)
+- **Secondary Color**: Green (cannabis section)
+- **Typography**: Inter font family
+- **Responsive Breakpoints**: Desktop, Tablet, Mobile
+- **Theme Support**: Light and Dark modes
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+---
 
-**Note:** Fullscreen functionality is disabled on iPhone devices as it's not supported by iOS Safari.
+**Contact Information:**
+- Website: [Health Insurance Dave](https://staylegitlonewolf.github.io/healthinsurancedave/)
+- Professional health insurance solutions for individuals, families, and businesses
 
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## License
-
-This project is licensed under the MIT License.
-
-## Support
-
-For support and questions, please open an issue in the repository.
+*Built with modern web technologies for optimal performance and user experience.*
