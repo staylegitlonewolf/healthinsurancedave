@@ -1,26 +1,26 @@
-const CACHE_NAME = 'lva-site-v3';
-const STATIC_CACHE = 'lva-static-v3';
+const CACHE_NAME = 'lva-site-v4';
+const STATIC_CACHE = 'lva-static-v4';
+const BASE_PATH = '/healthinsurancedave/';
 const urlsToCache = [
-  '/',
-  '/about',
-  '/services',
-  '/certifications',
-  '/discover',
-  '/health_master',
-  '/nil_master',
-  '/solar_master'
+  BASE_PATH,
+  BASE_PATH + 'about',
+  BASE_PATH + 'services',
+  BASE_PATH + 'certifications',
+  BASE_PATH + 'discover',
+  BASE_PATH + 'health_master',
+  BASE_PATH + 'nil_master',
+  BASE_PATH + 'solar_master'
 ];
 
 // Cache static assets
 const staticAssets = [
-  '/NiL/schoolLogo.png',
-
-  '/NiL/Vicotoria.png',
-  '/NiL/Vicotoria1.png',
-  '/NiL/Vicotoria2.png',
-  '/NiL/victoriaAward.png',
-  '/Health/David Brown.png',
-  '/Health/Matthias Wendler.png'
+  BASE_PATH + 'NiL/schoolLogo.png',
+  BASE_PATH + 'NiL/Vicotoria.png',
+  BASE_PATH + 'NiL/Vicotoria1.png',
+  BASE_PATH + 'NiL/Vicotoria2.png',
+  BASE_PATH + 'NiL/victoriaAward.png',
+  BASE_PATH + 'Health/David Brown.png',
+  BASE_PATH + 'Health/Matthias Wendler.png'
 ];
 
 // Install event - cache resources with error handling
@@ -174,6 +174,6 @@ self.addEventListener('push', (event) => {
 self.addEventListener('notificationclick', (event) => {
   event.notification.close();
   event.waitUntil(
-    clients.openWindow('/')
+    clients.openWindow(BASE_PATH)
   );
 });
