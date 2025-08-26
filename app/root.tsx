@@ -43,6 +43,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
         <link rel="icon" type="image/png" href="/healthinsurancedave/logo.png" />
         <link rel="shortcut icon" type="image/png" href="/healthinsurancedave/logo.png" />
         <link rel="apple-touch-icon" href="/healthinsurancedave/logo.png" />
@@ -67,7 +70,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  // Updated for GitHub Pages deployment - all image paths fixed - CACHE BUST VERSION 4 - FINAL FIX
+  // FINAL DEPLOYMENT - ALL PATHS CORRECT - AGGRESSIVE CACHE BUST
   const location = useLocation();
   const isContactPage = location.pathname === '/contact';
   const isCertificationMaster = location.pathname === '/certification_master';
@@ -81,13 +84,13 @@ export default function App() {
       navigator.serviceWorker.getRegistrations().then((registrations) => {
         for (const registration of registrations) {
           registration.unregister();
-          console.log('SW unregistered to clear cache - FINAL VERSION');
+          console.log('SW unregistered to clear cache - AGGRESSIVE CACHE BUST');
         }
       }).catch((error) => {
         console.warn('Failed to get service worker registrations:', error);
       });
     }
-  }, []); // Force fresh deployment - FINAL CACHE BUST
+  }, []); // AGGRESSIVE CACHE BUST - FORCE GITHUB PAGES TO SERVE FRESH CONTENT
 
   // Scroll to top on route change
   useEffect(() => {
