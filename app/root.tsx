@@ -87,7 +87,7 @@ export default function App() {
         console.warn('Failed to get service worker registrations:', error);
       });
     }
-  }, []);
+  }, []); // Force fresh deployment - cache busting
 
   // Scroll to top on route change
   useEffect(() => {
