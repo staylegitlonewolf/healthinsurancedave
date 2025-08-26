@@ -66,7 +66,7 @@ const PromoThumbnail: React.FC = () => {
         }}
       >
         <img
-          src="/davidPromo.png"
+                          src="/healthinsurancedave/davidPromo.png"
           alt="David Brown Health Insurance Promotion"
           className="promo-thumbnail-image"
         />
@@ -99,7 +99,7 @@ const PromoThumbnail: React.FC = () => {
             <div className="promo-lightbox-content">
          
               <img
-                src="/davidPromo.png"
+                src="/healthinsurancedave/davidPromo.png"
                 alt="David Brown Health Insurance Promotion - Full Size"
                 className="promo-lightbox-image"
               />

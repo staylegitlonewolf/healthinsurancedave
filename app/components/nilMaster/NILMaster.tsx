@@ -450,19 +450,19 @@ const NILMaster = () => {
                <div className="nil-master-detail-content">
                  <div className="nil-credentials-grid">
                    <div className="nil-credential-item">
-                     <img src="/NiL/schoolLogo.png" alt="East Bay High School" className="nil-logo" />
+                     <img src="/healthinsurancedave/NiL/schoolLogo.png" alt="East Bay High School" className="nil-logo" />
                      <span>East Bay High School</span>
                    </div>
                    <div className="nil-credential-item">
-                     <img src="/NiL/maxprep.png" alt="MaxPreps" className="nil-logo" />
+                     <img src="/healthinsurancedave/NiL/maxprep.png" alt="MaxPreps" className="nil-logo" />
                      <span>MaxPreps Profile</span>
                    </div>
                    <div className="nil-credential-item">
-                     <img src="/NiL/FHSAA_logo.png" alt="FHSAA" className="nil-logo" />
+                     <img src="/healthinsurancedave/NiL/FHSAA_logo.png" alt="FHSAA" className="nil-logo" />
                      <span>FHSAA Certified</span>
                    </div>
                    <div className="nil-credential-item">
-                     <img src="/NiL/NCAA LOGO.png" alt="NCAA" className="nil-logo" />
+                     <img src="/healthinsurancedave/NiL/NCAA LOGO.png" alt="NCAA" className="nil-logo" />
                      <span>NCAA Compliant</span>
                    </div>
                  </div>

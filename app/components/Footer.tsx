@@ -33,7 +33,7 @@ export function Footer() {
             <div className="flex items-center mb-6">
               <div className="relative">
                 <img 
-                  src="/mainPhoto3.jpg" 
+                  src="/healthinsurancedave/mainPhoto3.jpg" 
                   alt="Health Insurance Dave" 
                   className="h-16 w-20 sm:h-20 sm:w-24 rounded-xl object-cover shadow-lg border-2 border-white/20 dark:border-gray-700/30"
                   draggable={false}

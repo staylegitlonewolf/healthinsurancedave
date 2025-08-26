@@ -43,9 +43,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-        <link rel="icon" type="image/png" href="/logo.png" />
-        <link rel="shortcut icon" type="image/png" href="/logo.png" />
-        <link rel="apple-touch-icon" href="/logo.png" />
+        <link rel="icon" type="image/png" href="/healthinsurancedave/logo.png" />
+        <link rel="shortcut icon" type="image/png" href="/healthinsurancedave/logo.png" />
+        <link rel="apple-touch-icon" href="/healthinsurancedave/logo.png" />
         <Meta />
         <Links />
       </head>

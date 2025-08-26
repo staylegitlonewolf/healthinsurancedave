@@ -215,7 +215,7 @@ export function GlobalHeader() {
           >
             <div className="relative">
               <img 
-                src="/logo.png" 
+                src="/healthinsurancedave/logo.png" 
                 alt="Health Insurance Dave" 
                 className={`select-none transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 ${
                   isHeaderCollapsed ? 'h-[30px] w-[30px] sm:h-[25px] sm:w-[25px]' : 'h-[45px] w-[45px] sm:h-[40px] sm:w-[40px]'

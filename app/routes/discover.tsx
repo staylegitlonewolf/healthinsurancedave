@@ -456,7 +456,7 @@ export default function Team() {
               // School information for NIL specialists
               <>
                 <div className="contact-item school-item">
-                  <img src="/NiL/schoolLogo.png" alt="School Logo" className="school-logo" />
+                  <img src="/healthinsurancedave/NiL/schoolLogo.png" alt="School Logo" className="school-logo" />
                   <span>East Bay High School</span>
                 </div>
                 <div className="contact-item school-item">
@@ -530,7 +530,7 @@ export default function Team() {
                 <span key={index} className={`service-badge ${service === 'Cannabis Health' ? 'cannabis-service-badge' : ''}`}>
                   {service === 'Cannabis Health' ? (
                     <>
-                      <img src="/cannabisLogo.png" alt="Cannabis" className="cannabis-service-icon" />
+                      <img src="/healthinsurancedave/cannabisLogo.png" alt="Cannabis" className="cannabis-service-icon" />
                       NEW Cannabis for Business
                     </>
                   ) : (
@@ -584,7 +584,7 @@ export default function Team() {
                    // School information for NIL specialists
                    <>
                      <div className="health-contact-item school-item">
-                       <img src="/NiL/schoolLogo.png" alt="School Logo" className="school-logo" />
+                       <img src="/healthinsurancedave/NiL/schoolLogo.png" alt="School Logo" className="school-logo" />
                        <span>East Bay High School</span>
                      </div>
                      <div className="health-contact-item school-item">
@@ -618,7 +618,7 @@ export default function Team() {
                     <span key={index} className={`health-service-badge ${service === 'Cannabis Health' ? 'cannabis-service-badge' : ''}`}>
                       {service === 'Cannabis Health' ? (
                         <>
-                          <img src="/cannabisLogo.png" alt="Cannabis" className="cannabis-service-icon" />
+                          <img src="/healthinsurancedave/cannabisLogo.png" alt="Cannabis" className="cannabis-service-icon" />
                           NEW Cannabis for Business
                         </>
                       ) : (
