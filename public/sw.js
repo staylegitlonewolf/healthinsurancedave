@@ -1,5 +1,5 @@
-const CACHE_NAME = 'lva-site-v4';
-const STATIC_CACHE = 'lva-static-v4';
+const CACHE_NAME = 'lva-site-v5';
+const STATIC_CACHE = 'lva-static-v5';
 const BASE_PATH = '/healthinsurancedave/';
 const urlsToCache = [
   BASE_PATH,
@@ -12,15 +12,15 @@ const urlsToCache = [
   BASE_PATH + 'solar_master'
 ];
 
-// Cache static assets
+// Cache static assets - these should be relative to the root since SW runs at root level
 const staticAssets = [
-  BASE_PATH + 'NiL/schoolLogo.png',
-  BASE_PATH + 'NiL/Vicotoria.png',
-  BASE_PATH + 'NiL/Vicotoria1.png',
-  BASE_PATH + 'NiL/Vicotoria2.png',
-  BASE_PATH + 'NiL/victoriaAward.png',
-  BASE_PATH + 'Health/David Brown.png',
-  BASE_PATH + 'Health/Matthias Wendler.png'
+  '/NiL/schoolLogo.png',
+  '/NiL/Vicotoria.png',
+  '/NiL/Vicotoria1.png',
+  '/NiL/Vicotoria2.png',
+  '/NiL/victoriaAward.png',
+  '/Health/David Brown.png',
+  '/Health/Matthias Wendler.png'
 ];
 
 // Install event - cache resources with error handling

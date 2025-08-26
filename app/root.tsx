@@ -81,13 +81,13 @@ export default function App() {
       navigator.serviceWorker.getRegistrations().then((registrations) => {
         for (const registration of registrations) {
           registration.unregister();
-          console.log('SW unregistered to clear cache');
+          console.log('SW unregistered to clear cache - VERSION 3');
         }
       }).catch((error) => {
         console.warn('Failed to get service worker registrations:', error);
       });
     }
-  }, []); // Force fresh deployment - cache busting
+  }, []); // Force fresh deployment - cache busting VERSION 3
 
   // Scroll to top on route change
   useEffect(() => {
