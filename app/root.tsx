@@ -74,38 +74,17 @@ export default function App() {
   const hideHeader = isContactPage; // Hide header on contact page
   const hideFooter = isContactPage || isCertificationMaster; // Hide footer on contact and certification master pages
 
-  // Register service worker for caching with better error handling
+  // Temporarily disable service worker to fix caching issues
   useEffect(() => {
-    if ('serviceWorker' in navigator && import.meta.env.PROD) {
-      navigator.serviceWorker.register('/sw.js')
-        .then((registration) => {
-          // console.log('SW registered: ', registration);
-          
-          // Check for updates
-          registration.addEventListener('updatefound', () => {
-            const newWorker = registration.installing;
-            if (newWorker) {
-              newWorker.addEventListener('statechange', () => {
-                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                  // New service worker available
-                  // console.log('New service worker available');
-                }
-              });
-            }
-          });
-        })
-        .catch((registrationError) => {
-          // console.warn('SW registration failed: ', registrationError);
-        });
-    } else if (import.meta.env.DEV && 'serviceWorker' in navigator) {
-      // Unregister service worker in development to avoid caching issues
+    if ('serviceWorker' in navigator) {
+      // Unregister all service workers to clear cache
       navigator.serviceWorker.getRegistrations().then((registrations) => {
         for (const registration of registrations) {
           registration.unregister();
-          // console.log('SW unregistered in development mode');
+          console.log('SW unregistered to clear cache');
         }
       }).catch((error) => {
-                  // console.warn('Failed to get service worker registrations:', error);
+        console.warn('Failed to get service worker registrations:', error);
       });
     }
   }, []);
