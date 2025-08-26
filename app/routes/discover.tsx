@@ -80,7 +80,7 @@ const useLazyImage = (src: string) => {
         setIsLoaded(true);
         // Fallback to placeholder if image fails to load
         if (imgRef.current) {
-          imgRef.current.src = '/healthinsurancedave/NiL/comingsoon.png';
+          imgRef.current.src = '/healthinsurancedave/NiL/Vicotoria.png';
         }
       };
       img.src = src;
@@ -232,7 +232,7 @@ export default function Team() {
       name: 'Huawei Solar',
       title: 'Smart Solar & Energy Storage',
       category: 'solar',
-      image: '/Solar/solarHuawei.png',   
+      image: '/healthinsurancedave/Solar/solarHuawei.png',   
       website: 'https://solar.huawei.com/en/',
       description: 'Huawei Solar is a global leader in smart solar solutions and energy storage systems, combining cutting-edge technology with intelligent energy management. Our FusionSolar solutions integrate solar inverters, energy storage, and smart grid technologies to create comprehensive energy ecosystems. With AI-powered optimization and cloud-based monitoring, Huawei Solar delivers maximum efficiency, reliability, and intelligent energy management for residential and commercial applications.',
       services: ['Smart Inverters', 'Energy Storage Systems', 'AI Optimization', 'Cloud Monitoring', 'Grid Integration', 'Commercial Solutions'],
@@ -243,7 +243,7 @@ export default function Team() {
       name: 'Jinko Solar',
       title: 'World-Class Solar Technology',
       category: 'solar',
-      image: '/Solar/solarJinko.png',
+      image: '/healthinsurancedave/Solar/solarJinko.png',
       website: 'https://jinkosolar.us/',
       description: 'Jinko Solar is a world-class solar panel manufacturer delivering cutting-edge technology and exceptional quality. As one of the largest and most innovative solar companies globally, we produce high-efficiency modules using advanced PERC, TOPCon, and HJT technologies. Our commitment to research and development has resulted in multiple world records for solar cell efficiency. Jinko Solar provides reliable, high-performance solar solutions backed by industry-leading warranties and comprehensive customer support.',
       services: ['High-Efficiency Modules', 'PERC Technology', 'TOPCon Cells', 'HJT Technology', 'Global Support', 'Extended Warranties'],
@@ -254,7 +254,7 @@ export default function Team() {
       name: 'Qcells',
       title: 'Premium Solar Cell Technology',
       category: 'solar',
-      image: '/Solar/solarQcells.png',      
+      image: '/healthinsurancedave/Solar/solarQcells.png',      
       website: 'https://www.qcells.com/',
       description: 'Qcells is a global leader in premium solar cell and module technology, delivering maximum efficiency and reliability. Our advanced Q.ANTUM technology combines PERC, QID, and Zero Gap technology to achieve superior performance and durability. With manufacturing facilities in the United States and worldwide, Qcells provides high-quality solar solutions with industry-leading warranties and comprehensive technical support for residential and commercial applications.',
       services: ['Q.ANTUM Technology', 'PERC Solar Cells', 'Zero Gap Technology', 'High Efficiency Modules', 'US Manufacturing', 'Premium Warranties'],
@@ -265,7 +265,7 @@ export default function Team() {
       name: 'Trina Solar',
       title: 'Global Solar Energy Solutions',
       category: 'solar',
-      image: '/Solar/solarTrinasolar.png',
+      image: '/healthinsurancedave/Solar/solarTrinasolar.png',
       website: 'https://www.trinasolar.com/us',
       description: 'Trina Solar is a global leader in solar energy solutions, providing comprehensive products and services worldwide. Our innovative Vertex series modules feature advanced cell technology and industry-leading efficiency ratings. With over 25 years of experience and a presence in more than 100 countries, Trina Solar delivers reliable, high-performance solar solutions backed by extensive research and development, comprehensive warranties, and global customer support.',
       services: ['Vertex Series Modules', 'Advanced Cell Technology', 'Global Solutions', 'High Efficiency', 'Comprehensive Support', 'Research & Development'],
@@ -394,7 +394,7 @@ export default function Team() {
 
     const handleImageError = useCallback((e: React.SyntheticEvent<HTMLImageElement>) => {
       // Fallback to placeholder
-              e.currentTarget.src = '/healthinsurancedave/NiL/comingsoon.png';
+              e.currentTarget.src = '/healthinsurancedave/NiL/Vicotoria.png';
     }, []);
 
     const handleCardClick = useCallback(() => {

@@ -44,9 +44,9 @@ export default function Certifications() {
       id: 1,
       name: "Colorado",
       status: "Active",
-      image: "/media/Certification/Colorado.png",
+      image: "/healthinsurancedave/media/Certification/Colorado.png",
       flagIcon: "🏔️",
-      flagImage: "/Flags/Colorado.svg",
+      flagImage: "/healthinsurancedave/Flags/Colorado.svg",
       stateColor: "#002868",
       licenseData: {
         licenseNumber: "890294",
@@ -59,11 +59,11 @@ export default function Certifications() {
       id: 2,
       name: "Florida",
       status: "Active",
-      image: "/media/Certification/Florida.png",
+      image: "/healthinsurancedave/media/Certification/Florida.png",
       flagIcon: "🌴",
-      flagImage: "/Flags/Florida.svg",
+      flagImage: "/healthinsurancedave/Flags/Florida.svg",
       stateColor: "#002868",
-      pdfUrl: "/media/Certification/Florida_pdf.pdf",
+      pdfUrl: "/healthinsurancedave/media/Certification/Florida_pdf.pdf",
       licenseData: {
         licenseNumber: "G223402",
         npn: "21533411",
@@ -71,19 +71,19 @@ export default function Certifications() {
         expirationDate: "-"
       },
       galleryImages: [
-        { src: "/media/Certification/Florida.png", caption: "Florida License" },
-        { src: "/media/Certification/Florida1.png", caption: "View " }
+        { src: "/healthinsurancedave/media/Certification/Florida.png", caption: "Florida License" },
+        { src: "/healthinsurancedave/media/Certification/Florida1.png", caption: "View " }
       ]
     },
     { 
       id: 3,
       name: "Georgia",
       status: "Active",
-      image: "/media/Certification/Georgia.png",
+      image: "/healthinsurancedave/media/Certification/Georgia.png",
       flagIcon: "🍑",
-      flagImage: "/Flags/Georgia.svg",
+      flagImage: "/healthinsurancedave/Flags/Georgia.svg",
       stateColor: "#B31B1B",
-      pdfUrl: "/media/Certification/Georgia_pdf.pdf",
+      pdfUrl: "/healthinsurancedave/media/Certification/Georgia_pdf.pdf",
       licenseData: {
         licenseNumber: "3800610",
         npn: "21533411",
@@ -95,11 +95,11 @@ export default function Certifications() {
       id: 4,
       name: "Maryland",
       status: "Active",
-      image: "/media/Certification/Maryland.png",
+      image: "/healthinsurancedave/media/Certification/Maryland.png",
       flagIcon: "🦀",
-      flagImage: "/Flags/Maryland.svg",
+      flagImage: "/healthinsurancedave/Flags/Maryland.svg",
       stateColor: "#B31B1B",
-      pdfUrl: "/media/Certification/Maryland_pdf.pdf",
+      pdfUrl: "/healthinsurancedave/media/Certification/Maryland_pdf.pdf",
       licenseData: {
         licenseNumber: "3003608516",
         npn: "21533411",
@@ -111,9 +111,9 @@ export default function Certifications() {
       id: 5,
       name: "Nevada",
       status: "Active",
-      image: "/media/Certification/Nevada.png",
+      image: "/healthinsurancedave/media/Certification/Nevada.png",
       flagIcon: "🎰",
-      flagImage: "/Flags/Nevada.svg",
+      flagImage: "/healthinsurancedave/Flags/Nevada.svg",
       stateColor: "#002868",
       licenseData: {
         licenseNumber: "4104634",
@@ -126,11 +126,11 @@ export default function Certifications() {
       id: 6,
       name: "Ohio",
       status: "Active",
-      image: "/media/Certification/Ohio.png",
+      image: "/healthinsurancedave/media/Certification/Ohio.png",
       flagIcon: "🌰",
-      flagImage: "/Flags/Ohio.svg",
+      flagImage: "/healthinsurancedave/Flags/Ohio.svg",
       stateColor: "#B31B1B",
-      pdfUrl: "/media/Certification/Ohio_pdf.pdf",
+      pdfUrl: "/healthinsurancedave/media/Certification/Ohio_pdf.pdf",
       licenseData: {
         licenseNumber: "1653852",
         npn: "21533411",
@@ -142,11 +142,11 @@ export default function Certifications() {
       id: 7,
       name: "Tennessee",
       status: "Active",
-      image: "/media/Certification/Tennessee.png",
+      image: "/healthinsurancedave/media/Certification/Tennessee.png",
       flagIcon: "🎸",
-      flagImage: "/Flags/Tennessee.svg",
+      flagImage: "/healthinsurancedave/Flags/Tennessee.svg",
       stateColor: "#DC143C",
-      pdfUrl: "/media/Certification/Tennessee_pdf.pdf",
+      pdfUrl: "/healthinsurancedave/media/Certification/Tennessee_pdf.pdf",
       licenseData: {
         licenseNumber: "3003608514",
         npn: "21533411",
@@ -158,9 +158,9 @@ export default function Certifications() {
       id: 8,
       name: "Texas",
       status: "Active",
-      image: "/media/Certification/Texas.png",
+      image: "/healthinsurancedave/media/Certification/Texas.png",
       flagIcon: "🤠",
-      flagImage: "/Flags/Texas.svg",
+      flagImage: "/healthinsurancedave/Flags/Texas.svg",
       stateColor: "#002868",
       licenseData: {
         licenseNumber: "3323905",
@@ -173,9 +173,9 @@ export default function Certifications() {
       id: 9,
       name: "Utah",
       status: "Active",
-      image: "/media/Certification/Utah.png",
+      image: "/healthinsurancedave/media/Certification/Utah.png",
       flagIcon: "🏔️",
-      flagImage: "/Flags/Utah.svg",
+      flagImage: "/healthinsurancedave/Flags/Utah.svg",
       stateColor: "#002868",
       licenseData: {
         licenseNumber: "1070494",
@@ -188,9 +188,9 @@ export default function Certifications() {
       id: 10,
       name: "Virginia",
       status: "Active",
-      image: "/media/Certification/Virginia.png",
+      image: "/healthinsurancedave/media/Certification/Virginia.png",
       flagIcon: "🌊",
-      flagImage: "/Flags/Virginia.svg",
+      flagImage: "/healthinsurancedave/Flags/Virginia.svg",
       stateColor: "#B31B1B",
       licenseData: {
         licenseNumber: "1505466",
@@ -275,32 +275,7 @@ export default function Certifications() {
         ))}
       </div>
       
-      {/* Coming Soon Message */}
-      <div className="coming-soon-section">
-        <div className="coming-soon-card">
-          <div className="coming-soon-icon">
-            <i className="fas fa-rocket"></i>
-          </div>
-          <div className="coming-soon-content">
-            <h3>More Certifications Coming Soon!</h3>
-            <p>We're actively expanding our licensing portfolio to include additional states and specialized certifications, including cannabis business insurance licenses. Stay tuned for updates as we continue to grow our service reach.</p>
-            <div className="coming-soon-badges">
-              <span className="badge cannabis">
-                <i className="fas fa-leaf"></i>
-                Cannabis Licenses
-              </span>
-              <span className="badge expansion">
-                <i className="fas fa-map-marked-alt"></i>
-                More States
-              </span>
-              <span className="badge specialized">
-                <i className="fas fa-certificate"></i>
-                Specialized Coverage
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
+
     </div>
   );
 }

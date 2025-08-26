@@ -94,7 +94,7 @@ const NILMaster = () => {
     } else {
       // Default gallery for other specialists
       return [
-        { src: enhancedSpecialistData?.image || '/healthinsurancedave/NiL/comingsoon.png', caption: 'Main Photo' }
+        { src: enhancedSpecialistData?.image || '/healthinsurancedave/NiL/Vicotoria.png', caption: 'Main Photo' }
       ];
     }
   }, [enhancedSpecialistData]);

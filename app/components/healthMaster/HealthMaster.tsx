@@ -28,7 +28,7 @@ const HealthMaster = () => {
         name: 'David Brown',
         title: 'Health Coverage Expert',
         category: 'health',
-        image: '/Health/David Brown.png',
+        image: '/healthinsurancedave/Health/David Brown.png',
         phone: '(813) 647-1118',
         email: 'ElevatedHealthDavid@gmail.com',
         description: 'Licensed Health Coverage Expert with access to all options. Leading our mission to connect clients with the best solutions across all services. Specialized in cannabis health partnerships and industry-specific coverage solutions.',
@@ -40,7 +40,7 @@ const HealthMaster = () => {
         name: 'Matthias Wendler',
         title: 'Health Coverage Expert',
         category: 'health',
-        image: '/Health/Matthias Wendler.png',
+        image: '/healthinsurancedave/Health/Matthias Wendler.png',
         phone: '(813) 230-6033',
         email: 'ElevatedHealthMatthias@gmail.com',
         description: 'Licensed Health Coverage Expert with access to all options. Focuses on expanding our service reach and building strategic partnerships.',
@@ -55,9 +55,9 @@ const HealthMaster = () => {
   const getMasterPhoto = (memberName: string) => {
     switch (memberName.toLowerCase()) {
       case 'david brown':
-        return '/Health/masterDavid.png'
+        return '/healthinsurancedave/Health/masterDavid.png'
       case 'matthias wendler':
-        return '/Health/masterMatthias.png'
+        return '/healthinsurancedave/Health/masterMatthias.png'
       default:
         return profileData?.image || ''
     }

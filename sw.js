@@ -14,7 +14,7 @@ const urlsToCache = [
 // Cache static assets
 const staticAssets = [
   '/NiL/schoolLogo.png',
-  '/NiL/comingsoon.png',
+ 
   '/NiL/Vicotoria.png',
   '/NiL/Vicotoria1.png',
   '/NiL/Vicotoria2.png',
