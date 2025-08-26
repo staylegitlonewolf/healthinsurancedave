@@ -67,6 +67,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+  // Updated for GitHub Pages deployment - all image paths fixed
   const location = useLocation();
   const isContactPage = location.pathname === '/contact';
   const isCertificationMaster = location.pathname === '/certification_master';
