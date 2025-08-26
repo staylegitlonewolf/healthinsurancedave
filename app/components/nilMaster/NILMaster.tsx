@@ -86,15 +86,15 @@ const NILMaster = () => {
   const galleryImages = useMemo(() => {
     if (enhancedSpecialistData?.name === 'Victoria Whitfield') {
       return [
-        { src: enhancedSpecialistData?.image || '/NiL/Vicotoria.png', caption: 'Main Photo' },
-        { src: '/NiL/Vicotoria1.png', caption: 'Game Action' },
-        { src: '/NiL/Vicotoria2.png', caption: 'Team Spirit' },
-        { src: '/NiL/victoriaAward.png', caption: 'Award Recognition' }
+        { src: enhancedSpecialistData?.image || '/healthinsurancedave/NiL/Vicotoria.png', caption: 'Main Photo' },
+                  { src: '/healthinsurancedave/NiL/Vicotoria1.png', caption: 'Game Action' },
+          { src: '/healthinsurancedave/NiL/Vicotoria2.png', caption: 'Team Spirit' },
+          { src: '/healthinsurancedave/NiL/victoriaAward.png', caption: 'Award Recognition' }
       ];
     } else {
       // Default gallery for other specialists
       return [
-        { src: enhancedSpecialistData?.image || '/NiL/comingsoon.png', caption: 'Main Photo' }
+        { src: enhancedSpecialistData?.image || '/healthinsurancedave/NiL/comingsoon.png', caption: 'Main Photo' }
       ];
     }
   }, [enhancedSpecialistData]);
