@@ -1,6 +1,7 @@
 
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { IMAGES } from '../../src/utils/imageUtils';
 import "./certifications.css";
 
 export function meta() {
@@ -44,9 +45,9 @@ export default function Certifications() {
       id: 1,
       name: "Colorado",
       status: "Active",
-      image: "/media/Certification/Colorado.png",
+      image: IMAGES.CERT_COLORADO,
       flagIcon: "🏔️",
-      flagImage: "/Flags/Colorado.svg",
+      flagImage: IMAGES.FLAG_COLORADO,
       stateColor: "#002868",
       licenseData: {
         licenseNumber: "890294",
@@ -59,11 +60,11 @@ export default function Certifications() {
       id: 2,
       name: "Florida",
       status: "Active",
-      image: "/media/Certification/Florida.png",
+      image: IMAGES.CERT_FLORIDA,
       flagIcon: "🌴",
-      flagImage: "/Flags/Florida.svg",
+      flagImage: IMAGES.FLAG_FLORIDA,
       stateColor: "#002868",
-      pdfUrl: "/media/Certification/Florida_pdf.pdf",
+      pdfUrl: IMAGES.PDF_FLORIDA,
       licenseData: {
         licenseNumber: "G223402",
         npn: "21533411",
@@ -71,19 +72,19 @@ export default function Certifications() {
         expirationDate: "-"
       },
       galleryImages: [
-        { src: "/media/Certification/Florida.png", caption: "Florida License" },
-        { src: "/media/Certification/Florida1.png", caption: "View " }
+        { src: IMAGES.CERT_FLORIDA, caption: "Florida License" },
+        { src: IMAGES.CERT_FLORIDA1, caption: "View " }
       ]
     },
     { 
       id: 3,
       name: "Georgia",
       status: "Active",
-      image: "/media/Certification/Georgia.png",
+      image: IMAGES.CERT_GEORGIA,
       flagIcon: "🍑",
-      flagImage: "/Flags/Georgia.svg",
+      flagImage: IMAGES.FLAG_GEORGIA,
       stateColor: "#B31B1B",
-      pdfUrl: "/media/Certification/Georgia_pdf.pdf",
+      pdfUrl: IMAGES.PDF_GEORGIA,
       licenseData: {
         licenseNumber: "3800610",
         npn: "21533411",
@@ -95,11 +96,11 @@ export default function Certifications() {
       id: 4,
       name: "Maryland",
       status: "Active",
-      image: "/media/Certification/Maryland.png",
+      image: IMAGES.CERT_MARYLAND,
       flagIcon: "🦀",
-      flagImage: "/Flags/Maryland.svg",
+      flagImage: IMAGES.FLAG_MARYLAND,
       stateColor: "#B31B1B",
-      pdfUrl: "/media/Certification/Maryland_pdf.pdf",
+      pdfUrl: IMAGES.PDF_MARYLAND,
       licenseData: {
         licenseNumber: "3003608516",
         npn: "21533411",
@@ -111,9 +112,9 @@ export default function Certifications() {
       id: 5,
       name: "Nevada",
       status: "Active",
-      image: "/media/Certification/Nevada.png",
+      image: IMAGES.CERT_NEVADA,
       flagIcon: "🎰",
-      flagImage: "/Flags/Nevada.svg",
+      flagImage: IMAGES.FLAG_NEVADA,
       stateColor: "#002868",
       licenseData: {
         licenseNumber: "4104634",
@@ -126,11 +127,11 @@ export default function Certifications() {
       id: 6,
       name: "Ohio",
       status: "Active",
-      image: "/media/Certification/Ohio.png",
+      image: IMAGES.CERT_OHIO,
       flagIcon: "🌰",
-      flagImage: "/Flags/Ohio.svg",
+      flagImage: IMAGES.FLAG_OHIO,
       stateColor: "#B31B1B",
-      pdfUrl: "/media/Certification/Ohio_pdf.pdf",
+      pdfUrl: IMAGES.PDF_OHIO,
       licenseData: {
         licenseNumber: "1653852",
         npn: "21533411",
@@ -142,11 +143,11 @@ export default function Certifications() {
       id: 7,
       name: "Tennessee",
       status: "Active",
-      image: "/media/Certification/Tennessee.png",
+      image: IMAGES.CERT_TENNESSEE,
       flagIcon: "🎸",
-      flagImage: "/Flags/Tennessee.svg",
+      flagImage: IMAGES.FLAG_TENNESSEE,
       stateColor: "#DC143C",
-      pdfUrl: "/media/Certification/Tennessee_pdf.pdf",
+      pdfUrl: IMAGES.PDF_TENNESSEE,
       licenseData: {
         licenseNumber: "3003608514",
         npn: "21533411",
@@ -158,9 +159,9 @@ export default function Certifications() {
       id: 8,
       name: "Texas",
       status: "Active",
-      image: "/media/Certification/Texas.png",
+      image: IMAGES.CERT_TEXAS,
       flagIcon: "🤠",
-      flagImage: "/Flags/Texas.svg",
+      flagImage: IMAGES.FLAG_TEXAS,
       stateColor: "#002868",
       licenseData: {
         licenseNumber: "3323905",
@@ -173,9 +174,9 @@ export default function Certifications() {
       id: 9,
       name: "Utah",
       status: "Active",
-      image: "/media/Certification/Utah.png",
+      image: IMAGES.CERT_UTAH,
       flagIcon: "🏔️",
-      flagImage: "/Flags/Utah.svg",
+      flagImage: IMAGES.FLAG_UTAH,
       stateColor: "#002868",
       licenseData: {
         licenseNumber: "1070494",
@@ -188,9 +189,9 @@ export default function Certifications() {
       id: 10,
       name: "Virginia",
       status: "Active",
-      image: "/media/Certification/Virginia.png",
+      image: IMAGES.CERT_VIRGINIA,
       flagIcon: "🌊",
-      flagImage: "/Flags/Virginia.svg",
+      flagImage: IMAGES.FLAG_VIRGINIA,
       stateColor: "#B31B1B",
       licenseData: {
         licenseNumber: "1505466",
