@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './OtherServices.css'
 import { initScrollAnimations, addStaggerAnimation } from '../../components/scrollAnimations'
+import { IMAGES } from '../../../src/utils/imageUtils'
 
 const OtherServices: React.FC = () => {
   const navigate = useNavigate()
@@ -106,23 +107,23 @@ const OtherServices: React.FC = () => {
                 <h4>Powered by Modern Technology</h4>
                 <div className="tech-stack-grid">
                   <div className="tech-item">
-                                    <img src="/react.webp" alt="React" className="tech-logo" />
+                                    <img src={IMAGES.REACT} alt="React" className="tech-logo" />
                 <span>React</span>
               </div>
               <div className="tech-item">
-                <img src="/typescript.webp" alt="TypeScript" className="tech-logo" />
+                <img src={IMAGES.TYPESCRIPT} alt="TypeScript" className="tech-logo" />
                 <span>TypeScript</span>
               </div>
               <div className="tech-item">
-                <img src="/vite.webp" alt="Vite" className="tech-logo" />
+                <img src={IMAGES.VITE} alt="Vite" className="tech-logo" />
                 <span>Vite</span>
               </div>
               <div className="tech-item">
-                <img src="/tailwind.webp" alt="Tailwind CSS" className="tech-logo" />
+                <img src={IMAGES.TAILWIND} alt="Tailwind CSS" className="tech-logo" />
                 <span>Tailwind CSS</span>
               </div>
               <div className="tech-item">
-                <img src="/react-router.webp" alt="React Router" className="tech-logo" />
+                <img src={IMAGES.REACT_ROUTER} alt="React Router" className="tech-logo" />
                     <span>React Router</span>
                   </div>
                   <div className="tech-item">
