@@ -1,8 +1,8 @@
-import type { Route } from "./+types/disclaimer";
-import { Link } from 'react-router';
+
+import { Link } from 'react-router-dom';
 import "./disclaimer.css";
 
-export function meta({}: Route.MetaArgs) {
+export function meta() {
   return [
     { title: "Disclaimer - Health Insurance Dave" },
     { name: "description", content: "Legal disclaimers and terms for Health Insurance Dave services" },

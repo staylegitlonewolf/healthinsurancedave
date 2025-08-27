@@ -1,9 +1,9 @@
-import type { Route } from "./+types/certifications";
+
 import { useState, useEffect, useMemo, useCallback } from 'react';
-import { useNavigate, useLocation } from 'react-router';
+import { useNavigate, useLocation } from 'react-router-dom';
 import "./certifications.css";
 
-export function meta({}: Route.MetaArgs) {
+export function meta() {
   return [
     { title: "Certifications - Health Insurance Dave" },
     { name: "description", content: "View our licenses and certifications" },
@@ -44,9 +44,9 @@ export default function Certifications() {
       id: 1,
       name: "Colorado",
       status: "Active",
-      image: "/healthinsurancedave/media/Certification/Colorado.png",
+      image: "/media/Certification/Colorado.png",
       flagIcon: "🏔️",
-      flagImage: "/healthinsurancedave/Flags/Colorado.svg",
+      flagImage: "/Flags/Colorado.svg",
       stateColor: "#002868",
       licenseData: {
         licenseNumber: "890294",
@@ -59,11 +59,11 @@ export default function Certifications() {
       id: 2,
       name: "Florida",
       status: "Active",
-      image: "/healthinsurancedave/media/Certification/Florida.png",
+      image: "/media/Certification/Florida.png",
       flagIcon: "🌴",
-      flagImage: "/healthinsurancedave/Flags/Florida.svg",
+      flagImage: "/Flags/Florida.svg",
       stateColor: "#002868",
-      pdfUrl: "/healthinsurancedave/media/Certification/Florida_pdf.pdf",
+      pdfUrl: "/media/Certification/Florida_pdf.pdf",
       licenseData: {
         licenseNumber: "G223402",
         npn: "21533411",
@@ -71,19 +71,19 @@ export default function Certifications() {
         expirationDate: "-"
       },
       galleryImages: [
-        { src: "/healthinsurancedave/media/Certification/Florida.png", caption: "Florida License" },
-        { src: "/healthinsurancedave/media/Certification/Florida1.png", caption: "View " }
+        { src: "/media/Certification/Florida.png", caption: "Florida License" },
+        { src: "/media/Certification/Florida1.png", caption: "View " }
       ]
     },
     { 
       id: 3,
       name: "Georgia",
       status: "Active",
-      image: "/healthinsurancedave/media/Certification/Georgia.png",
+      image: "/media/Certification/Georgia.png",
       flagIcon: "🍑",
-      flagImage: "/healthinsurancedave/Flags/Georgia.svg",
+      flagImage: "/Flags/Georgia.svg",
       stateColor: "#B31B1B",
-      pdfUrl: "/healthinsurancedave/media/Certification/Georgia_pdf.pdf",
+      pdfUrl: "/media/Certification/Georgia_pdf.pdf",
       licenseData: {
         licenseNumber: "3800610",
         npn: "21533411",
@@ -95,11 +95,11 @@ export default function Certifications() {
       id: 4,
       name: "Maryland",
       status: "Active",
-      image: "/healthinsurancedave/media/Certification/Maryland.png",
+      image: "/media/Certification/Maryland.png",
       flagIcon: "🦀",
-      flagImage: "/healthinsurancedave/Flags/Maryland.svg",
+      flagImage: "/Flags/Maryland.svg",
       stateColor: "#B31B1B",
-      pdfUrl: "/healthinsurancedave/media/Certification/Maryland_pdf.pdf",
+      pdfUrl: "/media/Certification/Maryland_pdf.pdf",
       licenseData: {
         licenseNumber: "3003608516",
         npn: "21533411",
@@ -111,9 +111,9 @@ export default function Certifications() {
       id: 5,
       name: "Nevada",
       status: "Active",
-      image: "/healthinsurancedave/media/Certification/Nevada.png",
+      image: "/media/Certification/Nevada.png",
       flagIcon: "🎰",
-      flagImage: "/healthinsurancedave/Flags/Nevada.svg",
+      flagImage: "/Flags/Nevada.svg",
       stateColor: "#002868",
       licenseData: {
         licenseNumber: "4104634",
@@ -126,11 +126,11 @@ export default function Certifications() {
       id: 6,
       name: "Ohio",
       status: "Active",
-      image: "/healthinsurancedave/media/Certification/Ohio.png",
+      image: "/media/Certification/Ohio.png",
       flagIcon: "🌰",
-      flagImage: "/healthinsurancedave/Flags/Ohio.svg",
+      flagImage: "/Flags/Ohio.svg",
       stateColor: "#B31B1B",
-      pdfUrl: "/healthinsurancedave/media/Certification/Ohio_pdf.pdf",
+      pdfUrl: "/media/Certification/Ohio_pdf.pdf",
       licenseData: {
         licenseNumber: "1653852",
         npn: "21533411",
@@ -142,11 +142,11 @@ export default function Certifications() {
       id: 7,
       name: "Tennessee",
       status: "Active",
-      image: "/healthinsurancedave/media/Certification/Tennessee.png",
+      image: "/media/Certification/Tennessee.png",
       flagIcon: "🎸",
-      flagImage: "/healthinsurancedave/Flags/Tennessee.svg",
+      flagImage: "/Flags/Tennessee.svg",
       stateColor: "#DC143C",
-      pdfUrl: "/healthinsurancedave/media/Certification/Tennessee_pdf.pdf",
+      pdfUrl: "/media/Certification/Tennessee_pdf.pdf",
       licenseData: {
         licenseNumber: "3003608514",
         npn: "21533411",
@@ -158,9 +158,9 @@ export default function Certifications() {
       id: 8,
       name: "Texas",
       status: "Active",
-      image: "/healthinsurancedave/media/Certification/Texas.png",
+      image: "/media/Certification/Texas.png",
       flagIcon: "🤠",
-      flagImage: "/healthinsurancedave/Flags/Texas.svg",
+      flagImage: "/Flags/Texas.svg",
       stateColor: "#002868",
       licenseData: {
         licenseNumber: "3323905",
@@ -173,9 +173,9 @@ export default function Certifications() {
       id: 9,
       name: "Utah",
       status: "Active",
-      image: "/healthinsurancedave/media/Certification/Utah.png",
+      image: "/media/Certification/Utah.png",
       flagIcon: "🏔️",
-      flagImage: "/healthinsurancedave/Flags/Utah.svg",
+      flagImage: "/Flags/Utah.svg",
       stateColor: "#002868",
       licenseData: {
         licenseNumber: "1070494",
@@ -188,9 +188,9 @@ export default function Certifications() {
       id: 10,
       name: "Virginia",
       status: "Active",
-      image: "/healthinsurancedave/media/Certification/Virginia.png",
+      image: "/media/Certification/Virginia.png",
       flagIcon: "🌊",
-      flagImage: "/healthinsurancedave/Flags/Virginia.svg",
+      flagImage: "/Flags/Virginia.svg",
       stateColor: "#B31B1B",
       licenseData: {
         licenseNumber: "1505466",

@@ -1,6 +1,25 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react'
-import { useNavigate, useLocation } from 'react-router'
-import { useIPhoneDetection } from '../../lib/iPhone.jsx'
+import { useNavigate, useLocation } from 'react-router-dom'
+// Simple mobile detection hook
+const useIPhoneDetection = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => {
+      const userAgent = navigator.userAgent;
+      const isIPhone = /iPhone|iPod/.test(userAgent);
+      const isAndroid = /Android/.test(userAgent);
+      const isMobileDevice = isIPhone || isAndroid || window.innerWidth <= 768;
+      setIsMobile(isMobileDevice);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  
+  return { isMobile };
+};
 import './CertificationMaster.css'
 
 const CertificationMaster = () => {

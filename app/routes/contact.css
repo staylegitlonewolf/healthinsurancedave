@@ -663,14 +663,14 @@
   }
   
   .contact-info-card {
-    background: rgba(0, 0, 0, 0.9);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.95);
+    color: #1f2937;
+    border: 1px solid rgba(0, 0, 0, 0.1);
   }
   
   .method-item {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
   }
   
   .contact-info-card h3 {

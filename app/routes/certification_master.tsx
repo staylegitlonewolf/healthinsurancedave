@@ -1,7 +1,6 @@
-import type { Route } from "./+types/certification_master";
 import CertificationMaster from "../components/certificationMaster/CertificationMaster";
 
-export function meta({}: Route.MetaArgs) {
+export function meta() {
   return [
     { title: "Certification Details - Health Insurance Dave" },
     { name: "description", content: "View detailed certification information" },

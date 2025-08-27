@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useNavigate } from 'react-router'
+import { useNavigate } from 'react-router-dom'
 import './OtherServices.css'
 import { initScrollAnimations, addStaggerAnimation } from '../../components/scrollAnimations'
 
@@ -106,23 +106,23 @@ const OtherServices: React.FC = () => {
                 <h4>Powered by Modern Technology</h4>
                 <div className="tech-stack-grid">
                   <div className="tech-item">
-                    <img src="/healthinsurancedave/react.webp" alt="React" className="tech-logo" />
-                    <span>React</span>
-                  </div>
-                  <div className="tech-item">
-                    <img src="/healthinsurancedave/typescript.webp" alt="TypeScript" className="tech-logo" />
-                    <span>TypeScript</span>
-                  </div>
-                  <div className="tech-item">
-                    <img src="/healthinsurancedave/vite.webp" alt="Vite" className="tech-logo" />
-                    <span>Vite</span>
-                  </div>
-                  <div className="tech-item">
-                    <img src="/healthinsurancedave/tailwind.webp" alt="Tailwind CSS" className="tech-logo" />
-                    <span>Tailwind CSS</span>
-                  </div>
-                  <div className="tech-item">
-                    <img src="/healthinsurancedave/react-router.webp" alt="React Router" className="tech-logo" />
+                                    <img src="/react.webp" alt="React" className="tech-logo" />
+                <span>React</span>
+              </div>
+              <div className="tech-item">
+                <img src="/typescript.webp" alt="TypeScript" className="tech-logo" />
+                <span>TypeScript</span>
+              </div>
+              <div className="tech-item">
+                <img src="/vite.webp" alt="Vite" className="tech-logo" />
+                <span>Vite</span>
+              </div>
+              <div className="tech-item">
+                <img src="/tailwind.webp" alt="Tailwind CSS" className="tech-logo" />
+                <span>Tailwind CSS</span>
+              </div>
+              <div className="tech-item">
+                <img src="/react-router.webp" alt="React Router" className="tech-logo" />
                     <span>React Router</span>
                   </div>
                   <div className="tech-item">

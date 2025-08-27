@@ -1,10 +1,8 @@
-import type { Route } from "./+types/services";
 import MainServices from "./Services/MainServices";
 import OtherServices from "./Services/OtherServices";
 import FAQ from "./Services/FAQ";
-import "./Services/Services.css";
 
-export function meta({}: Route.MetaArgs) {
+export function meta() {
   return [
     { title: "Services - Health Insurance Dave" },
     { name: "description", content: "Comprehensive health insurance plans, web development, solar solutions, and NIL opportunities. Expert guidance for all your needs." },

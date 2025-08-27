@@ -1,7 +1,15 @@
 {
   "include": [
     "src/**/*.ts",
-    "src/**/*.tsx"
+    "src/**/*.tsx",
+    "app/**/*.ts",
+    "app/**/*.tsx"
+  ],
+  "exclude": [
+    "app/root.tsx",
+    "app/routes.ts",
+    "app/routes/**/+types/**",
+    ".react-router/**"
   ],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2022"],

@@ -1,9 +1,9 @@
-import type { Route } from "./+types/home";
+
 import { useRef, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import "./home.css";
 
-export function meta({}: Route.MetaArgs) {
+export function meta() {
   return [
     { title: "Health Insurance Dave - Health Plan Solutions" },
     { name: "description", content: "Find the right health plan with Health Insurance Dave" },
@@ -144,11 +144,31 @@ export default function Home() {
           </h1>
       
           <div className="hero-buttons">
-            <button onClick={() => navigate('/services')} className="btn-outline-accent">
+            <button 
+              onClick={() => {
+                navigate('/services');
+                // Scroll to top after navigation
+                setTimeout(() => {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 100);
+              }} 
+              className="btn-outline-accent"
+              aria-label="Explore our services"
+            >
               Explore Services
             </button>
             
-            <button onClick={() => navigate('/certifications')} className="btn-outline-accent">
+            <button 
+              onClick={() => {
+                navigate('/certifications');
+                // Scroll to top after navigation
+                setTimeout(() => {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 100);
+              }} 
+              className="btn-outline-accent"
+              aria-label="View our certifications"
+            >
               View Certifications
             </button>
           </div>
@@ -159,7 +179,7 @@ export default function Home() {
               onClick={() => setShowCannabisLightbox(true)}
               className="new-service-btn"
             >
-              <img src="/healthinsurancedave/cannabisLogo.png" alt="Cannabis" className="cannabis-icon-img" />
+                              <img src="/cannabisLogo.png" alt="Cannabis" className="cannabis-icon-img" />
               <span>New: Cannabis Business Insurance</span>
               <i className="fas fa-arrow-right"></i>
             </button>
@@ -171,23 +191,23 @@ export default function Home() {
               <h2 className="powered-by-title">Powered by</h2>
               <div className="powered-by-logos">
                 <div className="powered-by-item" title="React">
-                  <img src="/healthinsurancedave/react.webp" alt="React" className="powered-by-logo" loading="lazy" decoding="async" width={28} height={28} />
+                  <img src="/react.webp" alt="React" className="powered-by-logo" loading="lazy" decoding="async" width={28} height={28} />
                   <span>React</span>
                 </div>
                 <div className="powered-by-item" title="React Router">
-                  <img src="/healthinsurancedave/react-router.webp" alt="React Router" className="powered-by-logo" loading="lazy" decoding="async" width={28} height={28} />
+                  <img src="/react-router.webp" alt="React Router" className="powered-by-logo" loading="lazy" decoding="async" width={28} height={28} />
                   <span>React Router</span>
                 </div>
                 <div className="powered-by-item" title="Vite">
-                  <img src="/healthinsurancedave/vite.webp" alt="Vite" className="powered-by-logo" loading="lazy" decoding="async" width={28} height={28} />
+                  <img src="/vite.webp" alt="Vite" className="powered-by-logo" loading="lazy" decoding="async" width={28} height={28} />
                   <span>Vite</span>
                 </div>
                 <div className="powered-by-item" title="TypeScript">
-                  <img src="/healthinsurancedave/typescript.webp" alt="TypeScript" className="powered-by-logo" loading="lazy" decoding="async" width={28} height={28} />
+                  <img src="/typescript.webp" alt="TypeScript" className="powered-by-logo" loading="lazy" decoding="async" width={28} height={28} />
                   <span>TypeScript</span>
                 </div>
                 <div className="powered-by-item" title="Tailwind CSS">
-                  <img src="/healthinsurancedave/tailwind.webp" alt="Tailwind CSS" className="powered-by-logo" loading="lazy" decoding="async" width={28} height={28} />
+                  <img src="/tailwind.webp" alt="Tailwind CSS" className="powered-by-logo" loading="lazy" decoding="async" width={28} height={28} />
                   <span>Tailwind CSS</span>
                 </div>
                 <div className="powered-by-item" title="Font Awesome">
@@ -213,7 +233,7 @@ export default function Home() {
             
             <div className="lightbox-header">
               <div className="lightbox-icon">
-                <img src="/healthinsurancedave/cannabisLogo.png" alt="Cannabis" className="lightbox-cannabis-icon" />
+                <img src="/cannabisLogo.png" alt="Cannabis" className="lightbox-cannabis-icon" />
               </div>
               <h2>A New Service is Available</h2>
               <p>Cannabis Business Insurance</p>
