@@ -25,7 +25,20 @@ import Terms from '../app/routes/terms'
 import Privacy from '../app/routes/privacy'
 import Debug from '../app/routes/debug'
 
-// ===== STYLES - MAIN PAGES =====
+// ===== STYLES - BASE & COMPONENTS (LOAD FIRST) =====
+import '../app/components/unifiedStyles.css'
+import '../app/components/masterComponents.css'
+import '../app/components/GlobalHeader.css'
+import '../app/components/Footer.css'
+import '../app/components/FloatingParticles.css'
+import '../app/components/FloatingContactButton.css'
+import '../app/components/ScrollArrow.css'
+import '../app/components/nilMaster/NILMaster.css'
+
+// ===== STYLES - SERVICES =====
+import '../app/routes/Services/Services.css'
+
+// ===== STYLES - MAIN PAGES (LOAD LAST) =====
 import '../app/routes/home.css'
 import '../app/routes/about.css'
 import '../app/routes/certifications.css'
@@ -34,19 +47,6 @@ import '../app/routes/contact.css'
 import '../app/routes/disclaimer.css'
 import '../app/routes/terms.css'
 import '../app/routes/privacy.css'
-
-// ===== STYLES - SERVICES =====
-import '../app/routes/Services/Services.css'
-
-// ===== STYLES - COMPONENTS =====
-import '../app/components/FloatingParticles.css'
-import '../app/components/FloatingContactButton.css'
-import '../app/components/ScrollArrow.css'
-import '../app/components/masterComponents.css'
-import '../app/components/unifiedStyles.css'
-import '../app/components/nilMaster/NILMaster.css'
-import '../app/components/GlobalHeader.css'
-import '../app/components/Footer.css'
 
 // ===== MAIN LAYOUT COMPONENT =====
 function AppLayout() {
