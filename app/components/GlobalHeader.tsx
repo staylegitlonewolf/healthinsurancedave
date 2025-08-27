@@ -272,43 +272,7 @@ export function GlobalHeader() {
               >
                 Health
               </button>
-              <button 
-                onClick={() => {
-                  const cannabisSection = document.getElementById('cannabis-section');
-                  if (cannabisSection) {
-                    const headerHeight = window.innerWidth <= 768 ? 120 : 80;
-                    const elementTop = Math.max(0, cannabisSection.offsetTop - headerHeight);
-                    
-                    // Enhanced mobile scrolling
-                    if (window.innerWidth <= 768) {
-                      try {
-                        window.scrollTo({ 
-                          top: elementTop, 
-                          behavior: 'smooth' 
-                        });
-                        
-                        // Fallback for mobile
-                        setTimeout(() => {
-                          if (Math.abs(window.scrollY - elementTop) > 50) {
-                            document.documentElement.scrollTop = elementTop;
-                            document.body.scrollTop = elementTop;
-                          }
-                        }, 100);
-                      } catch (error) {
-                        window.scroll(0, elementTop);
-                      }
-                    } else {
-                      window.scrollTo({ 
-                        top: elementTop, 
-                        behavior: 'smooth' 
-                      });
-                    }
-                  }
-                }}
-                className="global-header-nav-link"
-              >
-                Cannabis
-              </button>
+
               <button 
                 onClick={() => {
                   const webDevSection = document.getElementById('web-development');

@@ -137,22 +137,11 @@ export default function Team() {
               image: IMAGES.HEALTH_DAVID,
       phone: '(813) 647-1118',
       email: 'ElevatedHealthDavid@gmail.com',
-      description: 'Licensed Health Coverage Expert with access to all options. Leading our mission to connect clients with the best solutions across all services. Specialized in cannabis health partnerships and industry-specific coverage solutions.',
-      services: ['Cannabis Health', 'Health Insurance', 'Solar Solutions', 'NIL Partnerships'],
+      description: 'Licensed Health Coverage Expert with access to all options. Leading our mission to connect clients with the best solutions across all services.',
+      services: ['Health Insurance', 'Solar Solutions', 'NIL Partnerships'],
       featured: true
     },
-    {
-      id: 'health-2',
-      name: 'Matthias Wendler',
-      title: 'Health Coverage Expert',
-      category: 'health',
-              image: IMAGES.HEALTH_MATTHIAS,
-      phone: '(813) 230-6033',
-      email: 'ElevatedHealthMatthias@gmail.com',
-      description: 'Licensed Health Coverage Expert with access to all options. Focuses on expanding our service reach and building strategic partnerships.',
-      services: ['Health Insurance', 'Business Development'],
-      featured: false
-    },
+
 
                // NIL
            {
@@ -528,15 +517,8 @@ export default function Team() {
           {member.services && (
             <div className="member-services">
               {member.services.map((service, index) => (
-                <span key={index} className={`service-badge ${service === 'Cannabis Health' ? 'cannabis-service-badge' : ''}`}>
-                  {service === 'Cannabis Health' ? (
-                    <>
-                      <img src={IMAGES.CANNABIS_LOGO} alt="Cannabis" className="cannabis-service-icon" />
-                      NEW Cannabis for Business
-                    </>
-                  ) : (
-                    service
-                  )}
+                <span key={index} className="service-badge">
+                  {service}
                 </span>
               ))}
             </div>
@@ -616,15 +598,8 @@ export default function Team() {
               {member.services && (
                 <div className="health-member-services">
                   {member.services.map((service, index) => (
-                    <span key={index} className={`health-service-badge ${service === 'Cannabis Health' ? 'cannabis-service-badge' : ''}`}>
-                      {service === 'Cannabis Health' ? (
-                        <>
-                          <img src={IMAGES.CANNABIS_LOGO} alt="Cannabis" className="cannabis-service-icon" />
-                          NEW Cannabis for Business
-                        </>
-                      ) : (
-                        service
-                      )}
+                    <span key={index} className="health-service-badge">
+                      {service}
                     </span>
                   ))}
                 </div>

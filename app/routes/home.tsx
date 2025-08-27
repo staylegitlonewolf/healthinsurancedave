@@ -18,7 +18,7 @@ export default function Home() {
   const logosRef = useRef<HTMLDivElement>(null);
   const [isLogosVisible, setIsLogosVisible] = useState(false);
   const [activeCard, setActiveCard] = useState(0);
-  const [showCannabisLightbox, setShowCannabisLightbox] = useState(false);
+
   
   // Animate stats when component mounts
   useEffect(() => {
@@ -103,17 +103,7 @@ export default function Home() {
     }
   };
 
-  const handleCannabisServiceClick = () => {
-    setShowCannabisLightbox(false);
-    navigate('/services');
-    // Scroll to cannabis health partnership section after navigation
-    setTimeout(() => {
-      const cannabisSection = document.querySelector('.cannabis-section');
-      if (cannabisSection) {
-        cannabisSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 500);
-  };
+
 
   return (
     <div className="hero-container">
@@ -174,17 +164,7 @@ export default function Home() {
             </button>
           </div>
 
-          {/* New Service Announcement */}
-          <div className="new-service-announcement">
-            <button 
-              onClick={() => setShowCannabisLightbox(true)}
-              className="new-service-btn"
-            >
-                              <img src={IMAGES.CANNABIS_LOGO} alt="Cannabis" className="cannabis-icon-img" />
-              <span>New: Cannabis Business Insurance</span>
-              <i className="fas fa-arrow-right"></i>
-            </button>
-          </div>
+
 
           {/* Powered By Section */}
           <div className="powered-by" aria-label="Powered by technologies">
@@ -221,61 +201,7 @@ export default function Home() {
         </div>
       </section>
       
-      {/* Cannabis Service Lightbox */}
-      {showCannabisLightbox && (
-        <div className="lightbox-overlay" onClick={() => setShowCannabisLightbox(false)}>
-          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <button 
-              className="lightbox-close"
-              onClick={() => setShowCannabisLightbox(false)}
-            >
-              <i className="fas fa-times"></i>
-            </button>
-            
-            <div className="lightbox-header">
-              <div className="lightbox-icon">
-                <img src={IMAGES.CANNABIS_LOGO} alt="Cannabis" className="lightbox-cannabis-icon" />
-              </div>
-              <h2>A New Service is Available</h2>
-              <p>Cannabis Business Insurance</p>
-            </div>
-            
-            <div className="lightbox-body">
-              <div className="service-highlights">
-                <div className="highlight-item">
-                  <i className="fas fa-shield-alt"></i>
-                  <span>Comprehensive Protection</span>
-                </div>
-                <div className="highlight-item">
-                  <i className="fas fa-map-marker-alt"></i>
-                  <span>Florida Focused</span>
-                </div>
-                <div className="highlight-item">
-                  <i className="fas fa-certificate"></i>
-                  <span>Licensed & Compliant</span>
-                </div>
-              </div>
-              
-              <p className="lightbox-description">
-                Navigate the complex insurance requirements for Florida's cannabis industry. 
-                From medical marijuana treatment centers (MMTCs) to CBD businesses, we provide 
-                specialized coverage including performance bonds, product liability, and comprehensive 
-                business protection.
-              </p>
-            </div>
-            
-            <div className="lightbox-footer">
-              <button 
-                onClick={handleCannabisServiceClick}
-                className="lightbox-cta-btn"
-              >
-                <i className="fas fa-arrow-right"></i>
-                Learn More About Cannabis Insurance
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+
     </div>
   );
 }

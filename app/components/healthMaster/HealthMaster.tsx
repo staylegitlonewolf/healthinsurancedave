@@ -51,22 +51,11 @@ const HealthMaster = () => {
         image: IMAGES.HEALTH_DAVID,
         phone: '(813) 647-1118',
         email: 'ElevatedHealthDavid@gmail.com',
-        description: 'Licensed Health Coverage Expert with access to all options. Leading our mission to connect clients with the best solutions across all services. Specialized in cannabis health partnerships and industry-specific coverage solutions.',
-        services: ['Health Insurance', 'Cannabis Health', 'Solar Solutions', 'NIL Partnerships'],
+        description: 'Licensed Health Coverage Expert with access to all options. Leading our mission to connect clients with the best solutions across all services.',
+        services: ['Health Insurance', 'Solar Solutions', 'NIL Partnerships'],
         featured: true
       },
-      {
-        id: 'health-2',
-        name: 'Matthias Wendler',
-        title: 'Health Coverage Expert',
-        category: 'health',
-        image: IMAGES.HEALTH_MATTHIAS,
-        phone: '(813) 230-6033',
-        email: 'ElevatedHealthMatthias@gmail.com',
-        description: 'Licensed Health Coverage Expert with access to all options. Focuses on expanding our service reach and building strategic partnerships.',
-        services: ['Health Insurance', 'Business Development'],
-        featured: false
-      }
+
     ]
     return healthMembers.find(member => member.id === id)
   }
@@ -76,8 +65,6 @@ const HealthMaster = () => {
     switch (memberName.toLowerCase()) {
       case 'david brown':
         return IMAGES.HEALTH_MASTER_DAVID
-      case 'matthias wendler':
-        return IMAGES.HEALTH_MASTER_MATTHIAS
       default:
         return profileData?.image || ''
     }
@@ -567,9 +554,9 @@ const HealthMaster = () => {
                 <div className="master-detail-content">
                   <div className="master-services-list">
                     {memberData.services.map((service: string, index: number) => (
-                      <div key={index} className={`master-service-item ${service === 'Cannabis Health' ? 'cannabis-service' : ''}`}>
+                      <div key={index} className="master-service-item">
                         <i className="fas fa-check"></i>
-                        <span>{service === 'Cannabis Health' ? 'Cannabis for Business' : service}</span>
+                        <span>{service}</span>
                       </div>
                     ))}
                   </div>

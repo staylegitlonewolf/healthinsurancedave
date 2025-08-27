@@ -84,15 +84,7 @@ export default function Disclaimer() {
           </div>
 
           <div className="disclaimer-section">
-            <h2>6. Cannabis Business Insurance</h2>
-            <p>Our cannabis business insurance services are subject to:</p>
-            <ul>
-              <li>State and federal regulations</li>
-              <li>Licensing requirements</li>
-              <li>Underwriting guidelines</li>
-              <li>Policy exclusions and limitations</li>
-            </ul>
-            <p>Cannabis-related insurance coverage may be limited or unavailable depending on jurisdiction and carrier policies.</p>
+
           </div>
 
           <div className="disclaimer-section">

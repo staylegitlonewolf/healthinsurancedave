@@ -14,7 +14,6 @@ const MainServices: React.FC = () => {
   // Services sections configuration
   const serviceSections = useMemo(() => [
     { id: 'health', name: 'Health', icon: 'fas fa-clipboard-list', target: 'services' },
-    { id: 'cannabis', name: 'Cannabis', icon: 'fas fa-leaf', target: 'cannabis-section' },
     { id: 'additional', name: 'Additional', icon: 'fas fa-plus-circle', target: 'solar-solutions' }
   ], [])
 
@@ -223,118 +222,7 @@ const MainServices: React.FC = () => {
           </div>
         </div>
 
-        {/* Cannabis Industry Solutions - Combined Section */}
-        <div className="cannabis-section" id="cannabis-section">
-          <div className="cannabis-header">
-            <div className="cannabis-logo-container">
-                              <img src={IMAGES.CANNABIS_LOGO} alt="Cannabis Logo" className="cannabis-header-logo" />
-            </div>
-            <h2>Cannabis Industry Solutions</h2>
-            <p>Comprehensive health benefits and business insurance for Florida's cannabis industry</p>
-          </div>
-          
-          <div className="cannabis-grid">
-            {/* Health Benefits Card */}
-            <div className="cannabis-card health-benefits">
-              <div className="cannabis-badge health">Health Benefits</div>
-            <div className="cannabis-content">
-              <div className="cannabis-icon-section">
-                <div className="cannabis-icon">
-                    <i className="fas fa-heart-pulse"></i>
-                </div>
-                <h3>Cannabis Health Partnership</h3>
-                <p className="cannabis-description">
-                    Specialized health benefits for budtenders, cultivators, and the entire cannabis workforce.
-                </p>
-              </div>
-              
-                <div className="cannabis-features-compact">
-                  <div className="feature-item">
-                    <i className="fas fa-check-circle"></i>
-                    <span>Custom health plans designed for cannabis industry workers including budtenders, cultivators, and dispensary staff</span>
-                  </div>
-                  <div className="feature-item">
-                    <i className="fas fa-check-circle"></i>
-                    <span>Executive medical coverage with tax-advantaged structures to maximize savings for business owners</span>
-                  </div>
-                  <div className="feature-item">
-                    <i className="fas fa-check-circle"></i>
-                    <span>Competitive benefits packages that help retain top talent in the cannabis industry</span>
-                  </div>
-                  <div className="feature-item">
-                    <i className="fas fa-check-circle"></i>
-                    <span>Quarterly reviews, claims assistance, and employee education to maximize benefit utilization</span>
-                  </div>
-                  </div>
-                
-                <div className="cannabis-cta">
-                  <button className="btn-accent cannabis-btn" onClick={handleGetQuote}>Get Health Quote</button>
-                  </div>
-                  </div>
-                </div>
-                
-            {/* Business Insurance Card */}
-            <div className="cannabis-card business-insurance">
-              <div className="cannabis-badge insurance">Business Protection</div>
-              <div className="cannabis-content">
-                <div className="cannabis-icon-section">
-                  <div className="cannabis-icon">
-                    <i className="fas fa-shield-halved"></i>
-                  </div>
-                  <h3>Cannabis Business Insurance</h3>
-                  <p className="cannabis-description">
-                    Navigate Florida's complex insurance requirements for MMTCs and CBD businesses.
-                  </p>
-                </div>
-                
-                <div className="cannabis-features-compact">
-                  <div className="feature-item">
-                    <i className="fas fa-check-circle"></i>
-                    <span>Required $5M performance bonds for Medical Marijuana Treatment Centers ensuring state compliance</span>
-                  </div>
-                  <div className="feature-item">
-                    <i className="fas fa-check-circle"></i>
-                    <span>Comprehensive product liability coverage protecting against adverse reactions and safety claims</span>
-                  </div>
-                  <div className="feature-item">
-                    <i className="fas fa-check-circle"></i>
-                    <span>Commercial property insurance for high-value cannabis inventory, equipment, and facilities</span>
-                  </div>
-                  <div className="feature-item">
-                    <i className="fas fa-check-circle"></i>
-                    <span>Specialized workers' compensation for cannabis businesses with 4+ employees</span>
-                </div>
-              </div>
-              
-              <div className="cannabis-cta">
-                  <button className="btn-accent cannabis-btn" onClick={handleGetQuote}>Get Insurance Quote</button>
-              </div>
-            </div>
-          </div>
-        </div>
 
-          {/* Results Section */}
-          <div className="cannabis-results-section">
-            <h3>Why Choose Our Cannabis Solutions?</h3>
-            <div className="results-grid">
-              <div className="result-item">
-                <i className="fas fa-arrow-trend-down"></i>
-                <span>Lower employee turnover</span>
-              </div>
-              <div className="result-item">
-                <i className="fas fa-users"></i>
-                <span>Competitive talent acquisition</span>
-              </div>
-              <div className="result-item">
-                <i className="fas fa-gavel"></i>
-                <span>Full regulatory compliance</span>
-              </div>
-              <div className="result-item">
-                <i className="fas fa-chart-line"></i>
-                <span>Business growth protection</span>
-              </div>
-            </div>
-          </div>
 
 
           {/* Additional Services Target for Navigation */}

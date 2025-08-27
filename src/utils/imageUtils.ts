@@ -22,7 +22,7 @@ export const IMAGES = {
   TAILWIND: getImagePath('tailwind.webp'),
   
   // Business logos
-  CANNABIS_LOGO: getImagePath('cannabisLogo.png'),
+
   LOGO: getImagePath('logo.png'),
   ELEVATED_LOGO: getImagePath('elevatedLogo.png'),
   
@@ -45,9 +45,9 @@ export const IMAGES = {
   
   // Health assets
   HEALTH_DAVID: getImagePath('Health/David Brown.png'),
-  HEALTH_MATTHIAS: getImagePath('Health/Matthias Wendler.png'),
+
   HEALTH_MASTER_DAVID: getImagePath('Health/masterDavid.png'),
-  HEALTH_MASTER_MATTHIAS: getImagePath('Health/masterMatthias.png'),
+
   
   // Solar assets
   SOLAR_BRILLIANT: getImagePath('Solar/solarBrilliantSolar.png'),

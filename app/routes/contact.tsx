@@ -148,7 +148,7 @@ export default function Contact() {
                 >
                   <option value="">Select a subject</option>
                   <option value="health-insurance">Health Insurance</option>
-                  <option value="cannabis-business">Cannabis Business Insurance</option>
+  
                   <option value="solar-solutions">Solar Solutions</option>
                   <option value="nil-partnerships">NIL Partnerships</option>
                   <option value="general-inquiry">General Inquiry</option>
@@ -278,7 +278,7 @@ export default function Contact() {
                
                 <h3>Get In Touch</h3>
                 <p>Send us a message and we'll get back to you as soon as possible</p>
-                <p>We're here to help you find the perfect solutions for your needs. Whether you're looking for health insurance, cannabis business insurance, solar solutions, or NIL partnerships, our team of experts is ready to assist you.</p>
+                <p>We're here to help you find the perfect solutions for your needs. Whether you're looking for health insurance, solar solutions, or NIL partnerships, our team of experts is ready to assist you.</p>
                 
                 <div className="contact-methods">
                   <div className="method-item">

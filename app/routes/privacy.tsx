@@ -34,7 +34,7 @@ export default function Privacy() {
             <ul>
               <li>Name and contact information</li>
               <li>Insurance-related information</li>
-              <li>Business information (for cannabis business insurance)</li>
+              
               <li>Communication preferences</li>
             </ul>
           </div>

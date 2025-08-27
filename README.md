@@ -19,7 +19,7 @@ Visit the live website: [https://staylegitlonewolf.github.io/healthinsurancedave
 ### 👥 **Professional Team**
 - Licensed Health Insurance Experts
 - David Brown - Licensed Health Coverage Expert
-- Matthias Wendler - Licensed Health Coverage Expert
+
 - Victoria Whitfield - NIL Specialist
 
 ### 📱 **Modern Web Experience**

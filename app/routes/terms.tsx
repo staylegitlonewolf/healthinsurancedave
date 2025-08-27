@@ -31,7 +31,7 @@ export default function Terms() {
             <p>Health Insurance Dave provides insurance brokerage services including:</p>
             <ul>
               <li>Health insurance quotes and enrollment</li>
-              <li>Cannabis business insurance solutions</li>
+              
               <li>Solar energy consultation and partnerships</li>
               <li>NIL (Name, Image, Likeness) partnership services</li>
               <li>Insurance consultation and advisory services</li>
