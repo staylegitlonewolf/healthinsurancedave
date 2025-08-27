@@ -101,11 +101,9 @@ const router = createBrowserRouter([
   basename: '/healthinsurancedave'
 })
 
-// ===== APP INITIALIZATION =====
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
-)
+// ===== MAIN APP COMPONENT =====
+function App() {
+  return <RouterProvider router={router} />
+}
 
-export default AppLayout
+export default App
