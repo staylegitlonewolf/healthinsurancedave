@@ -547,12 +547,10 @@ html {
 }
 
 /* Dark theme cannabis section */
-@media (prefers-color-scheme: dark) {
-  .cannabis-section {
-    background: linear-gradient(135deg, rgba(20, 20, 20, 0.95) 0%, rgba(30, 30, 30, 0.9) 100%);
-    border-color: rgba(76, 175, 80, 0.3);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 8px 20px rgba(76, 175, 80, 0.2);
-  }
+.dark .cannabis-section {
+  background: transparent;
+  border-color: rgba(76, 175, 80, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 8px 20px rgba(76, 175, 80, 0.2);
 }
 
 /* Cannabis Header */
@@ -591,11 +589,9 @@ html {
 }
 
 /* Dark theme logo container */
-@media (prefers-color-scheme: dark) {
-  .cannabis-logo-container {
-    background: rgba(76, 175, 80, 0.1);
-    border-color: rgba(76, 175, 80, 0.3);
-  }
+.dark .cannabis-logo-container {
+  background: rgba(76, 175, 80, 0.1);
+  border-color: rgba(76, 175, 80, 0.3);
 }
 
 .cannabis-header h2 {
@@ -619,15 +615,13 @@ html {
 }
 
 /* Dark theme cannabis header */
-@media (prefers-color-scheme: dark) {
-  .cannabis-header h2 {
-    color: #f7fafc;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  }
-  
-  .cannabis-header p {
-    color: #e2e8f0;
-  }
+.dark .cannabis-header h2 {
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.dark .cannabis-header p {
+  color: #ffffff;
 }
 
 
@@ -735,14 +729,12 @@ html {
 }
 
 /* Dark theme text colors for cannabis section */
-@media (prefers-color-scheme: dark) {
-  .cannabis-icon-section h3 {
-    color: #f7fafc;
-  }
-  
-  .cannabis-description {
-    color: #e2e8f0;
-  }
+.dark .cannabis-icon-section h3 {
+  color: #ffffff;
+}
+
+.dark .cannabis-description {
+  color: #ffffff;
 }
 
 /* Cannabis Features Section */
@@ -911,11 +903,9 @@ html {
 }
 
 /* Dark theme CTA background */
-@media (prefers-color-scheme: dark) {
-  .cannabis-cta {
-    background: rgba(76, 175, 80, 0.15);
-    border-color: rgba(76, 175, 80, 0.3);
-  }
+.dark .cannabis-cta {
+  background: transparent;
+  border-color: rgba(76, 175, 80, 0.3);
 }
 
 .cannabis-cta::before {
@@ -1807,10 +1797,8 @@ html {
 }
 
 /* Dark theme feature text */
-@media (prefers-color-scheme: dark) {
-  .feature-item span {
-    color: #e2e8f0;
-  }
+.dark .feature-item span {
+  color: #ffffff;
 }
 
 /* Results Section */
@@ -1823,11 +1811,9 @@ html {
 }
 
 /* Dark theme results section */
-@media (prefers-color-scheme: dark) {
-  .cannabis-results-section {
-    background: rgba(76, 175, 80, 0.08);
-    border-color: rgba(76, 175, 80, 0.2);
-  }
+.dark .cannabis-results-section {
+  background: transparent;
+  border-color: rgba(76, 175, 80, 0.2);
 }
 
 .cannabis-results-section h3 {
@@ -1838,10 +1824,8 @@ html {
 }
 
 /* Dark theme results title */
-@media (prefers-color-scheme: dark) {
-  .cannabis-results-section h3 {
-    color: #f7fafc;
-  }
+.dark .cannabis-results-section h3 {
+  color: #ffffff;
 }
 
 .results-grid {
@@ -1870,10 +1854,8 @@ html {
 }
 
 /* Dark theme result item text */
-@media (prefers-color-scheme: dark) {
-  .result-item span {
-    color: #e2e8f0;
-  }
+.dark .result-item span {
+  color: #ffffff;
 }
 
 /* Mobile Responsive for New Cannabis Layout */
@@ -1930,12 +1912,10 @@ html {
 }
 
 /* Dark theme comparison section */
-@media (prefers-color-scheme: dark) {
-  .cannabis-comparison-section {
-    background: linear-gradient(135deg, rgba(20, 20, 20, 0.95) 0%, rgba(30, 30, 30, 0.9) 100%);
-    border-color: rgba(76, 175, 80, 0.25);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
-  }
+.dark .cannabis-comparison-section {
+  background: transparent;
+  border-color: rgba(76, 175, 80, 0.25);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
 }
 
 /* Comparison Title */

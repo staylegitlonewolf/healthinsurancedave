@@ -1,15 +1,15 @@
 /**
  * Image Path Utilities
- * Automatically handles base path for GitHub Pages deployment
+ * Automatically handles base path for custom domain deployment
  */
 
-// Helper function to get correct image path for GitHub Pages
+// Helper function to get correct image path for custom domain
 export const getImagePath = (path: string): string => {
   // Remove leading slash if present to avoid double slashes
   const cleanPath = path.startsWith('/') ? path.slice(1) : path;
   
-  // Both development and production use the same base path for consistency
-  return `/healthinsurancedave/${cleanPath}`;
+  // Use root path for custom domain
+  return `/${cleanPath}`;
 };
 
 // Predefined image paths for common assets

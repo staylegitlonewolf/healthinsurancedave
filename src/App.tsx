@@ -121,7 +121,7 @@ const router = createBrowserRouter([
     ]
   }
 ], {
-  basename: '/healthinsurancedave'
+  basename: '/'
 })
 
 // ===== MAIN APP COMPONENT =====

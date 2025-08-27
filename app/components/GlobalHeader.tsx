@@ -414,8 +414,8 @@ export function GlobalHeader() {
             )}
           </button>
           
-                     {/* Enhanced Fullscreen Button - Hidden on iPhone, shown on Android */}
-           {(!isIPhone || isAndroid) && (
+                     {/* Enhanced Fullscreen Button - Hidden on iPhone, shown on Android and desktop */}
+           {!isIPhone && (
             <button
               onClick={toggleFullscreen}
               className={`global-header-control-btn global-header-fullscreen-btn ${isHeaderCollapsed ? 'collapsed' : 'normal'}`}
