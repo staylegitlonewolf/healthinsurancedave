@@ -8,12 +8,7 @@ export const getImagePath = (path: string): string => {
   // Remove leading slash if present to avoid double slashes
   const cleanPath = path.startsWith('/') ? path.slice(1) : path;
   
-  // In development, use the path as-is (images in public folder are served from root)
-  if (import.meta.env.DEV) {
-    return `/${cleanPath}`;
-  }
-  
-  // In production (GitHub Pages), prepend the base path
+  // Both development and production use the same base path for consistency
   return `/healthinsurancedave/${cleanPath}`;
 };
 
