@@ -9,6 +9,7 @@ import { GlobalHeader } from '../app/components/GlobalHeader'
 import { Footer } from '../app/components/Footer'
 import FloatingParticles from '../app/components/FloatingParticles'
 import FloatingContactButton from '../app/components/FloatingContactButton'
+import PromoThumbnail from '../app/components/PromoThumbnail/PromoThumbnail'
 
 // ===== PAGE COMPONENTS =====
 import Home from '../app/routes/home'
@@ -20,6 +21,7 @@ import Contact from '../app/routes/contact'
 import HealthMaster from '../app/routes/health_master'
 import CertificationMaster from '../app/routes/certification_master'
 import NILMaster from '../app/components/nilMaster/NILMaster'
+import SolarMaster from '../app/components/solarMaster/SolarMaster'
 import Disclaimer from '../app/routes/disclaimer'
 import Terms from '../app/routes/terms'
 import Privacy from '../app/routes/privacy'
@@ -33,7 +35,9 @@ import '../app/components/Footer.css'
 import '../app/components/FloatingParticles.css'
 import '../app/components/FloatingContactButton.css'
 import '../app/components/ScrollArrow.css'
+import '../app/components/PromoThumbnail/PromoThumbnail.css'
 import '../app/components/nilMaster/NILMaster.css'
+import '../app/components/solarMaster/SolarMaster.css'
 
 // ===== STYLES - SERVICES =====
 import '../app/routes/Services/Services.css'
@@ -59,6 +63,7 @@ function AppLayout() {
       <Footer />
       <FloatingParticles />
       <FloatingContactButton />
+      <PromoThumbnail />
     </div>
   )
 }
@@ -81,6 +86,7 @@ const router = createBrowserRouter([
       { path: "health_master", element: <HealthMaster /> },
       { path: "certification_master", element: <CertificationMaster /> },
       { path: "nil_master", element: <NILMaster /> },
+      { path: "solar_master", element: <SolarMaster /> },
       
       // Legal Pages
       { path: "disclaimer", element: <Disclaimer /> },
