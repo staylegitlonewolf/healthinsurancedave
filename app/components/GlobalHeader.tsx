@@ -305,38 +305,42 @@ export function GlobalHeader() {
               <button 
                 onClick={() => {
                   // Reset to show all categories
-                  window.location.href = '/discover';
+                  navigate('/discover');
                 }}
                 className={`global-header-nav-link ${pathname === '/discover' ? 'active' : ''}`}
               >
-                All
+                <i className="fas fa-users"></i>
+                <span>All</span>
               </button>
-                             <button 
-                 onClick={() => {
-                   // Filter to health category
-                   window.location.href = '/discover?category=health';
-                 }}
-                 className="global-header-nav-link"
-               >
-                 Health
-               </button>
               <button 
                 onClick={() => {
-                  // Filter to NIL category
-                  window.location.href = '/discover?category=nil';
+                  // Filter to health category
+                  navigate('/discover?category=health');
                 }}
                 className="global-header-nav-link"
               >
-                NIL
+                <i className="fas fa-heartbeat"></i>
+                <span>Health</span>
+              </button>
+              <button 
+                onClick={() => {
+                  // Filter to NIL category
+                  navigate('/discover?category=nil');
+                }}
+                className="global-header-nav-link"
+              >
+                <i className="fas fa-star"></i>
+                <span>NIL</span>
               </button>
               <button 
                 onClick={() => {
                   // Filter to solar category
-                  window.location.href = '/discover?category=solar';
+                  navigate('/discover?category=solar');
                 }}
                 className="global-header-nav-link"
               >
-                Solar
+                <i className="fas fa-solar-panel"></i>
+                <span>Solar</span>
               </button>
             </>
           )}

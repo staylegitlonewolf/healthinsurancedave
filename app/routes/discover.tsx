@@ -675,21 +675,6 @@ export default function Team() {
             )}
           </div>
 
-      {/* Category Navigation */}
-      <div className="discover-category-nav">
-        {categories.map((category) => (
-          <button
-            key={category.id}
-            onClick={() => handleCategorySelect(category.id)}
-            className={`category-btn ${activeCategory === category.id ? 'active' : ''}`}
-            aria-label={`Filter by ${category.name} category`}
-          >
-            <i className={category.icon}></i>
-            <span>{category.name}</span>
-          </button>
-        ))}
-      </div>
-
       {/* Main Content */}
       <div className="discover-content-main discover-content">
         {isLoading ? (
