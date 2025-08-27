@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, Outlet, useLocation } from 'react-router-dom'
 import './App.css'
 import '../app/app.css'
 
@@ -52,10 +52,33 @@ import '../app/routes/disclaimer.css'
 import '../app/routes/terms.css'
 import '../app/routes/privacy.css'
 
+// ===== SCROLL TO TOP COMPONENT =====
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    // Scroll to top on every route change
+    window.scrollTo(0, 0);
+    
+    // Enhanced mobile scroll to top
+    if (window.innerWidth <= 768) {
+      // Multiple fallback methods for mobile
+      setTimeout(() => {
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        window.scroll(0, 0);
+      }, 100);
+    }
+  }, [pathname]);
+
+  return null;
+}
+
 // ===== MAIN LAYOUT COMPONENT =====
 function AppLayout() {
   return (
     <div className="App">
+      <ScrollToTop />
       <GlobalHeader />
       <main>
         <Outlet />

@@ -52,6 +52,19 @@ const SolarMaster = () => {
   
   useEffect(() => {
     setIsClient(true);
+    
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+    
+    // Enhanced mobile scroll to top
+    if (window.innerWidth <= 768) {
+      setTimeout(() => {
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        window.scroll(0, 0);
+      }, 100);
+    }
+    
     if (!partnerData) {
       // console.warn('SolarMaster: No partnerData provided, redirecting to discover page');
       navigate('/discover', { replace: true });
@@ -75,13 +88,32 @@ const SolarMaster = () => {
   };
 
   useEffect(() => {
+    // Scroll to top when component mounts
     window.scrollTo(0, 0);
+    
+    // Enhanced mobile scroll to top
+    if (window.innerWidth <= 768) {
+      setTimeout(() => {
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        window.scroll(0, 0);
+      }, 100);
+    }
   }, []);
 
   // Scroll to top when partnerData changes (when navigating to different partner)
   useEffect(() => {
     if (partnerData) {
       window.scrollTo(0, 0);
+      
+      // Enhanced mobile scroll to top
+      if (window.innerWidth <= 768) {
+        setTimeout(() => {
+          document.documentElement.scrollTop = 0;
+          document.body.scrollTop = 0;
+          window.scroll(0, 0);
+        }, 100);
+      }
     }
   }, [partnerData]);
 

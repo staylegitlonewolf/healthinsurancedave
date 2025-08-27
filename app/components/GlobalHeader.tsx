@@ -253,12 +253,35 @@ export function GlobalHeader() {
                 onClick={() => {
                   const healthSection = document.getElementById('services');
                   if (healthSection) {
-                    const headerHeight = 80; // Approximate header height
-                    const elementTop = healthSection.offsetTop - headerHeight;
-                    window.scrollTo({ 
-                      top: elementTop, 
-                      behavior: 'smooth' 
-                    });
+                    const headerHeight = window.innerWidth <= 768 ? 120 : 80;
+                    const elementTop = Math.max(0, healthSection.offsetTop - headerHeight);
+                    
+                    // Enhanced mobile scrolling
+                    if (window.innerWidth <= 768) {
+                      // Mobile fallback methods
+                      try {
+                        window.scrollTo({ 
+                          top: elementTop, 
+                          behavior: 'smooth' 
+                        });
+                        
+                        // Fallback for mobile
+                        setTimeout(() => {
+                          if (Math.abs(window.scrollY - elementTop) > 50) {
+                            document.documentElement.scrollTop = elementTop;
+                            document.body.scrollTop = elementTop;
+                          }
+                        }, 100);
+                      } catch (error) {
+                        // Emergency fallback
+                        window.scroll(0, elementTop);
+                      }
+                    } else {
+                      window.scrollTo({ 
+                        top: elementTop, 
+                        behavior: 'smooth' 
+                      });
+                    }
                   }
                 }}
                 className={`global-header-nav-link ${pathname === '/services' ? 'active' : ''}`}
@@ -269,12 +292,33 @@ export function GlobalHeader() {
                 onClick={() => {
                   const cannabisSection = document.getElementById('cannabis-section');
                   if (cannabisSection) {
-                    const headerHeight = 80; // Approximate header height
-                    const elementTop = cannabisSection.offsetTop - headerHeight;
-                    window.scrollTo({ 
-                      top: elementTop, 
-                      behavior: 'smooth' 
-                    });
+                    const headerHeight = window.innerWidth <= 768 ? 120 : 80;
+                    const elementTop = Math.max(0, cannabisSection.offsetTop - headerHeight);
+                    
+                    // Enhanced mobile scrolling
+                    if (window.innerWidth <= 768) {
+                      try {
+                        window.scrollTo({ 
+                          top: elementTop, 
+                          behavior: 'smooth' 
+                        });
+                        
+                        // Fallback for mobile
+                        setTimeout(() => {
+                          if (Math.abs(window.scrollY - elementTop) > 50) {
+                            document.documentElement.scrollTop = elementTop;
+                            document.body.scrollTop = elementTop;
+                          }
+                        }, 100);
+                      } catch (error) {
+                        window.scroll(0, elementTop);
+                      }
+                    } else {
+                      window.scrollTo({ 
+                        top: elementTop, 
+                        behavior: 'smooth' 
+                      });
+                    }
                   }
                 }}
                 className="global-header-nav-link"
@@ -285,12 +329,33 @@ export function GlobalHeader() {
                 onClick={() => {
                   const webDevSection = document.getElementById('web-development');
                   if (webDevSection) {
-                    const headerHeight = 80; // Approximate header height
-                    const elementTop = webDevSection.offsetTop - headerHeight;
-                    window.scrollTo({ 
-                      top: elementTop, 
-                      behavior: 'smooth' 
-                    });
+                    const headerHeight = window.innerWidth <= 768 ? 120 : 80;
+                    const elementTop = Math.max(0, webDevSection.offsetTop - headerHeight);
+                    
+                    // Enhanced mobile scrolling
+                    if (window.innerWidth <= 768) {
+                      try {
+                        window.scrollTo({ 
+                          top: elementTop, 
+                          behavior: 'smooth' 
+                        });
+                        
+                        // Fallback for mobile
+                        setTimeout(() => {
+                          if (Math.abs(window.scrollY - elementTop) > 50) {
+                            document.documentElement.scrollTop = elementTop;
+                            document.body.scrollTop = elementTop;
+                          }
+                        }, 100);
+                      } catch (error) {
+                        window.scroll(0, elementTop);
+                      }
+                    } else {
+                      window.scrollTo({ 
+                        top: elementTop, 
+                        behavior: 'smooth' 
+                      });
+                    }
                   }
                 }}
                 className="global-header-nav-link"

@@ -64,6 +64,19 @@ const NILMaster = () => {
   
   useEffect(() => {
     setIsClient(true);
+    
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+    
+    // Enhanced mobile scroll to top
+    if (window.innerWidth <= 768) {
+      setTimeout(() => {
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        window.scroll(0, 0);
+      }, 100);
+    }
+    
     if (!enhancedSpecialistData) {
       // console.warn('NILMaster: No specialistData provided, redirecting to discover page');
       navigate('/discover', { replace: true });

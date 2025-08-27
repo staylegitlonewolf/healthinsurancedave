@@ -41,6 +41,19 @@ const CertificationMaster = () => {
   // If no certData is provided, redirect back to certification page
   useEffect(() => {
     setIsClient(true)
+    
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+    
+    // Enhanced mobile scroll to top
+    if (window.innerWidth <= 768) {
+      setTimeout(() => {
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        window.scroll(0, 0);
+      }, 100);
+    }
+    
     if (!certData) {
       // console.warn('CertificationMaster: No certData provided, redirecting to certification page')
       navigate('/certifications', { replace: true })
