@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { IMAGES } from '../../src/utils/imageUtils';
+import './Footer.css';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -27,7 +29,7 @@ export function Footer() {
             <div className="global-footer-company-header">
               <div className="global-footer-company-logo">
                 <img 
-                  src="/mainPhoto3.jpg" 
+                                     src={IMAGES.MAIN_PHOTO3} 
                   alt="Health Insurance Dave" 
                   draggable={false}
                 />

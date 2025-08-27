@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { IMAGES } from '../../../src/utils/imageUtils'
 import './MainServices.css'
 
 const MainServices: React.FC = () => {
@@ -226,7 +227,7 @@ const MainServices: React.FC = () => {
         <div className="cannabis-section" id="cannabis-section">
           <div className="cannabis-header">
             <div className="cannabis-logo-container">
-                              <img src="/cannabisLogo.png" alt="Cannabis Logo" className="cannabis-header-logo" />
+                              <img src={IMAGES.CANNABIS_LOGO} alt="Cannabis Logo" className="cannabis-header-logo" />
             </div>
             <h2>Cannabis Industry Solutions</h2>
             <p>Comprehensive health benefits and business insurance for Florida's cannabis industry</p>

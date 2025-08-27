@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { IMAGES } from '../../src/utils/imageUtils';
+import './GlobalHeader.css';
 
 export function GlobalHeader() {
   const { pathname } = useLocation();
@@ -200,7 +202,7 @@ export function GlobalHeader() {
           >
             <div className="global-header-logo-container">
               <img 
-                src="/logo.png" 
+                src={IMAGES.LOGO} 
                 alt="Health Insurance Dave" 
                 className={`global-header-logo-image ${isHeaderCollapsed ? 'collapsed' : 'normal'}`}
                 draggable={false} 

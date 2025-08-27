@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
+import { IMAGES } from '../../../src/utils/imageUtils';
 import './PromoThumbnail.css';
 
 const PromoThumbnail: React.FC = () => {
@@ -66,7 +66,7 @@ const PromoThumbnail: React.FC = () => {
         }}
       >
         <img
-                          src="/davidPromo.png"
+          src={IMAGES.DAVID_PROMO}
           alt="David Brown Health Insurance Promotion"
           className="promo-thumbnail-image"
         />
@@ -99,7 +99,7 @@ const PromoThumbnail: React.FC = () => {
             <div className="promo-lightbox-content">
          
               <img
-                src="/davidPromo.png"
+                src={IMAGES.DAVID_PROMO}
                 alt="David Brown Health Insurance Promotion - Full Size"
                 className="promo-lightbox-image"
               />

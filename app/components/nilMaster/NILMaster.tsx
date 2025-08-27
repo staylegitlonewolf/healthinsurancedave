@@ -1,5 +1,6 @@
-import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { IMAGES } from '../../../src/utils/imageUtils';
 import './NILMaster.css';
 
 // Define types for NIL specialist data
@@ -86,15 +87,15 @@ const NILMaster = () => {
   const galleryImages = useMemo(() => {
     if (enhancedSpecialistData?.name === 'Victoria Whitfield') {
       return [
-            { src: enhancedSpecialistData?.image || '/NiL/Vicotoria.png', caption: 'Main Photo' },
-    { src: '/NiL/Vicotoria1.png', caption: 'Game Action' },
-    { src: '/NiL/Vicotoria2.png', caption: 'Team Spirit' },
-    { src: '/NiL/victoriaAward.png', caption: 'Award Recognition' }
+            { src: enhancedSpecialistData?.image || IMAGES.NIL_VICTORIA, caption: 'Main Photo' },
+    { src: IMAGES.NIL_VICTORIA1, caption: 'Game Action' },
+    { src: IMAGES.NIL_VICTORIA2, caption: 'Team Spirit' },
+    { src: IMAGES.NIL_VICTORIA_AWARD, caption: 'Award Recognition' }
       ];
     } else {
       // Default gallery for other specialists
               return [
-          { src: enhancedSpecialistData?.image || '/NiL/Vicotoria.png', caption: 'Main Photo' }
+          { src: enhancedSpecialistData?.image || IMAGES.NIL_VICTORIA, caption: 'Main Photo' }
         ];
     }
   }, [enhancedSpecialistData]);
@@ -450,19 +451,19 @@ const NILMaster = () => {
                <div className="nil-master-detail-content">
                  <div className="nil-credentials-grid">
                    <div className="nil-credential-item">
-                     <img src="/NiL/schoolLogo.png" alt="East Bay High School" className="nil-logo" />
+                                           <img src={IMAGES.NIL_SCHOOL_LOGO} alt="East Bay High School" className="nil-logo" />
                      <span>East Bay High School</span>
                    </div>
                    <div className="nil-credential-item">
-                     <img src="/NiL/maxprep.png" alt="MaxPreps" className="nil-logo" />
+                                           <img src={IMAGES.NIL_MAXPREP} alt="MaxPreps" className="nil-logo" />
                      <span>MaxPreps Profile</span>
                    </div>
                    <div className="nil-credential-item">
-                     <img src="/NiL/FHSAA_logo.png" alt="FHSAA" className="nil-logo" />
+                                           <img src={IMAGES.NIL_FHSAA} alt="FHSAA" className="nil-logo" />
                      <span>FHSAA Certified</span>
                    </div>
                    <div className="nil-credential-item">
-                     <img src="/NiL/NCAA LOGO.png" alt="NCAA" className="nil-logo" />
+                                           <img src={IMAGES.NIL_NCAA} alt="NCAA" className="nil-logo" />
                      <span>NCAA Compliant</span>
                    </div>
                  </div>

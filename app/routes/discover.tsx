@@ -1,6 +1,7 @@
 
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { IMAGES } from '../../src/utils/imageUtils';
 // Performance monitoring removed - not essential for functionality
 import "./discover.css";
 
@@ -80,7 +81,7 @@ const useLazyImage = (src: string) => {
         setIsLoaded(true);
         // Fallback to placeholder if image fails to load
         if (imgRef.current) {
-          imgRef.current.src = '/NiL/Vicotoria.png';
+          imgRef.current.src = IMAGES.NIL_VICTORIA;
         }
       };
       img.src = src;
@@ -133,7 +134,7 @@ export default function Team() {
       name: 'David Brown',
       title: 'Health Coverage Expert',
       category: 'health',
-      image: '/Health/David Brown.png',
+              image: IMAGES.HEALTH_DAVID,
       phone: '(813) 647-1118',
       email: 'ElevatedHealthDavid@gmail.com',
       description: 'Licensed Health Coverage Expert with access to all options. Leading our mission to connect clients with the best solutions across all services. Specialized in cannabis health partnerships and industry-specific coverage solutions.',
@@ -145,7 +146,7 @@ export default function Team() {
       name: 'Matthias Wendler',
       title: 'Health Coverage Expert',
       category: 'health',
-      image: '/Health/Matthias Wendler.png',
+              image: IMAGES.HEALTH_MATTHIAS,
       phone: '(813) 230-6033',
       email: 'ElevatedHealthMatthias@gmail.com',
       description: 'Licensed Health Coverage Expert with access to all options. Focuses on expanding our service reach and building strategic partnerships.',
@@ -159,7 +160,7 @@ export default function Team() {
              name: 'Victoria Whitfield',
              title: 'NIL Specialist & Elite Athlete',
              category: 'nil',
-             image: '/NiL/Vicotoria.png',
+                           image: IMAGES.NIL_VICTORIA,
              phone: '(234) 567-890',
              email: 'victoria@lvastudio.com',
              description: 'Victoria Whitfield is a standout athlete from East Bay High School in Gibsonton, FL, specializing in Flag Football and Basketball. As a Junior (Class of 2027), she has achieved remarkable success including being named Player of the Game and ranking 77th nationally for total tries made. Victoria excels in both sports - playing Varsity Flag Football as #3 Athlete and Varsity Basketball as #4 Center. Standing 5\'7" and weighing 133 lbs, she brings a unique perspective to NIL partnerships, combining her athletic achievements with expertise in athlete branding and Name, Image, and Likeness opportunities. Her recent performance includes 12 total points, 2 touchdowns, and 224 passing yards, demonstrating her exceptional talent and marketability. Victoria has an active NIL endorsement deal with LVA S&H LLC, showcasing her professional approach to athlete branding and partnerships.',
@@ -173,7 +174,7 @@ export default function Team() {
       name: 'Brilliant Solar',
       title: 'Premium Solar Solutions',
       category: 'solar',
-      image: '/Solar/solarBrilliantSolar.png',
+              image: IMAGES.SOLAR_BRILLIANT,
       phone: '1-800-805-1889',
       email: 'info@mybrilliantsolar.com',
       website: 'https://mybrilliantsolar.com/',
@@ -186,7 +187,7 @@ export default function Team() {
       name: 'Eagle Solar',
       title: 'Premium Solar Panel Solutions',
       category: 'solar',
-      image: '/Solar/solarEagle.png',
+              image: IMAGES.SOLAR_EAGLE,
       website: 'https://jinkosolar.us/eagle-modules/',
       description: 'Eagle Solar represents Jinko Solar\'s premium Eagle series modules, delivering industry-leading efficiency and reliability. Our Eagle modules feature advanced PERC technology, bifacial design, and superior performance in real-world conditions. With over 15 years of manufacturing excellence, Eagle Solar provides residential and commercial customers with cutting-edge solar technology backed by comprehensive warranties and exceptional customer support.',
       services: ['Premium Solar Panels', 'PERC Technology', 'Bifacial Modules', 'High Efficiency', 'Extended Warranties', 'Commercial Solutions'],
@@ -197,7 +198,7 @@ export default function Team() {
       name: 'Enphase Energy',
       title: 'Smart Solar Technology Leader',
       category: 'solar',
-      image: '/Solar/solarEnphase.png',
+              image: IMAGES.SOLAR_ENPHASE,
       phone: '(877) 797-4743',
       website: 'https://www.enphase.com/',
       description: 'Enphase Energy is the global leader in smart solar technology, revolutionizing the industry with our innovative microinverter systems. Our IQ microinverters provide maximum energy harvest, enhanced safety, and real-time monitoring capabilities. With over 50 million microinverters deployed worldwide, Enphase delivers reliable, intelligent solar solutions that optimize energy production and provide homeowners with complete visibility into their solar system performance.',
@@ -209,7 +210,7 @@ export default function Team() {
       name: 'Freedom Forever',
       title: 'Complete Solar Freedom Solutions',
       category: 'solar',
-      image: '/Solar/solarFreedomForever.png',
+              image: IMAGES.SOLAR_FREEDOM,
       phone: '800-685-1850',     
       website: 'https://www.freedomforever.com/',
       description: 'Freedom Forever is dedicated to providing complete solar freedom through comprehensive energy solutions. We offer end-to-end solar services including custom design, professional installation, and ongoing maintenance. Our commitment to quality and customer satisfaction has made us one of the fastest-growing solar companies in America. We provide flexible financing options, premium equipment, and lifetime support to ensure our customers achieve true energy independence.',
@@ -221,7 +222,7 @@ export default function Team() {
       name: 'Helioscope',
       title: 'Advanced Solar Design & Analysis',
       category: 'solar',
-      image: '/Solar/solarHelioscope.png',      
+              image: IMAGES.SOLAR_HELIOSCOPE,      
       website: 'https://helioscope.aurorasolar.com/',
       description: 'Helioscope is the industry-leading solar design and analysis platform, providing comprehensive tools for optimal system performance. Our advanced software enables solar professionals to create accurate designs, perform detailed shading analysis, and generate precise energy production estimates. With cloud-based collaboration and real-time updates, Helioscope streamlines the entire solar project lifecycle from initial design to final commissioning.',
       services: ['Solar Design Software', 'Shading Analysis', 'Energy Modeling', 'System Optimization', 'Project Collaboration', 'Performance Monitoring'],
@@ -232,7 +233,7 @@ export default function Team() {
       name: 'Huawei Solar',
       title: 'Smart Solar & Energy Storage',
       category: 'solar',
-      image: '/Solar/solarHuawei.png',   
+              image: IMAGES.SOLAR_HUAWEI,   
       website: 'https://solar.huawei.com/en/',
       description: 'Huawei Solar is a global leader in smart solar solutions and energy storage systems, combining cutting-edge technology with intelligent energy management. Our FusionSolar solutions integrate solar inverters, energy storage, and smart grid technologies to create comprehensive energy ecosystems. With AI-powered optimization and cloud-based monitoring, Huawei Solar delivers maximum efficiency, reliability, and intelligent energy management for residential and commercial applications.',
       services: ['Smart Inverters', 'Energy Storage Systems', 'AI Optimization', 'Cloud Monitoring', 'Grid Integration', 'Commercial Solutions'],
@@ -243,7 +244,7 @@ export default function Team() {
       name: 'Jinko Solar',
       title: 'World-Class Solar Technology',
       category: 'solar',
-      image: '/Solar/solarJinko.png',
+              image: IMAGES.SOLAR_JINKO,
       website: 'https://jinkosolar.us/',
       description: 'Jinko Solar is a world-class solar panel manufacturer delivering cutting-edge technology and exceptional quality. As one of the largest and most innovative solar companies globally, we produce high-efficiency modules using advanced PERC, TOPCon, and HJT technologies. Our commitment to research and development has resulted in multiple world records for solar cell efficiency. Jinko Solar provides reliable, high-performance solar solutions backed by industry-leading warranties and comprehensive customer support.',
       services: ['High-Efficiency Modules', 'PERC Technology', 'TOPCon Cells', 'HJT Technology', 'Global Support', 'Extended Warranties'],
@@ -254,7 +255,7 @@ export default function Team() {
       name: 'Qcells',
       title: 'Premium Solar Cell Technology',
       category: 'solar',
-      image: '/Solar/solarQcells.png',      
+              image: IMAGES.SOLAR_QCELLS,      
       website: 'https://www.qcells.com/',
       description: 'Qcells is a global leader in premium solar cell and module technology, delivering maximum efficiency and reliability. Our advanced Q.ANTUM technology combines PERC, QID, and Zero Gap technology to achieve superior performance and durability. With manufacturing facilities in the United States and worldwide, Qcells provides high-quality solar solutions with industry-leading warranties and comprehensive technical support for residential and commercial applications.',
       services: ['Q.ANTUM Technology', 'PERC Solar Cells', 'Zero Gap Technology', 'High Efficiency Modules', 'US Manufacturing', 'Premium Warranties'],
@@ -265,7 +266,7 @@ export default function Team() {
       name: 'Trina Solar',
       title: 'Global Solar Energy Solutions',
       category: 'solar',
-      image: '/Solar/solarTrinasolar.png',
+              image: IMAGES.SOLAR_TRINA,
       website: 'https://www.trinasolar.com/us',
       description: 'Trina Solar is a global leader in solar energy solutions, providing comprehensive products and services worldwide. Our innovative Vertex series modules feature advanced cell technology and industry-leading efficiency ratings. With over 25 years of experience and a presence in more than 100 countries, Trina Solar delivers reliable, high-performance solar solutions backed by extensive research and development, comprehensive warranties, and global customer support.',
       services: ['Vertex Series Modules', 'Advanced Cell Technology', 'Global Solutions', 'High Efficiency', 'Comprehensive Support', 'Research & Development'],
@@ -394,7 +395,7 @@ export default function Team() {
 
     const handleImageError = useCallback((e: React.SyntheticEvent<HTMLImageElement>) => {
       // Fallback to placeholder
-              e.currentTarget.src = '/NiL/Vicotoria.png';
+              e.currentTarget.src = IMAGES.NIL_VICTORIA;
     }, []);
 
     const handleCardClick = useCallback(() => {
@@ -456,7 +457,7 @@ export default function Team() {
               // School information for NIL specialists
               <>
                 <div className="contact-item school-item">
-                  <img src="/NiL/schoolLogo.png" alt="School Logo" className="school-logo" />
+                  <img src={IMAGES.NIL_SCHOOL_LOGO} alt="School Logo" className="school-logo" />
                   <span>East Bay High School</span>
                 </div>
                 <div className="contact-item school-item">
@@ -530,7 +531,7 @@ export default function Team() {
                 <span key={index} className={`service-badge ${service === 'Cannabis Health' ? 'cannabis-service-badge' : ''}`}>
                   {service === 'Cannabis Health' ? (
                     <>
-                      <img src="/cannabisLogo.png" alt="Cannabis" className="cannabis-service-icon" />
+                      <img src={IMAGES.CANNABIS_LOGO} alt="Cannabis" className="cannabis-service-icon" />
                       NEW Cannabis for Business
                     </>
                   ) : (
@@ -584,7 +585,7 @@ export default function Team() {
                    // School information for NIL specialists
                    <>
                      <div className="health-contact-item school-item">
-                       <img src="/NiL/schoolLogo.png" alt="School Logo" className="school-logo" />
+                       <img src={IMAGES.NIL_SCHOOL_LOGO} alt="School Logo" className="school-logo" />
                        <span>East Bay High School</span>
                      </div>
                      <div className="health-contact-item school-item">
@@ -618,7 +619,7 @@ export default function Team() {
                     <span key={index} className={`health-service-badge ${service === 'Cannabis Health' ? 'cannabis-service-badge' : ''}`}>
                       {service === 'Cannabis Health' ? (
                         <>
-                          <img src="/cannabisLogo.png" alt="Cannabis" className="cannabis-service-icon" />
+                          <img src={IMAGES.CANNABIS_LOGO} alt="Cannabis" className="cannabis-service-icon" />
                           NEW Cannabis for Business
                         </>
                       ) : (
