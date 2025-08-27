@@ -91,7 +91,9 @@ const router = createBrowserRouter([
       { path: "debug", element: <Debug /> }
     ]
   }
-])
+], {
+  basename: '/healthinsurancedave'
+})
 
 // ===== APP INITIALIZATION =====
 ReactDOM.createRoot(document.getElementById('root')!).render(
