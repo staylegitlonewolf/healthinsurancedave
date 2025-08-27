@@ -8,5 +8,9 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     emptyOutDir: true,
+    rollupOptions: {
+      external: [],
+    },
+    target: 'es2015',
   },
 })
