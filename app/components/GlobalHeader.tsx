@@ -10,6 +10,7 @@ export function GlobalHeader() {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isIPhone, setIsIPhone] = useState(false);
+  const [isAndroid, setIsAndroid] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [logoClickCount, setLogoClickCount] = useState(0);
   const [lastLogoClickMs, setLastLogoClickMs] = useState<number>(0);
@@ -41,15 +42,16 @@ export function GlobalHeader() {
     const shouldBeDark = savedTheme ? savedTheme === 'dark' : prefersDark;
     setIsDark(shouldBeDark);
     
-    // Enhanced mobile detection
-    const checkMobile = () => {
-      const userAgent = navigator.userAgent;
-      const isIPhoneDevice = /iPhone|iPod/.test(userAgent);
-      const isAndroid = /Android/.test(userAgent);
-      const isMobileDevice = isIPhoneDevice || isAndroid || window.innerWidth <= 768;
-      setIsMobile(isMobileDevice);
-      setIsIPhone(isIPhoneDevice);
-    };
+      // Enhanced mobile detection
+  const checkMobile = () => {
+    const userAgent = navigator.userAgent;
+    const isIPhoneDevice = /iPhone|iPod/.test(userAgent);
+    const isAndroidDevice = /Android/.test(userAgent);
+    const isMobileDevice = isIPhoneDevice || isAndroidDevice || window.innerWidth <= 768;
+    setIsMobile(isMobileDevice);
+    setIsIPhone(isIPhoneDevice);
+    setIsAndroid(isAndroidDevice);
+  };
     
     checkMobile();
     window.addEventListener('resize', checkMobile);
@@ -251,37 +253,19 @@ export function GlobalHeader() {
             <>
               <button 
                 onClick={() => {
-                  const healthSection = document.getElementById('services');
-                  if (healthSection) {
-                    const headerHeight = window.innerWidth <= 768 ? 120 : 80;
-                    const elementTop = Math.max(0, healthSection.offsetTop - headerHeight);
-                    
-                    // Enhanced mobile scrolling
-                    if (window.innerWidth <= 768) {
-                      // Mobile fallback methods
-                      try {
-                        window.scrollTo({ 
-                          top: elementTop, 
-                          behavior: 'smooth' 
-                        });
-                        
-                        // Fallback for mobile
-                        setTimeout(() => {
-                          if (Math.abs(window.scrollY - elementTop) > 50) {
-                            document.documentElement.scrollTop = elementTop;
-                            document.body.scrollTop = elementTop;
-                          }
-                        }, 100);
-                      } catch (error) {
-                        // Emergency fallback
-                        window.scroll(0, elementTop);
-                      }
-                    } else {
-                      window.scrollTo({ 
-                        top: elementTop, 
-                        behavior: 'smooth' 
-                      });
-                    }
+                  // Scroll to top of the page instead of a specific section
+                  window.scrollTo({ 
+                    top: 0, 
+                    behavior: 'smooth' 
+                  });
+                  
+                  // Enhanced mobile scroll to top
+                  if (window.innerWidth <= 768) {
+                    setTimeout(() => {
+                      document.documentElement.scrollTop = 0;
+                      document.body.scrollTop = 0;
+                      window.scroll(0, 0);
+                    }, 100);
                   }
                 }}
                 className={`global-header-nav-link ${pathname === '/services' ? 'active' : ''}`}
@@ -430,8 +414,8 @@ export function GlobalHeader() {
             )}
           </button>
           
-          {/* Enhanced Fullscreen Button - Hidden on iPhone */}
-          {!isIPhone && (
+                     {/* Enhanced Fullscreen Button - Hidden on iPhone, shown on Android */}
+           {(!isIPhone || isAndroid) && (
             <button
               onClick={toggleFullscreen}
               className={`global-header-control-btn global-header-fullscreen-btn ${isHeaderCollapsed ? 'collapsed' : 'normal'}`}

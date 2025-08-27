@@ -23,6 +23,20 @@ export default function FloatingContactButton() {
     } else {
       // If we're on any other page, go to contact page
       navigate('/contact');
+      
+      // Scroll to top when navigating to contact page
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        
+        // Enhanced mobile scroll to top
+        if (window.innerWidth <= 768) {
+          setTimeout(() => {
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+            window.scroll(0, 0);
+          }, 100);
+        }
+      }, 100);
     }
   };
 

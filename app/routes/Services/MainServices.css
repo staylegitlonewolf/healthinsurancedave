@@ -107,6 +107,13 @@
   }
 }
 
+/* Dark theme service cards - using .dark class */
+.dark .service-card {
+  background: rgba(17, 24, 39, 0.8);
+  border-color: rgba(55, 65, 81, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
 /* Top border accent on hover */
 .service-card::before {
   content: '';
@@ -139,6 +146,11 @@
   .service-card::after {
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
   }
+}
+
+/* Dark theme shimmer variation - using .dark class */
+.dark .service-card::after {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
 }
 
 .service-card:hover::before {
