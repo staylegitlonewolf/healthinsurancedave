@@ -25,7 +25,7 @@ import SolarMaster from '../app/components/solarMaster/SolarMaster'
 import Disclaimer from '../app/routes/disclaimer'
 import Terms from '../app/routes/terms'
 import Privacy from '../app/routes/privacy'
-import Debug from '../app/routes/debug'
+// import Debug from '../app/routes/debug'
 
 // ===== STYLES - BASE & COMPONENTS (LOAD FIRST) =====
 import '../app/components/unifiedStyles.css'
@@ -94,7 +94,7 @@ const router = createBrowserRouter([
       { path: "privacy", element: <Privacy /> },
       
       // Development
-      { path: "debug", element: <Debug /> }
+      // { path: "debug", element: <Debug /> }
     ]
   }
 ], {

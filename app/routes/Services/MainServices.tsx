@@ -24,15 +24,15 @@ const MainServices: React.FC = () => {
     
     const section = serviceSections.find(s => s.id === sectionId);
     if (section) {
-      console.log(`🎯 Scrolling to section: ${sectionId}, target: ${section.target}`);
+      // console.log(`🎯 Scrolling to section: ${sectionId}, target: ${section.target}`);
       
       // Function to attempt scroll with retries for dynamically loaded content
       const attemptScroll = (attempt = 1, maxAttempts = 5) => {
         const targetElement = document.getElementById(section.target);
         
         if (targetElement) {
-          console.log(`✅ Found target element on attempt ${attempt}:`, targetElement);
-          console.log(`📍 Element position: ${targetElement.offsetTop}px`);
+                  // console.log(`✅ Found target element on attempt ${attempt}:`, targetElement);
+        // console.log(`📍 Element position: ${targetElement.offsetTop}px`);
           
           // Enhanced mobile scrolling with multiple fallback methods
           try {
@@ -41,7 +41,7 @@ const MainServices: React.FC = () => {
             const headerHeight = isMobile ? 140 : 100; 
             const elementTop = Math.max(0, targetElement.offsetTop - headerHeight);
             
-            console.log(`🚀 Scrolling to: ${elementTop}px (element: ${targetElement.offsetTop}px - header: ${headerHeight}px, mobile: ${isMobile}, iPhone: ${isIPhone})`);
+            // console.log(`🚀 Scrolling to: ${elementTop}px (element: ${targetElement.offsetTop}px - header: ${headerHeight}px, mobile: ${isMobile}, iPhone: ${isIPhone})`);
             
             // Multiple scroll methods for better mobile compatibility
             if (isMobile || isIPhone) {
@@ -54,7 +54,7 @@ const MainServices: React.FC = () => {
               // Method 2: Fallback after short delay for mobile
               setTimeout(() => {
                 if (Math.abs(window.scrollY - elementTop) > 50) {
-                  console.log('🔄 Mobile fallback scroll');
+                  // console.log('🔄 Mobile fallback scroll');
                   document.documentElement.scrollTop = elementTop;
                   document.body.scrollTop = elementTop;
                 }
@@ -64,7 +64,7 @@ const MainServices: React.FC = () => {
               if (isIPhone) {
                 setTimeout(() => {
                   if (Math.abs(window.scrollY - elementTop) > 50) {
-                    console.log('📱 iPhone fallback scroll');
+                    // console.log('📱 iPhone fallback scroll');
                     window.scroll(0, elementTop);
                   }
                 }, 200);
@@ -78,7 +78,7 @@ const MainServices: React.FC = () => {
             }
             
           } catch (error) {
-            console.error('❌ Scroll error:', error);
+            // console.error('❌ Scroll error:', error);
             const elementTop = targetElement.offsetTop - (window.innerWidth <= 768 ? 140 : 100);
             // Emergency fallback
             window.scrollTo(0, Math.max(0, elementTop));
@@ -86,18 +86,18 @@ const MainServices: React.FC = () => {
             document.body.scrollTop = Math.max(0, elementTop);
           }
         } else {
-          console.warn(`⚠️ Target element not found on attempt ${attempt}: ${section.target}`);
+          // console.warn(`⚠️ Target element not found on attempt ${attempt}: ${section.target}`);
           
           // Retry with longer delay for dynamically loaded content
           if (attempt < maxAttempts) {
             setTimeout(() => attemptScroll(attempt + 1, maxAttempts), 200 * attempt);
           } else {
-            console.error(`❌ Target element not found after ${maxAttempts} attempts: ${section.target}`);
+            // console.error(`❌ Target element not found after ${maxAttempts} attempts: ${section.target}`);
             // Fallback: scroll to other-services section if solar-solutions fails
             if (section.target === 'solar-solutions') {
               const fallbackElement = document.getElementById('other-services');
               if (fallbackElement) {
-                console.log(`🔄 Fallback to other-services section`);
+                // console.log(`🔄 Fallback to other-services section`);
                 const isMobile = window.innerWidth <= 768;
                 const isIPhone = /iPhone|iPad|iPod/.test(navigator.userAgent);
                 const headerHeight = isMobile ? 140 : 100;
@@ -112,7 +112,7 @@ const MainServices: React.FC = () => {
                   
                   setTimeout(() => {
                     if (Math.abs(window.scrollY - elementTop) > 50) {
-                      console.log('🔄 Mobile fallback scroll (other-services)');
+                      // console.log('🔄 Mobile fallback scroll (other-services)');
                       document.documentElement.scrollTop = elementTop;
                       document.body.scrollTop = elementTop;
                     }
@@ -121,7 +121,7 @@ const MainServices: React.FC = () => {
                   if (isIPhone) {
                     setTimeout(() => {
                       if (Math.abs(window.scrollY - elementTop) > 50) {
-                        console.log('📱 iPhone fallback scroll (other-services)');
+                        // console.log('📱 iPhone fallback scroll (other-services)');
                         window.scroll(0, elementTop);
                       }
                     }, 200);
@@ -141,7 +141,7 @@ const MainServices: React.FC = () => {
       // Start the scroll attempt
       attemptScroll();
     } else {
-      console.error(`❌ Section not found: ${sectionId}`);
+      // console.error(`❌ Section not found: ${sectionId}`);
     }
   }, [serviceSections])
   return (

@@ -147,7 +147,7 @@
 }
 
 @media (min-width: 640px) {
-  . {
+  .global-footer-company-logo {
     height: 5rem;
     width: 6rem;
   }
