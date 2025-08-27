@@ -1,16 +1,12 @@
-import { reactRouter } from "@react-router/dev/vite";
-import { defineConfig } from "vite";
-import tsconfigPaths from "vite-tsconfig-paths";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
+// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [reactRouter(), tsconfigPaths()],
-  server: {
-    host: true,
-  },
-  base: "/healthinsurancedave/", // GitHub Pages repository name
+  plugins: [react()],
+  base: '/healthinsurancedave/',
   build: {
-    outDir: "dist",
+    outDir: 'dist',
     emptyOutDir: true,
-    assetsDir: "assets",
   },
-});
+})
