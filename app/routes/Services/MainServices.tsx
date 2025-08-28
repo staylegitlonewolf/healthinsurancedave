@@ -222,14 +222,10 @@ const MainServices: React.FC = () => {
           </div>
         </div>
 
-
-
-
-          {/* Additional Services Target for Navigation */}
-          <div id="web-development" style={{ paddingTop: '2rem' }}>
-            {/* This serves as the scroll target for Additional Services navigation */}
-            {/* The actual Additional Services content is in the Web Development section above */}
-          </div>
+        {/* Additional Services Target for Navigation */}
+        <div id="web-development" style={{ paddingTop: '2rem' }}>
+          {/* This serves as the scroll target for Additional Services navigation */}
+          {/* The actual Additional Services content is in the Web Development section above */}
         </div>
       </div>
     </section>
