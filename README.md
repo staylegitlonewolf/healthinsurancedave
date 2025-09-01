@@ -17,7 +17,7 @@ Visit the live website: [https://staylegitlonewolf.github.io/healthinsurancedave
 - Comprehensive Coverage Options
 - Professional Consultation Services
 
-### 👥 **Professional Team**
+### 👤 **Primary Contact**
 - **David Brown** - Licensed Health Coverage Expert
 - Access to all health insurance options
 - Personalized consultation and guidance
@@ -30,10 +30,9 @@ Visit the live website: [https://staylegitlonewolf.github.io/healthinsurancedave
 - **Interactive Components** - Smooth animations and modern UI
 
 ### 🔍 **Advanced Features**
-- **Smart Navigation** - Clean, intuitive menu system
+- **Clean Navigation** - Simple, intuitive menu
 - **Contact Integration** - Google Forms embedded contact system
 - **Certification Gallery** - State licensing displays
-- **Professional Profiles** - Detailed specialist information
 - **Responsive Layouts** - Optimized for all screen sizes
 
 ## 📄 Pages
@@ -42,8 +41,7 @@ Visit the live website: [https://staylegitlonewolf.github.io/healthinsurancedave
 - **💼 Services** (`/services`) - Health insurance plans and solutions
 - **ℹ️ About** (`/about`) - Company information and mission
 - **🏆 Certifications** (`/certifications`) - Professional licenses by state
-- **📞 Contact** (`/contact`) - Google Forms contact system
-- **👨‍⚕️ David Brown** (`/discover`) - Health coverage expert profile
+- **📞 Contact** (`/contact`) - Full-screen Google Form contact page
 
 ### 👨‍⚕️ Specialist Pages
 - **Health Master** (`/health_master`) - David Brown's detailed profile
@@ -86,7 +84,7 @@ Optimized for all mobile devices with:
 
 ## 🎨 Design System
 
-- **Primary Color**: Blue (#00bfff)
+- **Primary Accent**: Emerald (#10b981)
 - **Typography**: Inter font family
 - **Responsive Breakpoints**: Desktop, Tablet, Mobile
 - **Theme Support**: Light and Dark modes
@@ -94,7 +92,7 @@ Optimized for all mobile devices with:
 
 ## 📧 Contact Form Integration
 
-The contact form uses **Google Forms** for reliable, free form submissions:
+The contact form uses **Google Forms** for reliable, free form submissions and is embedded as a **full-screen iframe** on the `/contact` page.
 
 ### ✅ **Benefits of Google Forms**
 - **100% Free** - No monthly fees or setup costs
@@ -104,8 +102,8 @@ The contact form uses **Google Forms** for reliable, free form submissions:
 - **No Maintenance** - Google handles everything automatically
 
 ### 🔧 **How It Works**
-1. **Embedded Form** - Google Form is seamlessly integrated into your website
-2. **Professional Look** - Matches your website's design perfectly
+1. **Full-Screen Embed** - The page hosts only the embedded Google Form for maximum focus
+2. **Floating "Contact Me" Button** - A persistent button appears on all pages; on `/contact` it switches to "Go Back"
 3. **Instant Submissions** - You receive email notifications immediately
 4. **Secure** - Google's security protects all form data
 
