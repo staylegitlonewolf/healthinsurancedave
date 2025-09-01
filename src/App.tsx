@@ -16,7 +16,6 @@ import Home from '../app/routes/home'
 import Services from '../app/routes/services'
 import About from '../app/routes/about'
 import Certifications from '../app/routes/certifications'
-import Discover from '../app/routes/discover'
 import Contact from '../app/routes/contact'
 import HealthMaster from '../app/routes/health_master'
 import CertificationMaster from '../app/routes/certification_master'
@@ -44,7 +43,6 @@ import '../app/routes/Services/Services.css'
 import '../app/routes/home.css'
 import '../app/routes/about.css'
 import '../app/routes/certifications.css'
-import '../app/routes/discover.css'
 import '../app/routes/contact.css'
 import '../app/routes/disclaimer.css'
 import '../app/routes/terms.css'
@@ -100,7 +98,6 @@ const router = createBrowserRouter([
       { path: "services", element: <Services /> },
       { path: "about", element: <About /> },
       { path: "certifications", element: <Certifications /> },
-      { path: "discover", element: <Discover /> },
       { path: "contact", element: <Contact /> },
       
       // Master Pages

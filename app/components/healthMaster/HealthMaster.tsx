@@ -95,9 +95,8 @@ const HealthMaster = () => {
       }
     }
     
-    // If no valid data is found, redirect back to team page
-    // console.warn('HealthMaster: No memberData provided, redirecting to team page')
-    navigate('/discover', { replace: true })
+    // If no valid data is found, redirect back to home page
+    navigate('/', { replace: true })
   }, [memberData, location.search, navigate, getMemberDataById])
 
   const [imageZoom, setImageZoom] = useState({
@@ -472,18 +471,18 @@ const HealthMaster = () => {
                 </div>
                 <h3 className="master-detail-title">Get In Touch</h3>
               </div>
-                             <div className="master-detail-content">
-                 <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                   <a href={`tel:${memberData.phone}`} className="master-btn health">
-                     <i className="fas fa-phone"></i>
-                     Call Now
-                   </a>
-                   <a href={`mailto:${memberData.email}`} className="master-btn health">
-                     <i className="fas fa-envelope"></i>
-                     Send Email
-                   </a>
-                 </div>
-               </div>
+              <div className="master-detail-content">
+                <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                  <a href={`tel:${memberData.phone}`} className="master-btn health">
+                    <i className="fas fa-phone"></i>
+                    Call Now
+                  </a>
+                  <a href={`mailto:${memberData.email}`} className="master-btn health">
+                    <i className="fas fa-envelope"></i>
+                    Send Email
+                  </a>
+                </div>
+              </div>
             </div>
 
             {/* Contact Information */}

@@ -3,277 +3,129 @@
 /* Base button styles */
 .floating-contact-btn {
   position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
+  bottom: 1.25rem;
+  right: 1.25rem;
   z-index: 50;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 4rem;
-  height: 4rem;
-  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 50%, #1e40af 100%);
+  width: auto;
+  min-width: 6.25rem;
+  height: 3.5rem;
+  padding: 0 1.5rem;
+  background: linear-gradient(135deg, #10b981 0%, #059669 40%, #047857 100%);
   color: white;
   border: none;
-  border-radius: 50%;
-  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 2rem;
+  box-shadow: 0 10px 24px rgba(16, 185, 129, 0.35);
+  transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease;
   cursor: pointer;
   overflow: hidden;
-  animation: float 3s ease-in-out infinite;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
 }
 
 .floating-contact-btn:hover {
-  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 50%, #1e3a8a 100%);
-  transform: scale(1.25) rotate(12deg);
-  box-shadow: 0 15px 35px rgba(59, 130, 246, 0.5);
-  animation: bounce 0.6s ease-in-out, glow 2s ease-in-out infinite;
+  background: linear-gradient(135deg, #10b981 0%, #059669 60%, #047857 100%);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(16, 185, 129, 0.45);
 }
 
 .floating-contact-btn:active {
-  transform: scale(0.95);
+  transform: translateY(-1px);
 }
 
-/* Animated ring effect */
+/* Simple ring and glow */
 .floating-contact-ring {
   position: absolute;
   inset: 0;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #60a5fa, #3b82f6);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  border-radius: 2rem;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  pointer-events: none;
 }
 
-.floating-contact-btn:hover .floating-contact-ring {
-  opacity: 1;
-  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-
-/* Glow effect */
 .floating-contact-glow {
   position: absolute;
   inset: 0;
-  border-radius: 50%;
-  background: #60a5fa;
-  filter: blur(1rem);
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.floating-contact-btn:hover .floating-contact-glow {
-  opacity: 0.3;
+  border-radius: 2rem;
+  box-shadow: 0 0 22px rgba(16, 185, 129, 0.25);
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 /* Main button content */
 .floating-contact-content {
   position: relative;
-  z-index: 10;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
 }
 
 /* Icon styles */
 .floating-contact-icon {
-  font-size: 1.5rem;
-  transition: transform 0.3s ease;
+  font-size: 1rem;
+  transition: transform 180ms ease;
 }
 
 .floating-contact-btn:hover .floating-contact-icon {
-  transform: scale(1.1);
+  transform: translateY(-1px);
 }
 
-/* Pulse animation */
+/* Text styles */
+.floating-contact-text {
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+}
+
+/* Pulse animation - subtle */
 .floating-contact-pulse {
   position: absolute;
   inset: 0;
-  border-radius: 50%;
-  border: 2px solid #93c5fd;
+  border-radius: 2rem;
+  border: 2px solid rgba(16, 185, 129, 0.25);
   opacity: 0;
-  transition: opacity 0.3s ease;
 }
 
 .floating-contact-btn:hover .floating-contact-pulse {
-  opacity: 1;
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation: pulse-soft 1.8s ease-out infinite;
 }
 
-/* Enhanced hover effects */
-.floating-contact-btn::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, #3b82f6, #1d4ed8, #3b82f6);
-  border-radius: 50%;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.floating-contact-btn:hover::before {
-  opacity: 1;
-  animation: spin 2s linear infinite;
-}
-
-/* Dark theme adjustments */
-.dark .floating-contact-btn {
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-}
-
-.dark .floating-contact-btn:hover {
-  box-shadow: 0 0 30px rgba(59, 130, 246, 0.6), 0 0 40px rgba(59, 130, 246, 0.3);
-}
-
-.dark .floating-contact-btn::before {
-  background: linear-gradient(45deg, #60a5fa, #3b82f6, #60a5fa);
-}
-
-/* Animations */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-@keyframes glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.8), 0 0 40px rgba(59, 130, 246, 0.4);
-  }
-}
-
-@keyframes bounce {
-  0%, 20%, 53%, 80%, 100% {
-    transform: translate3d(0, 0, 0);
-  }
-  40%, 43% {
-    transform: translate3d(0, -8px, 0);
-  }
-  70% {
-    transform: translate3d(0, -4px, 0);
-  }
-  90% {
-    transform: translate3d(0, -2px, 0);
-  }
-}
-
-@keyframes ping {
-  75%, 100% {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+@keyframes pulse-soft {
+  0% { opacity: 0.35; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.15); }
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .floating-contact-btn {
-    width: 3.5rem;
-    height: 3.5rem;
+    min-width: 5.5rem;
+    height: 3.25rem;
+    padding: 0 1.25rem;
     bottom: 1rem;
     right: 1rem;
+    font-size: 0.9rem;
   }
-  
-  .floating-contact-icon {
-    font-size: 1.25rem;
-  }
+  .floating-contact-text { font-size: 0.9rem; }
 }
 
 @media (max-width: 480px) {
   .floating-contact-btn {
-    width: 3rem;
+    min-width: 5rem;
     height: 3rem;
+    padding: 0 1rem;
     bottom: 0.75rem;
     right: 0.75rem;
+    font-size: 0.85rem;
   }
-  
-  .floating-contact-icon {
-    font-size: 1rem;
-  }
+  .floating-contact-text { font-size: 0.85rem; }
 }
 
-/* iPhone-Specific Floating Button Styles */
-.iphone-device .floating-contact-btn {
-  width: 3.25rem;
-  height: 3.25rem;
-  bottom: 1rem;
-  right: 1rem;
-}
-
-.iphone-device .floating-contact-icon {
-  font-size: 1.1rem;
-}
-
-/* iPhone 428x926 Specific Styles */
-.iphone-428x926 .floating-contact-btn {
-  width: 3rem;
-  height: 3rem;
-  bottom: 0.75rem;
-  right: 0.75rem;
-}
-
-.iphone-428x926 .floating-contact-icon {
-  font-size: 1rem;
-}
-
-/* iPhone Landscape 926x368 Specific Styles */
-.iphone-landscape-926x368 .floating-contact-btn {
-  width: 2.75rem;
-  height: 2.75rem;
-  bottom: 0.5rem;
-  right: 0.5rem;
-}
-
-.iphone-landscape-926x368 .floating-contact-icon {
-  font-size: 0.9rem;
-}
-
-/* Accessibility improvements */
+/* Accessibility */
 .floating-contact-btn:focus {
-  outline: 2px solid #3b82f6;
+  outline: 3px solid rgba(16, 185, 129, 0.45);
   outline-offset: 2px;
-}
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-  .floating-contact-btn,
-  .floating-contact-icon,
-  .floating-contact-ring,
-  .floating-contact-glow,
-  .floating-contact-pulse {
-    animation: none;
-    transition: none;
-  }
-  
-  .floating-contact-btn:hover {
-    transform: scale(1.1);
-  }
-  
-  .floating-contact-btn:hover .floating-contact-icon {
-    transform: none;
-  }
 }

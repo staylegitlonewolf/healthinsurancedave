@@ -82,9 +82,7 @@ export function Footer() {
               {[
                 { to: "/services", label: "Services" },
                 { to: "/about", label: "About Us" },
-                { to: "/certifications", label: "Certifications" },
-                { to: "/discover", label: "Our Team" },
-                { to: "/contact", label: "Contact" }
+                { to: "/certifications", label: "Certifications" }
               ].map((link) => (
                 <li key={link.to} className="global-footer-section-item">
                   <Link 

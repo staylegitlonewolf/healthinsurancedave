@@ -228,13 +228,7 @@ export function GlobalHeader() {
               >
                 Certifications
               </Link>
-                             <Link 
-                 to="/discover" 
-                 onClick={handleNavigationClick}
-                 className={`global-header-nav-link ${pathname.startsWith('/discover') ? 'active' : ''}`}
-               >
-                 Contact
-               </Link>
+              
             </>
           )}
 

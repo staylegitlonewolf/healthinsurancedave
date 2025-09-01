@@ -41,8 +41,8 @@ export default function FloatingContactButton() {
   };
 
   const isOnContactPage = location.pathname === '/contact';
-  const buttonTitle = isOnContactPage ? 'Go Back' : 'Contact Us';
-  const buttonAriaLabel = isOnContactPage ? 'Go back to previous page' : 'Contact Us';
+  const buttonTitle = isOnContactPage ? 'Go Back' : 'Contact Me';
+  const buttonAriaLabel = isOnContactPage ? 'Go back to previous page' : 'Contact Me';
 
   return (
     <button
@@ -61,6 +61,9 @@ export default function FloatingContactButton() {
         {/* Main button content */}
         <div className="floating-contact-content">
           <i className="fas fa-envelope floating-contact-icon"></i>
+          <span className="floating-contact-text">
+            {isOnContactPage ? 'Go Back' : 'Contact Me'}
+          </span>
         </div>
         
         {/* Pulse animation */}
