@@ -1,8 +1,8 @@
 # Health Insurance Dave
 
-**Professional Health Insurance Solutions & Services**
+**Professional Health Insurance Solutions**
 
-A modern, responsive React website built for Health Insurance Dave, featuring comprehensive health insurance services, cannabis business insurance, solar solutions, and professional certifications.
+A modern, responsive React website built for Health Insurance Dave, featuring comprehensive health insurance services, Medicare, Medicaid, and group insurance solutions.
 
 ## 🚀 Live Site
 
@@ -11,44 +11,42 @@ Visit the live website: [https://staylegitlonewolf.github.io/healthinsurancedave
 ## ✨ Features
 
 ### 🏥 **Health Insurance Services**
-- Individual & Family Plans
+- Individual & Family Health Plans
+- Medicare & Medicaid
 - Group Insurance Solutions
-- Cannabis Business Insurance
 - Comprehensive Coverage Options
+- Professional Consultation Services
 
 ### 👥 **Professional Team**
-- Licensed Health Insurance Experts
-- David Brown - Licensed Health Coverage Expert
-
-- Victoria Whitfield - NIL Specialist
+- **David Brown** - Licensed Health Coverage Expert
+- Access to all health insurance options
+- Personalized consultation and guidance
 
 ### 📱 **Modern Web Experience**
 - **Responsive Design** - Optimized for desktop, tablet, and mobile
 - **Dark/Light Theme** - Toggle between themes
 - **Mobile-First** - Perfect iPhone and Android experience
 - **Fast Performance** - Built with Vite for lightning-fast loading
-- **Interactive Components** - Floating particles, smooth animations
+- **Interactive Components** - Smooth animations and modern UI
 
 ### 🔍 **Advanced Features**
-- **Dynamic Navigation** - Context-aware menu system
-- **Master Pages** - Detailed specialist profiles
+- **Smart Navigation** - Clean, intuitive menu system
+- **Contact Integration** - Google Forms embedded contact system
 - **Certification Gallery** - State licensing displays
-- **Contact Forms** - Professional inquiry system
-- **Promo System** - Event and announcement lightbox
+- **Professional Profiles** - Detailed specialist information
+- **Responsive Layouts** - Optimized for all screen sizes
 
 ## 📄 Pages
 
-- **🏠 Home** (`/`) - Hero section with services overview
-- **💼 Services** (`/services`) - Insurance plans and pricing
+- **🏠 Home** (`/`) - Hero section with health insurance overview
+- **💼 Services** (`/services`) - Health insurance plans and solutions
 - **ℹ️ About** (`/about`) - Company information and mission
 - **🏆 Certifications** (`/certifications`) - Professional licenses by state
-- **🔍 Discover** (`/discover`) - Team member directory
-- **📞 Contact** (`/contact`) - Get in touch form
+- **📞 Contact** (`/contact`) - Google Forms contact system
+- **👨‍⚕️ David Brown** (`/discover`) - Health coverage expert profile
 
 ### 👨‍⚕️ Specialist Pages
-- **Health Master** (`/health_master`) - Health insurance specialists
-- **NIL Master** (`/nil_master`) - Name, Image, Likeness specialists
-- **Solar Master** (`/solar_master`) - Solar solution providers
+- **Health Master** (`/health_master`) - David Brown's detailed profile
 - **Certification Master** (`/certification_master`) - License details
 
 ## 🛠️ Built With
@@ -70,21 +68,12 @@ Visit the live website: [https://staylegitlonewolf.github.io/healthinsurancedave
 
 ## 🌟 Specialized Features
 
-### Cannabis Insurance
-- Tailored coverage for cannabis businesses
-- Florida MMTC compliance
-- Budtender and cultivator health plans
-- Risk management solutions
-
-### Solar Solutions
-- Partnership with trusted solar providers
-- Energy cost reduction services
-- Sustainable business solutions
-
-### NIL Services
-- Name, Image, Likeness consultation
-- Student-athlete support
-- Sports partnership management
+### Health Insurance Solutions
+- Individual and family health plans
+- Medicare and Medicaid assistance
+- Group insurance for businesses
+- Comprehensive coverage options
+- Professional consultation services
 
 ## 📱 Mobile Experience
 
@@ -98,15 +87,43 @@ Optimized for all mobile devices with:
 ## 🎨 Design System
 
 - **Primary Color**: Blue (#00bfff)
-- **Secondary Color**: Green (cannabis section)
 - **Typography**: Inter font family
 - **Responsive Breakpoints**: Desktop, Tablet, Mobile
 - **Theme Support**: Light and Dark modes
+- **Modern UI**: Clean, professional design
+
+## 📧 Contact Form Integration
+
+The contact form uses **Google Forms** for reliable, free form submissions:
+
+### ✅ **Benefits of Google Forms**
+- **100% Free** - No monthly fees or setup costs
+- **Reliable** - Google's infrastructure never goes down
+- **Instant Notifications** - Email alerts for every submission
+- **Mobile-Friendly** - Works perfectly on all devices
+- **No Maintenance** - Google handles everything automatically
+
+### 🔧 **How It Works**
+1. **Embedded Form** - Google Form is seamlessly integrated into your website
+2. **Professional Look** - Matches your website's design perfectly
+3. **Instant Submissions** - You receive email notifications immediately
+4. **Secure** - Google's security protects all form data
+
+### 📋 **Form Fields Include**
+- Full Name and Email
+- Phone Number
+- Subject Selection (Health Insurance, Medicare, Medicaid, Group Insurance)
+- Preferred Contact Method
+- Best Time to Reach You
+- How You Heard About Us
+- Referral Information
+- Detailed Message
 
 ---
 
 **Contact Information:**
-- Website: [Health Insurance Dave](https://staylegitlonewolf.github.io/healthinsurancedave/)
-- Professional health insurance solutions for individuals, families, and businesses
+- **David Brown**: (813) 647-1118
+- **Email**: ElevatedHealthDavid@gmail.com
+- **Services**: Individual, Family, Medicare, Medicaid, Group Insurance
 
-*Built with modern web technologies for optimal performance and user experience.*
+*Built with modern web technologies for optimal performance and user experience. Focused on providing exceptional health insurance solutions and professional consultation services.*

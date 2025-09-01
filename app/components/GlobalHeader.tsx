@@ -17,7 +17,7 @@ export function GlobalHeader() {
   const [showDebugPopup, setShowDebugPopup] = useState(false);
   const [isHeaderCollapsed, setIsHeaderCollapsed] = useState(false);
   const [isLogoDisabled, setIsLogoDisabled] = useState(false);
-  const [navigationMode, setNavigationMode] = useState<'global' | 'services' | 'discover'>('global');
+  const [navigationMode, setNavigationMode] = useState<'global'>('global');
 
   const [isClient, setIsClient] = useState(false);
 
@@ -68,13 +68,7 @@ export function GlobalHeader() {
     }
 
     // Set navigation mode based on current page
-    if (pathname === '/services') {
-      setNavigationMode('services');
-    } else if (pathname === '/discover') {
-      setNavigationMode('discover');
-    } else {
-      setNavigationMode('global');
-    }
+    setNavigationMode('global');
   }, [pathname]);
 
   // Check localStorage only after component mounts on client
@@ -141,12 +135,7 @@ export function GlobalHeader() {
       return;
     }
 
-    // If we're in services or discover mode, return to global navigation
-    if (navigationMode === 'services' || navigationMode === 'discover') {
-      e.preventDefault();
-      setNavigationMode('global');
-      return;
-    }
+
 
     const now = Date.now();
     const withinWindow = now - lastLogoClickMs < 2000;
@@ -239,124 +228,19 @@ export function GlobalHeader() {
               >
                 Certifications
               </Link>
-              <Link 
-                to="/discover" 
-                onClick={handleNavigationClick}
-                className={`global-header-nav-link ${pathname.startsWith('/discover') ? 'active' : ''}`}
-              >
-                Discover
-              </Link>
+                             <Link 
+                 to="/discover" 
+                 onClick={handleNavigationClick}
+                 className={`global-header-nav-link ${pathname.startsWith('/discover') ? 'active' : ''}`}
+               >
+                 Contact
+               </Link>
             </>
           )}
 
-          {navigationMode === 'services' && (
-            <>
-              <button 
-                onClick={() => {
-                  // Scroll to top of the page instead of a specific section
-                  window.scrollTo({ 
-                    top: 0, 
-                    behavior: 'smooth' 
-                  });
-                  
-                  // Enhanced mobile scroll to top
-                  if (window.innerWidth <= 768) {
-                    setTimeout(() => {
-                      document.documentElement.scrollTop = 0;
-                      document.body.scrollTop = 0;
-                      window.scroll(0, 0);
-                    }, 100);
-                  }
-                }}
-                className={`global-header-nav-link ${pathname === '/services' ? 'active' : ''}`}
-              >
-                Health
-              </button>
+          
 
-              <button 
-                onClick={() => {
-                  const webDevSection = document.getElementById('web-development');
-                  if (webDevSection) {
-                    const headerHeight = window.innerWidth <= 768 ? 120 : 80;
-                    const elementTop = Math.max(0, webDevSection.offsetTop - headerHeight);
-                    
-                    // Enhanced mobile scrolling
-                    if (window.innerWidth <= 768) {
-                      try {
-                        window.scrollTo({ 
-                          top: elementTop, 
-                          behavior: 'smooth' 
-                        });
-                        
-                        // Fallback for mobile
-                        setTimeout(() => {
-                          if (Math.abs(window.scrollY - elementTop) > 50) {
-                            document.documentElement.scrollTop = elementTop;
-                            document.body.scrollTop = elementTop;
-                          }
-                        }, 100);
-                      } catch (error) {
-                        window.scroll(0, elementTop);
-                      }
-                    } else {
-                      window.scrollTo({ 
-                        top: elementTop, 
-                        behavior: 'smooth' 
-                      });
-                    }
-                  }
-                }}
-                className="global-header-nav-link"
-              >
-                Additional
-              </button>
-            </>
-          )}
-
-          {navigationMode === 'discover' && (
-            <>
-              <button 
-                onClick={() => {
-                  // Reset to show all categories
-                  navigate('/discover');
-                }}
-                className={`global-header-nav-link ${pathname === '/discover' ? 'active' : ''}`}
-              >
-                <i className="fas fa-users"></i>
-                <span>All</span>
-              </button>
-              <button 
-                onClick={() => {
-                  // Filter to health category
-                  navigate('/discover?category=health');
-                }}
-                className="global-header-nav-link"
-              >
-                <i className="fas fa-heartbeat"></i>
-                <span>Health</span>
-              </button>
-              <button 
-                onClick={() => {
-                  // Filter to NIL category
-                  navigate('/discover?category=nil');
-                }}
-                className="global-header-nav-link"
-              >
-                <i className="fas fa-star"></i>
-                <span>NIL</span>
-              </button>
-              <button 
-                onClick={() => {
-                  // Filter to solar category
-                  navigate('/discover?category=solar');
-                }}
-                className="global-header-nav-link"
-              >
-                <i className="fas fa-solar-panel"></i>
-                <span>Solar</span>
-              </button>
-            </>
-          )}
+          
         </nav>
 
         {/* Side by Side Button Controls */}

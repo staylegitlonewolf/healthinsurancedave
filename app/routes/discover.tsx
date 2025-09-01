@@ -81,7 +81,7 @@ const useLazyImage = (src: string) => {
         setIsLoaded(true);
         // Fallback to placeholder if image fails to load
         if (imgRef.current) {
-          imgRef.current.src = IMAGES.NIL_VICTORIA;
+          imgRef.current.src = IMAGES.HEALTH_DAVID;
         }
       };
       img.src = src;
@@ -128,139 +128,20 @@ export default function Team() {
 
   // Discover data combining Health, NIL, and Solar members
   const teamMembers: TeamMember[] = useMemo(() => [
-    // Health Team Members - David Brown and Matthias Wendler
+    // Health Team Members - David Brown
     {
       id: 'health-1',
       name: 'David Brown',
       title: 'Health Coverage Expert',
       category: 'health',
-              image: IMAGES.HEALTH_DAVID,
+      image: IMAGES.HEALTH_DAVID,
       phone: '(813) 647-1118',
       email: 'ElevatedHealthDavid@gmail.com',
-      description: 'Licensed Health Coverage Expert with access to all options. Leading our mission to connect clients with the best solutions across all services.',
-      services: ['Health Insurance', 'Solar Solutions', 'NIL Partnerships'],
+      description: 'Licensed Health Coverage Expert with access to all options. Leading our mission to connect clients with the best health insurance solutions.',
+      services: ['Individual Health Insurance', 'Family Health Plans', 'Group Insurance', 'Medicare', 'Medicaid'],
       featured: true
     },
 
-
-               // NIL
-           {
-             id: 'nil-1',
-             name: 'Victoria Whitfield',
-             title: 'NIL Specialist & Elite Athlete',
-             category: 'nil',
-                           image: IMAGES.NIL_VICTORIA,
-             phone: '(234) 567-890',
-             email: 'victoria@lvastudio.com',
-             description: 'Victoria Whitfield is a standout athlete from East Bay High School in Gibsonton, FL, specializing in Flag Football and Basketball. As a Junior (Class of 2027), she has achieved remarkable success including being named Player of the Game and ranking 77th nationally for total tries made. Victoria excels in both sports - playing Varsity Flag Football as #3 Athlete and Varsity Basketball as #4 Center. Standing 5\'7" and weighing 133 lbs, she brings a unique perspective to NIL partnerships, combining her athletic achievements with expertise in athlete branding and Name, Image, and Likeness opportunities. Her recent performance includes 12 total points, 2 touchdowns, and 224 passing yards, demonstrating her exceptional talent and marketability. Victoria has an active NIL endorsement deal with LVA S&H LLC, showcasing her professional approach to athlete branding and partnerships.',
-    
-             featured: true
-           },
-
-    // Solar Team Members (using solar company logos as team members)
-    {
-      id: 'solar-1',
-      name: 'Brilliant Solar',
-      title: 'Premium Solar Solutions',
-      category: 'solar',
-              image: IMAGES.SOLAR_BRILLIANT,
-      phone: '1-800-805-1889',
-      email: 'info@mybrilliantsolar.com',
-      website: 'https://mybrilliantsolar.com/',
-      description: 'Brilliant Solar is a leading residential and commercial solar energy provider headquartered in Toms River, NJ. We specialize in custom solar installations, energy storage solutions, and comprehensive solar services across multiple states. Our mission is to make solar energy accessible and affordable while providing exceptional customer service and reliable, high-quality installations.',
-      services: ['Residential Solar', 'Commercial Solar', 'Energy Storage', 'Solar Maintenance', 'Financing Options', '24/7 Support'],
-      featured: true
-    },
-    {
-      id: 'solar-2',
-      name: 'Eagle Solar',
-      title: 'Premium Solar Panel Solutions',
-      category: 'solar',
-              image: IMAGES.SOLAR_EAGLE,
-      website: 'https://jinkosolar.us/eagle-modules/',
-      description: 'Eagle Solar represents Jinko Solar\'s premium Eagle series modules, delivering industry-leading efficiency and reliability. Our Eagle modules feature advanced PERC technology, bifacial design, and superior performance in real-world conditions. With over 15 years of manufacturing excellence, Eagle Solar provides residential and commercial customers with cutting-edge solar technology backed by comprehensive warranties and exceptional customer support.',
-      services: ['Premium Solar Panels', 'PERC Technology', 'Bifacial Modules', 'High Efficiency', 'Extended Warranties', 'Commercial Solutions'],
-      featured: false
-    },
-    {
-      id: 'solar-3',
-      name: 'Enphase Energy',
-      title: 'Smart Solar Technology Leader',
-      category: 'solar',
-              image: IMAGES.SOLAR_ENPHASE,
-      phone: '(877) 797-4743',
-      website: 'https://www.enphase.com/',
-      description: 'Enphase Energy is the global leader in smart solar technology, revolutionizing the industry with our innovative microinverter systems. Our IQ microinverters provide maximum energy harvest, enhanced safety, and real-time monitoring capabilities. With over 50 million microinverters deployed worldwide, Enphase delivers reliable, intelligent solar solutions that optimize energy production and provide homeowners with complete visibility into their solar system performance.',
-      services: ['IQ Microinverters', 'Smart Monitoring', 'Energy Optimization', 'System Diagnostics', 'Battery Storage', 'Grid Services'],
-      featured: false
-    },
-    {
-      id: 'solar-4',
-      name: 'Freedom Forever',
-      title: 'Complete Solar Freedom Solutions',
-      category: 'solar',
-              image: IMAGES.SOLAR_FREEDOM,
-      phone: '800-685-1850',     
-      website: 'https://www.freedomforever.com/',
-      description: 'Freedom Forever is dedicated to providing complete solar freedom through comprehensive energy solutions. We offer end-to-end solar services including custom design, professional installation, and ongoing maintenance. Our commitment to quality and customer satisfaction has made us one of the fastest-growing solar companies in America. We provide flexible financing options, premium equipment, and lifetime support to ensure our customers achieve true energy independence.',
-      services: ['Custom Solar Design', 'Professional Installation', 'Lifetime Support', 'Flexible Financing', 'Premium Equipment', 'Energy Independence'],
-      featured: false
-    },
-    {
-      id: 'solar-5',
-      name: 'Helioscope',
-      title: 'Advanced Solar Design & Analysis',
-      category: 'solar',
-              image: IMAGES.SOLAR_HELIOSCOPE,      
-      website: 'https://helioscope.aurorasolar.com/',
-      description: 'Helioscope is the industry-leading solar design and analysis platform, providing comprehensive tools for optimal system performance. Our advanced software enables solar professionals to create accurate designs, perform detailed shading analysis, and generate precise energy production estimates. With cloud-based collaboration and real-time updates, Helioscope streamlines the entire solar project lifecycle from initial design to final commissioning.',
-      services: ['Solar Design Software', 'Shading Analysis', 'Energy Modeling', 'System Optimization', 'Project Collaboration', 'Performance Monitoring'],
-      featured: false
-    },
-    {
-      id: 'solar-6',
-      name: 'Huawei Solar',
-      title: 'Smart Solar & Energy Storage',
-      category: 'solar',
-              image: IMAGES.SOLAR_HUAWEI,   
-      website: 'https://solar.huawei.com/en/',
-      description: 'Huawei Solar is a global leader in smart solar solutions and energy storage systems, combining cutting-edge technology with intelligent energy management. Our FusionSolar solutions integrate solar inverters, energy storage, and smart grid technologies to create comprehensive energy ecosystems. With AI-powered optimization and cloud-based monitoring, Huawei Solar delivers maximum efficiency, reliability, and intelligent energy management for residential and commercial applications.',
-      services: ['Smart Inverters', 'Energy Storage Systems', 'AI Optimization', 'Cloud Monitoring', 'Grid Integration', 'Commercial Solutions'],
-      featured: false
-    },
-    {
-      id: 'solar-7',
-      name: 'Jinko Solar',
-      title: 'World-Class Solar Technology',
-      category: 'solar',
-              image: IMAGES.SOLAR_JINKO,
-      website: 'https://jinkosolar.us/',
-      description: 'Jinko Solar is a world-class solar panel manufacturer delivering cutting-edge technology and exceptional quality. As one of the largest and most innovative solar companies globally, we produce high-efficiency modules using advanced PERC, TOPCon, and HJT technologies. Our commitment to research and development has resulted in multiple world records for solar cell efficiency. Jinko Solar provides reliable, high-performance solar solutions backed by industry-leading warranties and comprehensive customer support.',
-      services: ['High-Efficiency Modules', 'PERC Technology', 'TOPCon Cells', 'HJT Technology', 'Global Support', 'Extended Warranties'],
-      featured: false
-    },
-    {
-      id: 'solar-8',
-      name: 'Qcells',
-      title: 'Premium Solar Cell Technology',
-      category: 'solar',
-              image: IMAGES.SOLAR_QCELLS,      
-      website: 'https://www.qcells.com/',
-      description: 'Qcells is a global leader in premium solar cell and module technology, delivering maximum efficiency and reliability. Our advanced Q.ANTUM technology combines PERC, QID, and Zero Gap technology to achieve superior performance and durability. With manufacturing facilities in the United States and worldwide, Qcells provides high-quality solar solutions with industry-leading warranties and comprehensive technical support for residential and commercial applications.',
-      services: ['Q.ANTUM Technology', 'PERC Solar Cells', 'Zero Gap Technology', 'High Efficiency Modules', 'US Manufacturing', 'Premium Warranties'],
-      featured: false
-    },
-    {
-      id: 'solar-9',
-      name: 'Trina Solar',
-      title: 'Global Solar Energy Solutions',
-      category: 'solar',
-              image: IMAGES.SOLAR_TRINA,
-      website: 'https://www.trinasolar.com/us',
-      description: 'Trina Solar is a global leader in solar energy solutions, providing comprehensive products and services worldwide. Our innovative Vertex series modules feature advanced cell technology and industry-leading efficiency ratings. With over 25 years of experience and a presence in more than 100 countries, Trina Solar delivers reliable, high-performance solar solutions backed by extensive research and development, comprehensive warranties, and global customer support.',
-      services: ['Vertex Series Modules', 'Advanced Cell Technology', 'Global Solutions', 'High Efficiency', 'Comprehensive Support', 'Research & Development'],
-      featured: false
-    }
   ], []);
 
   // Initialize filtered members when component mounts
@@ -384,7 +265,7 @@ export default function Team() {
 
     const handleImageError = useCallback((e: React.SyntheticEvent<HTMLImageElement>) => {
       // Fallback to placeholder
-              e.currentTarget.src = IMAGES.NIL_VICTORIA;
+              e.currentTarget.src = IMAGES.HEALTH_DAVID;
     }, []);
 
     const handleCardClick = useCallback(() => {
@@ -440,76 +321,45 @@ export default function Team() {
           <h3 className="member-name">{member.name}</h3>
           <p className="member-title">{member.title}</p>
           
-          {/* Contact Information or School Information */}
+          {/* Contact Information */}
           <div className="member-contact">
-            {member.category === 'nil' ? (
-              // School information for NIL specialists
-              <>
-                <div className="contact-item school-item">
-                  <img src={IMAGES.NIL_SCHOOL_LOGO} alt="School Logo" className="school-logo" />
-                  <span>East Bay High School</span>
-                </div>
-                <div className="contact-item school-item">
-                  <i className="fas fa-map-marker-alt"></i>
-                  <span>Gibsonton, FL</span>
-                </div>
-                {member.website && (
-                  <div className="contact-item website-item">
-                    <i className="fas fa-globe"></i>
-                    <a 
-                      href={member.website} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      aria-label={`Visit ${member.name}'s website`}
-                    >
-                      Visit Website
-                    </a>
-                  </div>
-                )}
-              </>
-            ) : (
-              // Regular contact information for other categories
-              <>
-                {member.phone && (
-                  <div className="contact-item">
-                    <i className="fas fa-phone"></i>
-                    <a 
-                      href={`tel:${member.phone}`}
-                      onClick={(e) => e.stopPropagation()}
-                      aria-label={`Call ${member.name}`}
-                    >
-                      {member.phone}
-                    </a>
-                  </div>
-                )}
-                {member.email && (
-                  <div className="contact-item">
-                    <i className="fas fa-envelope"></i>
-                    <a 
-                      href={`mailto:${member.email}`}
-                      onClick={(e) => e.stopPropagation()}
-                      aria-label={`Email ${member.name}`}
-                    >
-                      {member.email}
-                    </a>
-                  </div>
-                )}
-                {member.website && (
-                  <div className="contact-item website-item">
-                    <i className="fas fa-globe"></i>
-                    <a 
-                      href={member.website} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      aria-label={`Visit ${member.name}'s website`}
-                    >
-                      Visit Website
-                    </a>
-                  </div>
-                )}
-              </>
+            {member.phone && (
+              <div className="contact-item">
+                <i className="fas fa-phone"></i>
+                <a 
+                  href={`tel:${member.phone}`}
+                  onClick={(e) => e.stopPropagation()}
+                  aria-label={`Call ${member.name}`}
+                >
+                  {member.phone}
+                </a>
+              </div>
+            )}
+            {member.email && (
+              <div className="contact-item">
+                <i className="fas fa-envelope"></i>
+                <a 
+                  href={`mailto:${member.email}`}
+                  onClick={(e) => e.stopPropagation()}
+                  aria-label={`Email ${member.name}`}
+                >
+                  {member.email}
+                </a>
+              </div>
+            )}
+            {member.website && (
+              <div className="contact-item website-item">
+                <i className="fas fa-globe"></i>
+                <a 
+                  href={member.website} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  aria-label={`Visit ${member.name}'s website`}
+                >
+                  Visit Website
+                </a>
+              </div>
             )}
           </div>
 
@@ -561,36 +411,19 @@ export default function Team() {
               <h3 className="health-member-name">{member.name}</h3>
               <p className="health-member-title">{member.title}</p>
 
-                             {/* Contact Information or School Information */}
+                             {/* Contact Information */}
                <div className="health-member-contact">
-                 {member.category === 'nil' ? (
-                   // School information for NIL specialists
-                   <>
-                     <div className="health-contact-item school-item">
-                       <img src={IMAGES.NIL_SCHOOL_LOGO} alt="School Logo" className="school-logo" />
-                       <span>East Bay High School</span>
-                     </div>
-                     <div className="health-contact-item school-item">
-                       <i className="fas fa-map-marker-alt"></i>
-                       <span>Gibsonton, FL</span>
-                     </div>
-                   </>
-                 ) : (
-                   // Regular contact information for other categories
-                   <>
-                     {member.phone && (
-                       <div className="health-contact-item">
-                         <i className="fas fa-phone"></i>
-                         <span>{member.phone}</span>
-                       </div>
-                     )}
-                     {member.email && (
-                       <div className="health-contact-item">
-                         <i className="fas fa-envelope"></i>
-                         <a href={`mailto:${member.email}`}>{member.email}</a>
-                       </div>
-                     )}
-                   </>
+                 {member.phone && (
+                   <div className="health-contact-item">
+                     <i className="fas fa-phone"></i>
+                     <span>{member.phone}</span>
+                   </div>
+                 )}
+                 {member.email && (
+                   <div className="health-contact-item">
+                     <i className="fas fa-envelope"></i>
+                     <a href={`mailto:${member.email}`}>{member.email}</a>
+                   </div>
                  )}
                </div>
 

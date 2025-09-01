@@ -46,7 +46,7 @@ export function Footer() {
             </div>
             <p className="global-footer-company-description">
               Dedicated to providing comprehensive health insurance solutions, 
-              solar solutions, and NIL partnerships. We're committed to helping you live victorious always.
+              health insurance solutions. We're committed to helping you find the perfect health coverage.
             </p>
             <div className="global-footer-contact-links">
               <a 
@@ -110,8 +110,10 @@ export function Footer() {
             <ul className="global-footer-section-list">
               {[
                 "Health Insurance",
-                "Solar Solutions",
-                "NIL Partnerships"
+                "Medicare",
+                "Medicaid",
+                "Group Insurance",
+                
               ].map((service) => (
                 <li key={service} className="global-footer-service-item">
                   <span className="global-footer-service-bullet"></span>

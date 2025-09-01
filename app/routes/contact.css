@@ -566,6 +566,70 @@
   font-size: 1.2rem;
 }
 
+.error-email-link {
+  color: #dc2626;
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.error-email-link:hover {
+  color: #b91c1c;
+  text-decoration: none;
+}
+
+/* Contact Form Container Styles */
+.contact-form-container {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+}
+
+.contact-form-container h2 {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.contact-form-container p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.form-iframe-container {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-iframe-container iframe {
+  display: block;
+  border: none;
+  width: 100%;
+  min-height: 800px;
+  background: white;
+}
+
+@media (max-width: 768px) {
+  .contact-form-container {
+    padding: 1.5rem;
+  }
+  
+  .contact-form-container h2 {
+    font-size: 1.5rem;
+  }
+  
+  .form-iframe-container iframe {
+    min-height: 600px;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .contact-page {

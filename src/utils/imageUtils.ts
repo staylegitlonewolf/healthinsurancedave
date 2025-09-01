@@ -32,16 +32,7 @@ export const IMAGES = {
   MAIN_PHOTO3: getImagePath('mainPhoto3.jpg'),
   DAVID_PROMO: getImagePath('davidPromo.png'),
   
-  // NIL assets
-  NIL_FHSAA: getImagePath('NiL/FHSAA_logo.png'),
-  NIL_NCAA: getImagePath('NiL/NCAA LOGO.png'),
-  NIL_VICTORIA: getImagePath('NiL/Vicotoria.png'),
-  NIL_VICTORIA1: getImagePath('NiL/Vicotoria1.png'),
-  NIL_VICTORIA2: getImagePath('NiL/Vicotoria2.png'),
-  NIL_COMING_SOON: getImagePath('NiL/comingsoon.png'),
-  NIL_MAXPREP: getImagePath('NiL/maxprep.png'),
-  NIL_SCHOOL_LOGO: getImagePath('NiL/schoolLogo.png'),
-  NIL_VICTORIA_AWARD: getImagePath('NiL/victoriaAward.png'),
+
   
   // Health assets
   HEALTH_DAVID: getImagePath('Health/David Brown.png'),
@@ -49,16 +40,7 @@ export const IMAGES = {
   HEALTH_MASTER_DAVID: getImagePath('Health/masterDavid.png'),
 
   
-  // Solar assets
-  SOLAR_BRILLIANT: getImagePath('Solar/solarBrilliantSolar.png'),
-  SOLAR_EAGLE: getImagePath('Solar/solarEagle.png'),
-  SOLAR_ENPHASE: getImagePath('Solar/solarEnphase.png'),
-  SOLAR_FREEDOM: getImagePath('Solar/solarFreedomForever.png'),
-  SOLAR_HELIOSCOPE: getImagePath('Solar/solarHelioscope.png'),
-  SOLAR_HUAWEI: getImagePath('Solar/solarHuawei.png'),
-  SOLAR_JINKO: getImagePath('Solar/solarJinko.png'),
-  SOLAR_QCELLS: getImagePath('Solar/solarQcells.png'),
-  SOLAR_TRINA: getImagePath('Solar/solarTrinasolar.png'),
+
   
   // Flags
   FLAG_COLORADO: getImagePath('Flags/Colorado.svg'),

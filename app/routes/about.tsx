@@ -46,9 +46,7 @@ export function meta({}: Route.MetaArgs) {
 
 export default function About() {
   // Initialize counting animations
-  const happyClients = useCountUp(500);
   const statesCovered = useCountUp(30);
-  const projectsCompleted = useCountUp(1000);
 
   // Hide floating particles on About page
   useEffect(() => {
@@ -78,16 +76,8 @@ export default function About() {
         </div>
         <div className="stats-grid">
                   <div className="stat-item">
-                    <div className="stat-number">{happyClients.toLocaleString()}</div>
-                    <div className="stat-label">Happy Clients</div>
-                  </div>
-                  <div className="stat-item">
                     <div className="stat-number">{statesCovered}</div>
                     <div className="stat-label">States Covered</div>
-                  </div>
-                  <div className="stat-item">
-                    <div className="stat-number">{projectsCompleted.toLocaleString()}</div>
-                    <div className="stat-label">Projects Completed</div>
                   </div>
                 </div>
       </div>
