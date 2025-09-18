@@ -73,7 +73,7 @@ export default function Home() {
           
          
           <h1 className="hero-title">
-            Finding the right health plan shouldn't be complicated..
+            Finding the right Insurance plans shouldn't be complicated..
           </h1>
       
           <div className="hero-buttons">
