@@ -1,8 +1,8 @@
-# Health Insurance Dave
+# Insurance Dave
 
-**Professional Health Insurance Solutions**
+**Professional Health and Life Insurance Solutions**
 
-A modern, responsive React website built for Health Insurance Dave, featuring comprehensive health insurance services, Medicare, Medicaid, and group insurance solutions.
+A modern, responsive React website built for Insurance Dave, featuring comprehensive Health and Life Insurance services, Medicare, Medicaid, and group insurance solutions.
 
 ## 🚀 Live Site
 
@@ -10,7 +10,7 @@ Visit the live website: [https://staylegitlonewolf.github.io/healthinsurancedave
 
 ## ✨ Features
 
-### 🏥 **Health Insurance Services**
+### 🏥 **Health and Life Insurance Services**
 - Individual & Family Health Plans
 - Medicare & Medicaid
 - Group Insurance Solutions
@@ -19,7 +19,7 @@ Visit the live website: [https://staylegitlonewolf.github.io/healthinsurancedave
 
 ### 👤 **Primary Contact**
 - **David Brown** - Licensed Health Coverage Expert
-- Access to all health insurance options
+- Access to all Health and Life insurance options
 - Personalized consultation and guidance
 
 ### 📱 **Modern Web Experience**
@@ -37,8 +37,8 @@ Visit the live website: [https://staylegitlonewolf.github.io/healthinsurancedave
 
 ## 📄 Pages
 
-- **🏠 Home** (`/`) - Hero section with health insurance overview
-- **💼 Services** (`/services`) - Health insurance plans and solutions
+- **🏠 Home** (`/`) - Hero section with Health and Life insurance overview
+- **💼 Services** (`/services`) - Health and Life insurance plans and solutions
 - **ℹ️ About** (`/about`) - Company information and mission
 - **🏆 Certifications** (`/certifications`) - Professional licenses by state
 - **📞 Contact** (`/contact`) - Full-screen Google Form contact page
@@ -66,7 +66,7 @@ Visit the live website: [https://staylegitlonewolf.github.io/healthinsurancedave
 
 ## 🌟 Specialized Features
 
-### Health Insurance Solutions
+### Health and Life Insurance Solutions
 - Individual and family health plans
 - Medicare and Medicaid assistance
 - Group insurance for businesses
@@ -110,7 +110,7 @@ The contact form uses **Google Forms** for reliable, free form submissions and i
 ### 📋 **Form Fields Include**
 - Full Name and Email
 - Phone Number
-- Subject Selection (Health Insurance, Medicare, Medicaid, Group Insurance)
+- Subject Selection (Health and Life Insurance, Medicare, Medicaid, Group Insurance)
 - Preferred Contact Method
 - Best Time to Reach You
 - How You Heard About Us
@@ -124,4 +124,4 @@ The contact form uses **Google Forms** for reliable, free form submissions and i
 - **Email**: ElevatedHealthDavid@gmail.com
 - **Services**: Individual, Family, Medicare, Medicaid, Group Insurance
 
-*Built with modern web technologies for optimal performance and user experience. Focused on providing exceptional health insurance solutions and professional consultation services.*
+*Built with modern web technologies for optimal performance and user experience. Focused on providing exceptional Health and Life insurance solutions and professional consultation services.*

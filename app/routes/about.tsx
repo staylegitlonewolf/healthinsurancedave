@@ -39,8 +39,8 @@ function useCountUp(end: number, duration: number = 2000) {
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "About - Health Insurance Dave" },
-    { name: "description", content: "Learn more about Health Insurance Dave" },
+    { title: "About - Insurance Dave" },
+    { name: "description", content: "Learn more about Insurance Dave" },
   ];
 }
 
@@ -71,7 +71,7 @@ export default function About() {
         <div className="mission-container">
           <h2 className="mission-title">Our Mission</h2>
           <p className="mission-text">
-            At Health Insurance Dave, we are committed to providing exceptional health insurance solutions and services to individuals and families across multiple states. Our mission is to ensure that everyone has access to quality healthcare coverage that fits their needs.
+            At Insurance Dave, we are committed to providing exceptional Health and Life Insurance solutions and services to individuals and families across multiple states. Our mission is to ensure that everyone has access to quality Health and Life coverage that fits their needs.
           </p>
         </div>
         <div className="stats-grid">
@@ -94,7 +94,7 @@ export default function About() {
                 </h2>
                 
                 <p className="stats-description">
-                  Our founder, David Brown, is a licensed health coverage expert with access to all options, ensuring our clients receive the best possible solutions across all our services.
+                  Our founder, David Brown, is a licensed Health and Life coverage expert with access to all options, ensuring our clients receive the best possible solutions across all our services.
                 </p>
                 
                
@@ -124,13 +124,13 @@ export default function About() {
             <div className="value-item">
               <h3 className="value-title">Innovation</h3>
               <p className="value-text">
-                We continuously innovate to provide better healthcare solutions for our clients.
+                We continuously innovate to provide better Health and Life insurance solutions for our clients.
               </p>
             </div>
             <div className="value-item">
               <h3 className="value-title">Compassion</h3>
               <p className="value-text">
-                We care deeply about the health and well-being of our clients and communities.
+                We care deeply about the Health and Life protection of our clients and communities.
               </p>
             </div>
           </div>
@@ -140,12 +140,12 @@ export default function About() {
       {/* Why Choose Our Health Insurance Services Section - Bottom */}
       <div className="mission-section">
         <div className="mission-container">
-          <h2 className="mission-title">Why Choose Our Health Insurance Services?</h2>
+          <h2 className="mission-title">Why Choose Our Health and Life Insurance Services?</h2>
           <div className="benefits-grid">
             <div className="benefit-item">
               <i className="fas fa-certificate"></i>
               <h4>Same-Day Coverage</h4>
-              <p>Get covered instantly! Most of our clients receive active coverage within hours, not weeks. No waiting periods for essential health services.</p>
+              <p>Get covered instantly! Most of our clients receive active coverage within hours, not weeks. No waiting periods for essential Health and Life services.</p>
             </div>
             <div className="benefit-item">
               <i className="fas fa-handshake"></i>
@@ -155,7 +155,7 @@ export default function About() {
             <div className="benefit-item">
               <i className="fas fa-shield-alt"></i>
               <h4>30+ States Covered</h4>
-              <p>Licensed to serve residents across 30+ states with active certifications. Wherever you are, we can help protect your health.</p>
+              <p>Licensed to serve residents across 30+ states with active certifications. Wherever you are, we can help protect your Health and Life.</p>
             </div>
             <div className="benefit-item">
               <i className="fas fa-dollar-sign"></i>

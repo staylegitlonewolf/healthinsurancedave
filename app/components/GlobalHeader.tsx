@@ -188,13 +188,13 @@ export function GlobalHeader() {
                 ? "Debug mode loading..." 
                 : navigationMode !== 'global' 
                 ? "Click to return to main navigation" 
-                : "Health Insurance Dave"
+                : "Insurance Dave"
             }
           >
             <div className="global-header-logo-container">
               <img 
                 src={IMAGES.LOGO} 
-                alt="Health Insurance Dave" 
+                alt="Insurance Dave" 
                 className={`global-header-logo-image ${isHeaderCollapsed ? 'collapsed' : 'normal'}`}
                 draggable={false} 
               />

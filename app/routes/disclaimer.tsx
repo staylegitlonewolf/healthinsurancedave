@@ -4,8 +4,8 @@ import "./disclaimer.css";
 
 export function meta() {
   return [
-    { title: "Disclaimer - Health Insurance Dave" },
-    { name: "description", content: "Legal disclaimers and terms for Health Insurance Dave services" },
+    { title: "Disclaimer - Insurance Dave" },
+    { name: "description", content: "Legal disclaimers and terms for Insurance Dave services" },
   ];
 }
 
@@ -32,12 +32,12 @@ export default function Disclaimer() {
         <div className="disclaimer-content">
           <div className="disclaimer-section">
             <h2>1. General Information</h2>
-            <p>This disclaimer applies to all services provided by Health Insurance Dave ("we," "us," or "our") and our website. By using our services, you acknowledge that you have read, understood, and agree to be bound by this disclaimer.</p>
+            <p>This disclaimer applies to all services provided by Insurance Dave ("we," "us," or "our") and our website. By using our services, you acknowledge that you have read, understood, and agree to be bound by this disclaimer.</p>
           </div>
 
           <div className="disclaimer-section">
             <h2>2. Insurance Services Disclaimer</h2>
-            <p>Health Insurance Dave is a licensed insurance broker and consultant. We provide information, guidance, and assistance in selecting health insurance plans, but we do not:</p>
+            <p>Insurance Dave is a licensed insurance broker and consultant. We provide information, guidance, and assistance in selecting Health and Life insurance plans, but we do not:</p>
             <ul>
               <li>Guarantee approval for any insurance policy</li>
               <li>Ensure specific coverage or benefits</li>
@@ -89,7 +89,7 @@ export default function Disclaimer() {
 
           <div className="disclaimer-section">
             <h2>7. Limitation of Liability</h2>
-            <p>To the maximum extent permitted by law, Health Insurance Dave shall not be liable for:</p>
+            <p>To the maximum extent permitted by law, Insurance Dave shall not be liable for:</p>
             <ul>
               <li>Direct, indirect, incidental, or consequential damages</li>
               <li>Loss of profits, data, or business opportunities</li>
@@ -101,7 +101,7 @@ export default function Disclaimer() {
 
           <div className="disclaimer-section">
             <h2>8. Indemnification</h2>
-            <p>You agree to indemnify and hold harmless Health Insurance Dave from any claims, damages, or expenses arising from:</p>
+            <p>You agree to indemnify and hold harmless Insurance Dave from any claims, damages, or expenses arising from:</p>
             <ul>
               <li>Your use of our services</li>
               <li>Your violation of our terms</li>
@@ -124,7 +124,7 @@ export default function Disclaimer() {
             <h2>11. Contact Information</h2>
             <p>If you have questions about this disclaimer, please contact us:</p>
             <div className="contact-info">
-              <p><strong>Health Insurance Dave</strong></p>
+              <p><strong>Insurance Dave</strong></p>
               <p>Email: ElevatedHealthDavid@gmail.com</p>
               <p>Phone: (813) 647-1118</p>
             </div>

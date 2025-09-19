@@ -6,8 +6,8 @@ import "./home.css";
 
 export function meta() {
   return [
-    { title: "Health Insurance Dave - Health Plan Solutions" },
-    { name: "description", content: "Find the right health plan with Health Insurance Dave" },
+    { title: "Insurance Dave - Health and Life Insurance Solutions" },
+    { name: "description", content: "Find the right Health and Life Insurance plans with Insurance Dave" },
   ];
 }
 

@@ -22,7 +22,7 @@ interface TeamMember {
 
 export function meta() {
   return [
-    { title: "Meet The Team - Health Insurance Dave" },
+    { title: "Meet The Team - Insurance Dave" },
     { name: "description", content: "Meet our expert team across Health, NIL, and Solar divisions" },
   ];
 }
@@ -137,8 +137,8 @@ export default function Team() {
       image: IMAGES.HEALTH_DAVID,
       phone: '(813) 647-1118',
       email: 'ElevatedHealthDavid@gmail.com',
-      description: 'Licensed Health Coverage Expert with access to all options. Leading our mission to connect clients with the best health insurance solutions.',
-      services: ['Individual Health Insurance', 'Family Health Plans', 'Group Insurance', 'Medicare', 'Medicaid'],
+      description: 'Licensed Health and Life Coverage Expert with access to all options. Leading our mission to connect clients with the best Health and Life insurance solutions.',
+      services: ['Individual Health and Life Insurance', 'Family Health and Life Plans', 'Group Insurance', 'Medicare', 'Medicaid'],
       featured: true
     },
 

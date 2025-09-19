@@ -6,7 +6,7 @@ import "./certifications.css";
 
 export function meta() {
   return [
-    { title: "Certifications - Health Insurance Dave" },
+    { title: "Certifications - Insurance Dave" },
     { name: "description", content: "View our licenses and certifications" },
   ];
 }

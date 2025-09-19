@@ -2,7 +2,7 @@ import HealthMaster from '../components/healthMaster/HealthMaster';
 
 export function meta() {
   return [
-    { title: "Health Master - Health Insurance Dave" },
+    { title: "Health Master - Insurance Dave" },
     { name: "description", content: "Health coverage expert details" },
   ];
 }

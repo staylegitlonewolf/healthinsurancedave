@@ -23,14 +23,14 @@ export default function Terms() {
         <div className="terms-content">
           <div className="terms-section">
             <h2>1. Acceptance of Terms</h2>
-            <p>By accessing and using the Health Insurance Dave website and services, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.</p>
+            <p>By accessing and using the Insurance Dave website and services, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.</p>
           </div>
 
           <div className="terms-section">
             <h2>2. Description of Service</h2>
-            <p>Health Insurance Dave provides insurance brokerage services including:</p>
+            <p>Insurance Dave provides insurance brokerage services including:</p>
             <ul>
-              <li>Health insurance quotes and enrollment</li>
+              <li>Health and Life insurance quotes and enrollment</li>
               
               <li>Solar energy consultation and partnerships</li>
               <li>NIL (Name, Image, Likeness) partnership services</li>
@@ -69,12 +69,12 @@ export default function Terms() {
 
           <div className="terms-section">
             <h2>6. Intellectual Property</h2>
-            <p>The content on this website, including but not limited to text, graphics, logos, images, and software, is the property of Health Insurance Dave and is protected by copyright and other intellectual property laws.</p>
+            <p>The content on this website, including but not limited to text, graphics, logos, images, and software, is the property of Insurance Dave and is protected by copyright and other intellectual property laws.</p>
           </div>
 
           <div className="terms-section">
             <h2>7. Limitation of Liability</h2>
-            <p>Health Insurance Dave shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, or use, incurred by you or any third party, whether in an action in contract or tort, even if we have been advised of the possibility of such damages.</p>
+            <p>Insurance Dave shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, or use, incurred by you or any third party, whether in an action in contract or tort, even if we have been advised of the possibility of such damages.</p>
           </div>
 
           <div className="terms-section">
@@ -84,7 +84,7 @@ export default function Terms() {
 
           <div className="terms-section">
             <h2>9. Indemnification</h2>
-            <p>You agree to indemnify and hold harmless Health Insurance Dave, its officers, directors, employees, and agents from and against any claims, damages, obligations, losses, liabilities, costs, or debt arising from your use of our services.</p>
+            <p>You agree to indemnify and hold harmless Insurance Dave, its officers, directors, employees, and agents from and against any claims, damages, obligations, losses, liabilities, costs, or debt arising from your use of our services.</p>
           </div>
 
           <div className="terms-section">
@@ -94,7 +94,7 @@ export default function Terms() {
 
           <div className="terms-section">
             <h2>11. Governing Law</h2>
-            <p>These Terms of Service shall be governed by and construed in accordance with the laws of the state where Health Insurance Dave is registered, without regard to its conflict of law provisions.</p>
+            <p>These Terms of Service shall be governed by and construed in accordance with the laws of the state where Insurance Dave is registered, without regard to its conflict of law provisions.</p>
           </div>
 
           <div className="terms-section">

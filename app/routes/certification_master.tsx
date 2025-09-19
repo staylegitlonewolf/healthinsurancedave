@@ -2,7 +2,7 @@ import CertificationMaster from "../components/certificationMaster/Certification
 
 export function meta() {
   return [
-    { title: "Certification Details - Health Insurance Dave" },
+    { title: "Certification Details - Insurance Dave" },
     { name: "description", content: "View detailed certification information" },
   ];
 }

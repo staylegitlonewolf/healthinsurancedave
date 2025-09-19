@@ -3,7 +3,7 @@ import FAQ from "./Services/FAQ";
 
 export function meta() {
   return [
-    { title: "Services - Health Insurance Dave" },
+    { title: "Services - Insurance Dave" },
     { name: "description", content: "Comprehensive health insurance plans including individual, family, Medicare, Medicaid, and group insurance. Expert guidance for all your health coverage needs." },
   ];
 }

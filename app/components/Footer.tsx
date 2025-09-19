@@ -30,14 +30,14 @@ export function Footer() {
               <div className="global-footer-company-logo">
                 <img 
                                      src={IMAGES.MAIN_PHOTO3} 
-                  alt="Health Insurance Dave" 
+                  alt="Insurance Dave" 
                   draggable={false}
                 />
                 <div className="global-footer-company-logo-glow"></div>
               </div>
               <div className="global-footer-company-info">
                 <h3 className="global-footer-company-title">
-                  Health Insurance Dave
+                  Insurance Dave
                 </h3>
                 <p className="global-footer-company-subtitle">
                   Your #1 Trusted Insurance Partner
@@ -130,7 +130,7 @@ export function Footer() {
                 © {currentYear} <span className="global-footer-copyright-brand">Living Victorious Always™</span> All Rights Reserved.
               </p>
               <p className="global-footer-copyright-subtext">
-                Health Insurance Dave is a registered service provider.
+                Insurance Dave is a registered service provider.
               </p>
             </div>
             <div className="global-footer-legal-links">
