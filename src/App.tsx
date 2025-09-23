@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider, Outlet, useLocation } from 'react-router-dom'
+import { createHashRouter, RouterProvider, Outlet, useLocation } from 'react-router-dom'
 import './App.css'
 import '../app/app.css'
 
@@ -88,7 +88,7 @@ function AppLayout() {
 }
 
 // ===== ROUTER CONFIGURATION =====
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <AppLayout />,
@@ -113,9 +113,7 @@ const router = createBrowserRouter([
       // { path: "debug", element: <Debug /> }
     ]
   }
-], {
-  basename: '/'
-})
+])
 
 // ===== MAIN APP COMPONENT =====
 function App() {
