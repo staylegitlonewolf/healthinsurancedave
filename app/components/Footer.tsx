@@ -45,8 +45,8 @@ export function Footer() {
               </div>
             </div>
             <p className="global-footer-company-description">
-              Dedicated to providing comprehensive health insurance solutions, 
-              health insurance solutions. We're committed to helping you find the perfect health coverage.
+            At our core, we're passionate about helping you discover the ideal insurance care coverage, seamlessly integrating comprehensive health insurance and life insurance solutions to safeguard your well-being.
+
             </p>
             <div className="global-footer-contact-links">
               <a 
