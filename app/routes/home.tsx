@@ -70,10 +70,15 @@ export default function Home() {
     <div className="hero-container">
       <section id="home" className="hero">
         <div className="hero-content">
-          
+          {/* Company Logos Section (single combined image) */}
+          <div className="group-logos">
+            <img src="/groupLogo.png" alt="Partner logos" className="group-logos-img" />
+          </div>
          
           <h1 className="hero-title">
-            Finding the right Insurance plans shouldn't be complicated..
+            Finding the right Insurance plans
+            <br className="tablet-only-break" />
+            shouldn't be complicated..
           </h1>
       
           <div className="hero-buttons">
