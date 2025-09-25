@@ -43,18 +43,18 @@ export const IMAGES = {
 
   
   // Flags
-  FLAG_ALABAMA: getImagePath('Flags/Alabama.svg'),
-  FLAG_COLORADO: getImagePath('Flags/Colorado.svg'),
-  FLAG_FLORIDA: getImagePath('Flags/Florida.svg'),
-  FLAG_GEORGIA: getImagePath('Flags/Georgia.svg'),
-  FLAG_MARYLAND: getImagePath('Flags/Maryland.svg'),
-  FLAG_NEVADA: getImagePath('Flags/Nevada.svg'),
-  FLAG_OHIO: getImagePath('Flags/Ohio.svg'),
-  FLAG_SOUTH_CAROLINA: getImagePath('Flags/SouthCarolina.svg'),
-  FLAG_TENNESSEE: getImagePath('Flags/Tennessee.svg'),
-  FLAG_TEXAS: getImagePath('Flags/Texas.svg'),
-  FLAG_UTAH: getImagePath('Flags/Utah.svg'),
-  FLAG_VIRGINIA: getImagePath('Flags/Virginia.svg'),
+  FLAG_ALABAMA: getImagePath('Flags/Alabama.png'),
+  FLAG_COLORADO: getImagePath('Flags/Colorado.png'),
+  FLAG_FLORIDA: getImagePath('Flags/Florida.png'),
+  FLAG_GEORGIA: getImagePath('Flags/Georgia.png'),
+  FLAG_MARYLAND: getImagePath('Flags/Maryland.png'),
+  FLAG_NEVADA: getImagePath('Flags/Nevada.png'),
+  FLAG_OHIO: getImagePath('Flags/Ohio.png'),
+  FLAG_SOUTH_CAROLINA: getImagePath('Flags/South_Carolina.png'),
+  FLAG_TENNESSEE: getImagePath('Flags/Tennessee.png'),
+  FLAG_TEXAS: getImagePath('Flags/Texas.png'),
+  FLAG_UTAH: getImagePath('Flags/Utah.png'),
+  FLAG_VIRGINIA: getImagePath('Flags/Virginia.png'),
   
   // Certifications
   CERT_ALABAMA: getImagePath('media/Certification/Alabama.png'),
