@@ -51,10 +51,10 @@ export default function Certifications() {
       stateColor: "#B31B1B",
       pdfUrl: IMAGES.PDF_ALABAMA,
       licenseData: {
-        licenseNumber: "TBD",
+        licenseNumber: "3003615547",
         npn: "21533411",
-        issueDate: "TBD",
-        expirationDate: "TBD"
+        issueDate: "01/24/2025",
+        expirationDate: "01/31/2027"
       }
     },
     {
@@ -165,10 +165,10 @@ export default function Certifications() {
       stateColor: "#B31B1B",
       pdfUrl: IMAGES.PDF_SOUTH_CAROLINA,
       licenseData: {
-        licenseNumber: "TBD",
+        licenseNumber: "21533411",
         npn: "21533411",
-        issueDate: "TBD",
-        expirationDate: "TBD"
+        issueDate: "04/19/2025",
+        expirationDate: "01/31/2029"
       }
     },
     {
