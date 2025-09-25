@@ -43,6 +43,22 @@ export default function Certifications() {
   const allCertifications = useMemo(() => [
     {
       id: 1,
+      name: "Alabama",
+      status: "Active",
+      image: IMAGES.CERT_ALABAMA,
+      flagIcon: "🏛️",
+      flagImage: IMAGES.FLAG_ALABAMA,
+      stateColor: "#B31B1B",
+      pdfUrl: IMAGES.PDF_ALABAMA,
+      licenseData: {
+        licenseNumber: "TBD",
+        npn: "21533411",
+        issueDate: "TBD",
+        expirationDate: "TBD"
+      }
+    },
+    {
+      id: 2,
       name: "Colorado",
       status: "Active",
       image: IMAGES.CERT_COLORADO,
@@ -57,7 +73,7 @@ export default function Certifications() {
       }
     },
     {
-      id: 2,
+      id: 3,
       name: "Florida",
       status: "Active",
       image: IMAGES.CERT_FLORIDA,
@@ -77,7 +93,7 @@ export default function Certifications() {
       ]
     },
     { 
-      id: 3,
+      id: 4,
       name: "Georgia",
       status: "Active",
       image: IMAGES.CERT_GEORGIA,
@@ -93,7 +109,7 @@ export default function Certifications() {
       }
     },
     {
-      id: 4,
+      id: 5,
       name: "Maryland",
       status: "Active",
       image: IMAGES.CERT_MARYLAND,
@@ -109,7 +125,7 @@ export default function Certifications() {
       }
     },
     {
-      id: 5,
+      id: 6,
       name: "Nevada",
       status: "Active",
       image: IMAGES.CERT_NEVADA,
@@ -124,7 +140,7 @@ export default function Certifications() {
       }
     },
     {
-      id: 6,
+      id: 7,
       name: "Ohio",
       status: "Active",
       image: IMAGES.CERT_OHIO,
@@ -140,7 +156,23 @@ export default function Certifications() {
       }
     },
     {
-      id: 7,
+      id: 8,
+      name: "South Carolina",
+      status: "Active",
+      image: IMAGES.CERT_SOUTH_CAROLINA,
+      flagIcon: "🌴",
+      flagImage: IMAGES.FLAG_SOUTH_CAROLINA,
+      stateColor: "#B31B1B",
+      pdfUrl: IMAGES.PDF_SOUTH_CAROLINA,
+      licenseData: {
+        licenseNumber: "TBD",
+        npn: "21533411",
+        issueDate: "TBD",
+        expirationDate: "TBD"
+      }
+    },
+    {
+      id: 9,
       name: "Tennessee",
       status: "Active",
       image: IMAGES.CERT_TENNESSEE,
@@ -156,7 +188,7 @@ export default function Certifications() {
       }
     },
     {
-      id: 8,
+      id: 10,
       name: "Texas",
       status: "Active",
       image: IMAGES.CERT_TEXAS,
@@ -171,7 +203,7 @@ export default function Certifications() {
       }
     },
     {
-      id: 9,
+      id: 11,
       name: "Utah",
       status: "Active",
       image: IMAGES.CERT_UTAH,
@@ -186,7 +218,7 @@ export default function Certifications() {
       }
     },
     {
-      id: 10,
+      id: 12,
       name: "Virginia",
       status: "Active",
       image: IMAGES.CERT_VIRGINIA,
